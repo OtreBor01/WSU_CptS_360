@@ -49,6 +49,7 @@ char *getDirName(char *path){
 #define PATH 64
 #define LINE 128
 #define CMD 16
+#define ROOT "~"
 //Custom Data Structures and Types 
 typedef struct node{
 	char Name[PATH];
@@ -67,10 +68,10 @@ int creat(char*);   			int rm(char*);
 int reload(char*);  			int save(char*);
 int menu(char*);    			int quit(char*);
 void displayNode(Node*); 		int runCommand(char*,char*);
-void saveTree(FILE*,Node*);
+void saveTree(FILE*,Node*,char*);
 //Gloabal Variables
 Node *root, *cwd, *start; // root and CWD (Current Working Directory) pointers
-char pathname[PATH] = "~", cwPath[PATH] = "",  dname[PATH] = "", bname[PATH] = "";
+char pathname[PATH] = ROOT, cwPath[PATH] = "",  dname[PATH] = "", bname[PATH] = "";
 char *cmd[] = {"mkdir", "rmdir", "ls", "cd", "pwd", "creat", "rm",
 			   "reload", "save", "menu", "quit", NULL};
 int (*fptr[ ])(char *)={(int (*)())mkdir,rmdir,ls,cd,pwd,creat,rm,
@@ -135,7 +136,6 @@ Node *locateDir(char *path)
 	char *delimiter = "/";
 	char *token = strtok(path, delimiter); // first call to strtok()
 	while(token){
-		printf("Path: '%s'\n", cwPath);
 		if(!strcmp(token, "..") && cwd != root){
 			cwd = cwd->Parent;
 			//Searches for the last occurrence of a character in the string
@@ -144,11 +144,9 @@ Node *locateDir(char *path)
 			cwPath[n] = '\0';
 		}
 		else if((cwd=traverseDir(token)) == NULL){ //If invalid directory name
-			printf("Invalid Token: '%s'\n", token);
 			return NULL;
 		}
 		else if(strlen(token) != 0){
-			printf("Valid Token: '%s'\n", token);
 			strcat(cwPath, "/");
 			strcat(cwPath, cwd->Name);
 		}
@@ -264,16 +262,16 @@ int pwd(char *name){
 	return true;
 }
 char *getPath(Node *node){
-	char *name = node->Name;
-	if((node = node->Parent) == NULL){ 
+	if(!(node->Parent)){ //root directory
 		return "/"; 
 	}
-	char *parentName = getPath(node);
-	if(strcmp(parentName, "/")){
-		strcat(parentName, "/"); 
-	}
-	strcat(parentName, name);
-	return parentName;
+	char parentPath[PATH];
+	strcpy(parentPath, getPath(node->Parent));// + node->Name;
+	strcat(parentPath, node->Name);
+	if(node != cwd){ strcat(parentPath, "/"); }
+	char *path = (char*) malloc(1 + strlen(parentPath));
+	strcpy(path, parentPath);
+	return path;
 }
 //creat pathname :create a FILE node.
 int creat(char *name){
@@ -324,14 +322,17 @@ int reload(char *name){
 //save filename :save the current file system tree as a file
 int save(char *name){
 	FILE *fp = fopen(name, "w"); // fopen a FILE stream for WRITE
-	saveTree(fp, root->Child);
+	saveTree(fp, root->Child, "");
 	fclose(fp); // close FILE stream when done
 }
-void saveTree(FILE *fp, Node *node){
+void saveTree(FILE *fp, Node *node, char *path){
 	if(node){
-		fprintf(fp, "%c %s\n", node->Type, getPath(node)); // print a line to file
-		if(node->Child){ saveTree(fp, node->Child); }
-		if(node->Sibling){ saveTree(fp, node->Sibling); }
+		char currPath[PATH];
+		strcpy(currPath, path);
+		strcat(currPath, "/"); strcat(currPath, node->Name);
+		fprintf(fp, "%c %s\n", node->Type, currPath); // print a line to file
+		if(node->Child){ saveTree(fp, node->Child, currPath); }
+		if(node->Sibling){ saveTree(fp, node->Sibling, path); }
 	}
 }
 //menu : show a menu of valid commands
