@@ -15,7 +15,29 @@ Node * locateDir2(char *path)
 		token = strtok(NULL, delimiter); // call strtok() until it returns NULL
 	}
 	return cur;
-}*/
+}
+char *getBaseName(char *path){
+	bool isDir = false;
+	char *temp = path; 
+	for(int i = 0; *temp != '\0'; i++){
+		if(*temp == '/'){ isDir = true; break;}
+		temp++;
+	}
+	if(isDir){return strrchr(path, '/');}
+	return path;
+}
+char *getDirName(char *path){
+	int index = -1;
+	char *temp = path; 
+	for(int i = 0; *temp != '\0'; i++){
+		if(*temp == '/'){ index = i;}
+		temp++;
+	}
+	if(index != -1){return strncpy(temp, path, index);}
+	else {strcpy(temp, "");}
+	return temp;
+}
+*/
 //Libraries neccesary include 
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,19 +46,20 @@ Node * locateDir2(char *path)
 #include <libgen.h>
 #include <ctype.h>
 //Defined Constants
-
+#define PATH 64
+#define LINE 128
+#define CMD 16
 //Custom Data Structures and Types 
 typedef struct node{
-	char Name[64];
+	char Name[PATH];
 	char Type;
 	struct node *Child, *Sibling, *Parent;
 }Node;
 
 //Function Declarations
-char *getBaseName(char*);       char *getDirName(char*);
 Node *createNode(char*,char);   char *getPath(Node*);
 void dbname(char*); 			Node *locateDir(char*);
-Node * traverseDir(char*); 		void initialize();
+Node *traverseDir(char*); 		void initialize();
 int findCmd(char*); 			int mkdir(char*);
 int rmdir(char*);   			int ls(char*);
 int cd(char*);      			int pwd(char*);
@@ -47,7 +70,7 @@ void displayNode(Node*); 		int runCommand(char*,char*);
 void saveTree(FILE*,Node*);
 //Gloabal Variables
 Node *root, *cwd, *start; // root and CWD (Current Working Directory) pointers
-char pathname[64] = "~", cwPath[64] = "",  dname[64] = "", bname[64] = "";
+char pathname[PATH] = "~", cwPath[PATH] = "",  dname[PATH] = "", bname[PATH] = "";
 char *cmd[] = {"mkdir", "rmdir", "ls", "cd", "pwd", "creat", "rm",
 			   "reload", "save", "menu", "quit", NULL};
 int (*fptr[ ])(char *)={(int (*)())mkdir,rmdir,ls,cd,pwd,creat,rm,
@@ -58,7 +81,7 @@ int main(void){
 	while(true){
 		cwd = start;
 		strcpy(cwPath, pathname);
-		char line[128] = "", path[64] = "", command[16] = "";
+		char line[LINE] = "", path[PATH] = "", command[CMD] = "";
 		strcpy(dname, ""); strcpy(bname, ""); 
 		printf("%s$ ", pathname);
 		fgets(line, 128, stdin); //get user input line = [command pathname];
@@ -96,31 +119,11 @@ void initialize(){
 	strcpy(root->Name, pathname);
 	start = cwd = root;
 }
-char *getBaseName(char *path){
-	bool isDir = false;
-	char *temp = path; 
-	for(int i = 0; *temp != '\0'; i++){
-		if(*temp == '/'){ isDir = true; break;}
-		temp++;
-	}
-	if(isDir){return strrchr(path, '/');}
-	return path;
-}
-char *getDirName(char *path){
-	int index = -1;
-	char *temp = path; 
-	for(int i = 0; *temp != '\0'; i++){
-		if(*temp == '/'){ index = i;}
-		temp++;
-	}
-	if(index != -1){return strncpy(temp, path, index);}
-	else {strcpy(temp, "");}
-	return temp;
-}
 Node * traverseDir(char *name){
 	Node *child = cwd->Child;
 	while(child){
 		if(child->Type == 'D' && !strcmp(child->Name, name)){
+			cwd = child;
 			return child;
 		}
 		child = child->Sibling;
@@ -129,27 +132,29 @@ Node * traverseDir(char *name){
 }
 Node *locateDir(char *path)
 {
-	char* delimiter = "/";
+	char *delimiter = "/";
 	char *token = strtok(path, delimiter); // first call to strtok()
-	Node * cur = cwd;
 	while(token){
-		//printf("Token: '%s'\n", token);
+		printf("Path: '%s'\n", cwPath);
 		if(!strcmp(token, "..") && cwd != root){
-			cur = cur->Parent;
-			char * substr = getBaseName(cwPath);
+			cwd = cwd->Parent;
+			//Searches for the last occurrence of a character in the string
+			char *substr = strrchr(cwPath, '/');
 			int n = strlen(cwPath)-strlen(substr);
 			cwPath[n] = '\0';
 		}
-		else if((cur=traverseDir(token)) == NULL){ //If invalid directory name
-			return false;
+		else if((cwd=traverseDir(token)) == NULL){ //If invalid directory name
+			printf("Invalid Token: '%s'\n", token);
+			return NULL;
 		}
-		else{
+		else if(strlen(token) != 0){
+			printf("Valid Token: '%s'\n", token);
 			strcat(cwPath, "/");
-			strcat(cwPath, cur->Name);
+			strcat(cwPath, cwd->Name);
 		}
 		token = strtok(NULL, delimiter); // call strtok() until it returns NULL
 	}
-	return cur;
+	return cwd;
 }
 void dbname(char *path){
 		char temp[128]; // dirname(), basename() destroy original pathname
@@ -304,23 +309,17 @@ int rm(char *name){
 //reload filename :construct a file system tree from a file
 int reload(char *name){
 	FILE *fp = fopen(name, "r"); // fopen a FILE stream for reading
-	char line[64];
+	char line[LINE];
 	initialize();
-	while(fgets(line, 64, fp)){
-		char *type, *path = "", *command = "mkdir";
+	while(fgets(line, LINE, fp)){
+		line[strlen(line)-1] = 0; // kill \n at end of line
+		char type[2], path[PATH], *command = "mkdir";
 		sscanf(line, "%s %s", type, path); // print a line to file
 		if(type[0] == 'F'){ command = "creat"; }
 		int r = runCommand(command, path);
+		cwd = root;
 	}
 	fclose(fp); // close FILE stream when done
-/*
-The function reconstructs a tree from a file. First, initialize the tree as empty,
-i.e. with only the root node. Then read each line of the file. If the line contains “D pathname”, call
-mkdir(pathname) to make a directory.
-If the line contains “F pathname”, call
-creat(pathname) to create a file.
-These will reconstruct the tree saved earlier.
-*/
 }
 //save filename :save the current file system tree as a file
 int save(char *name){
@@ -328,7 +327,7 @@ int save(char *name){
 	saveTree(fp, root->Child);
 	fclose(fp); // close FILE stream when done
 }
-void saveTree(FILE * fp, Node * node){
+void saveTree(FILE *fp, Node *node){
 	if(node){
 		fprintf(fp, "%c %s\n", node->Type, getPath(node)); // print a line to file
 		if(node->Child){ saveTree(fp, node->Child); }
@@ -353,5 +352,3 @@ int menu(char *name){
 int quit(char *name){
 	return save(name);
 }
-
-
