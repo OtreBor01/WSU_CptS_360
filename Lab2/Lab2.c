@@ -1,14 +1,6 @@
 /*
-mkdir pathname :make a new directory for a given pathname
-rmdir pathname :remove the directory, if it is empty.
-cd [pathname] :change CWD to pathname, or to / if no pathname.
-ls [pathname] :list the directory contents of pathname or CWD
-pwd :print the (absolute) pathname of CWD
-creat pathname :create a FILE node.
-rm pathname :remove the FILE node.
 save filename :save the current file system tree as a file
 reload filename :construct a file system tree from a file
-menu : show a menu of valid commands
 quit : save the file system tree, then terminate the program.
 */
 //Libraries neccesary include 
@@ -29,7 +21,7 @@ typedef struct node{
 
 //Function Declarations
 char *getBaseName(char *); char *getDirName(char *);
-Node *createNode(char*, char); Node *locateDir2(char *);
+Node *createNode(char*, char); char *printPath(char *);
 void dbname(char*); Node *locateDir(char *);
 Node * traverseDir(char*); void initialize();
 int findCmd(char *); int mkdir(char *);
@@ -62,6 +54,7 @@ int main(void){
 		if(strlen(path)){ dbname(path);}
 		printf("path: %s\tdname: %s\tbname: %s\n", path, dname, bname);
 		if(!strcmp(command, "quit")){
+			int r = quit("");
 			break;
 		}
 		else if((index = findCmd(command)) == -1){//finds the command to execute
@@ -75,7 +68,6 @@ int main(void){
 		printf("path: %s\tdname: %s\tbname: %s\n", path, dname, bname);
 		int r = fptr[index](bname); //executes the command
 	}
-	
 	return 0;
 }
 void initialize(){
@@ -197,6 +189,7 @@ void displayNode(Node *node){
 	char *child = node->Child ? node->Child->Name : "N/A";
 	printf("Parent: %s\nSibling: %s\nChild: %s\n", parent, sibling, child);
 }
+//mkdir pathname :make a new directory for a given pathname
 int mkdir(char *name){
 	Node *prev = NULL, *cur = cwd->Child;
 	while(cur){
@@ -212,11 +205,16 @@ int mkdir(char *name){
 	else {cwd->Child = newDir;}
 	return true;
 }
+//rmdir pathname :remove the directory, if it is empty.
 int rmdir(char *name){
 	Node *prev = NULL, *cur = cwd->Child;
 	while(cur){
 		if(cur->Type == 'D' && !strcmp(cur->Name, name)){
-			if(cur == cwd->Child){ cwd->Child = cur->Sibling; }
+			if(cur->Child != NULL){
+				printf("rmdir: failed to remove '%s': Directory not empty\n", name);
+				return false;
+			}
+			else if(cur == cwd->Child){ cwd->Child = cur->Sibling; }
 			else if(prev != NULL){ prev->Sibling = cur->Sibling; }
 			free(cur);
 			return true;
@@ -225,7 +223,8 @@ int rmdir(char *name){
 	}
 	printf("rmdir: failed to remove '%s': No such file or directory\n", name);
 	return false;
-}   
+}
+//ls [pathname] :list the directory contents of pathname or CWD  
 int ls(char *name){
 	if(!(cwd = locateDir(name))){
 		printf("ls: cannot access '%s': No such file or directory\n", name);
@@ -243,6 +242,7 @@ int ls(char *name){
 	} else{ printf("%s (%c)\n", cwd->Name, cwd->Type); }
 	return true;
 }
+//cd [pathname] :change CWD to pathname, or to / if no pathname.
 int cd(char *name){
 	if((cwd = locateDir(bname)) != NULL){
 		strcpy(pathname, cwPath);
@@ -253,18 +253,51 @@ int cd(char *name){
 	printf("bash: cd: %s: No such file or directory\n", cwPath);
 	return false;
 }
+//pwd :print the (absolute) pathname of CWD
 int pwd(char *name){
-	/*Start from CWD, implement pwd by recursion:
-(1). Save the name (string) of the current node
-(2). Follow parentPtr to the parent node until the root node;
-(3). Print the names by adding / to each name string
-	*/
+	char *path = printPath(cwd->Name);
+	puts(path);
+	return true;
 }
+char *printPath(char *name){
+	if((cwd = cwd->Parent) == NULL){ 
+		return name; 
+	}
+	char *parentName = printPath(cwd->Name);
+	strcat(parentName, "/");
+	strcat(parentName, name);
+	return parentName;
+}
+//creat pathname :create a FILE node.
 int creat(char *name){
-	//SAME AS mkdir except the node type is ‘F’
-}   
+	Node *prev = NULL, *cur = cwd->Child;
+	while(cur){
+		if(cur->Type == 'F' && !strcmp(cur->Name, name)){
+			printf("creat: cannot create directory '%s': File exists\n", name);
+			return false;
+		}prev = cur;
+		cur = cur->Sibling;
+	}
+	Node *newDir = createNode(name, 'F');
+	newDir->Parent = cwd;
+	if(prev) {prev->Sibling = newDir;}
+	else {cwd->Child = newDir;}
+	return true;
+}
+//rm pathname :remove the FILE node.   
 int rm(char *name){
-	//SAME AS rmdir except check it's a file, no need to check for EMPTY.
+	Node *prev = NULL, *cur = cwd->Child;
+	while(cur){
+		if(cur->Type == 'F' && !strcmp(cur->Name, name)){
+			if(cur == cwd->Child){ cwd->Child = cur->Sibling; }
+			else if(prev != NULL){ prev->Sibling = cur->Sibling; }
+			free(cur);
+			return true;
+		} prev = cur;
+		cur = cur->Sibling;
+	}
+	printf("rm: failed to remove '%s': No such file or directory\n", name);
+	return false;
 }
 int reload(char *name){
 /*
@@ -279,14 +312,12 @@ These will reconstruct the tree saved earlier.
 int save(char *name){
 	//Check Textbook (pg. 95-96)
 }
+//menu : show a menu of valid commands
 int menu(char *name){
 	
 }
 int quit(char *name){
-	/*
-save the current tree to a file. Then terminate the program execution. 
-On subsequent runs of the simulator program, the user may use the reload command to 		restore the tree saved earlier.
-	*/
+	return save(name);
 }
 
 
