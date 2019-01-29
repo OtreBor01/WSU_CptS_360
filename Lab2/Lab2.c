@@ -1,43 +1,5 @@
-/*
-Node * locateDir2(char *path)
-{
-	char* delimiter = "/";
-	char *token = strtok(path, delimiter); // first call to strtok()
-	Node *cur = cwd;
-	while(token){
-		puts(token);
-		if(!strcmp(token, "..") && cwd != root){
-			cur = cur->Parent;
-		}
-		else if((cur=traverseDir(token)) == NULL){ //If invalid directory name
-			return NULL;
-		}
-		token = strtok(NULL, delimiter); // call strtok() until it returns NULL
-	}
-	return cur;
-}
-char *getBaseName(char *path){
-	bool isDir = false;
-	char *temp = path; 
-	for(int i = 0; *temp != '\0'; i++){
-		if(*temp == '/'){ isDir = true; break;}
-		temp++;
-	}
-	if(isDir){return strrchr(path, '/');}
-	return path;
-}
-char *getDirName(char *path){
-	int index = -1;
-	char *temp = path; 
-	for(int i = 0; *temp != '\0'; i++){
-		if(*temp == '/'){ index = i;}
-		temp++;
-	}
-	if(index != -1){return strncpy(temp, path, index);}
-	else {strcpy(temp, "");}
-	return temp;
-}
-*/
+//A relative path is a path that describes the location of a file or folder in relative to the current working directory.
+//An absolute path is a path that describes the location of a file or folder regardless of the current working directory; in fact, it is relative to the root directory.
 //Libraries neccesary include 
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,6 +12,7 @@ char *getDirName(char *path){
 #define LINE 128
 #define CMD 16
 #define ROOT "~"
+#define ABSPATH "/"
 //Custom Data Structures and Types 
 typedef struct node{
 	char Name[PATH];
@@ -68,7 +31,7 @@ int creat(char*);   			int rm(char*);
 int reload(char*);  			int save(char*);
 int menu(char*);    			int quit(char*);
 void displayNode(Node*); 		int runCommand(char*,char*);
-void saveTree(FILE*,Node*,char*);
+void saveTree(FILE*,Node*,char*); void resetToRoot(bool isWorking);
 //Gloabal Variables
 Node *root, *cwd, *start; // root and CWD (Current Working Directory) pointers
 char pathname[PATH] = ROOT, cwPath[PATH] = "",  dname[PATH] = "", bname[PATH] = "";
@@ -94,6 +57,10 @@ int main(void){
 	return 0;
 }
 int runCommand(char *command, char *path){
+	if(path[0] == ABSPATH[0]){ 
+		resetToRoot(true);
+		path++;
+	}
 	int index = 0; //used for command index
 	if(strlen(path)){ dbname(path);}
 	if(!strcmp(command, "quit")){
@@ -119,6 +86,16 @@ void initialize(){
 	root->Type = 'D';
 	strcpy(root->Name, pathname);
 	start = cwd = root;
+}
+void resetToRoot(bool isWorking){
+	if(isWorking){
+		cwd = root; 
+		strcpy(cwPath, ROOT);
+	}
+	else{
+		start = root; 
+		strcpy(pathname, ROOT);
+	}
 }
 Node * traverseDir(char *name){
 	Node *child = cwd->Child;
@@ -247,6 +224,10 @@ int ls(char *name){
 }
 //cd [pathname] :change CWD to pathname, or to / if no pathname.
 int cd(char *name){
+	if(strlen(name) == 0){ 
+		resetToRoot(false);
+		return true;
+	}
 	if((cwd = locateDir(bname)) != NULL){
 		strcpy(pathname, cwPath);
 		start = cwd;
@@ -263,7 +244,7 @@ int pwd(char *name){
 }
 char *getPath(Node *node){
 	if(!(node->Parent)){ //root directory
-		return "/"; 
+		return ABSPATH; 
 	}
 	char parentPath[PATH];
 	strcpy(parentPath, getPath(node->Parent));// + node->Name;
@@ -307,6 +288,10 @@ int rm(char *name){
 //reload filename :construct a file system tree from a file
 int reload(char *name){
 	FILE *fp = fopen(name, "r"); // fopen a FILE stream for reading
+	if(fp == NULL){ 
+		printf("reload: failed to locate '%s': No such file exist\n", name); 
+		return false;
+	}
 	char line[LINE];
 	initialize();
 	while(fgets(line, LINE, fp)){
@@ -318,12 +303,18 @@ int reload(char *name){
 		cwd = root;
 	}
 	fclose(fp); // close FILE stream when done
+	return true;
 }
 //save filename :save the current file system tree as a file
 int save(char *name){
 	FILE *fp = fopen(name, "w"); // fopen a FILE stream for WRITE
+	if(fp == NULL){ 
+		printf("save: failed to create '%s': Invalid file name\n", name);
+		return false;
+	}
 	saveTree(fp, root->Child, "");
 	fclose(fp); // close FILE stream when done
+	return true;
 }
 void saveTree(FILE *fp, Node *node, char *path){
 	if(node){
@@ -351,5 +342,5 @@ int menu(char *name){
 }
 //quit : save the file system tree, then terminate the program.
 int quit(char *name){
-	return save(name);
+	return save("quit.txt");
 }
