@@ -342,5 +342,9 @@ int menu(char *name){
 }
 //quit : save the file system tree, then terminate the program.
 int quit(char *name){
-	return save("quit.txt");
+	if(save("quit.txt")){
+			puts("Directory Tree has been saved under the file \"quit.txt\"");
+			return true;
+	}
+	return false;
 }
