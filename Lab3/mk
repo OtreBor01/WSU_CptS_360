@@ -1,0 +1,4 @@
+rm a.out
+gcc -m32 Lab3.c ts.s
+ls -l a.out
+./a.out
