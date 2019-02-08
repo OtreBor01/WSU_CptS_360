@@ -21,7 +21,7 @@ PROC *sleepList;       // list of SLEEP procs
 extern int body(char *); 
 int init(); int scheduler();
 void DisplayBinaryTree();
-int do_sleep(); //int sleep(int) in wait.c
+int do_ksleep(); //int sleep(int) in wait.c
 int do_wakeup(); //int wakeup(int) in wait.c
 int do_switch();
 int do_exit(); void kexit(int);//int kexit(int) in wait.c
@@ -202,12 +202,12 @@ void kexit(int exitValue){
     else{ puts("P1 Never Dies"); }
 }
 
-int do_sleep()
+int do_ksleep()
 {
   int event;
   printf("enter an event value to sleep on : ");
   scanf("%d", &event); getchar();
-  sleep(event);
+  ksleep(event);
 }
 
 int do_wakeup()
@@ -257,7 +257,7 @@ int kwait(int *statusCode)
 			return pid; //return ZOMBIE child pid;
 		}
 		//**** has children but none dead yet ****
-		sleep((int)running); // sleep on its PROC address
+		ksleep((int)running); // sleep on its PROC address
 	}
 	return -1; // caller has no children
 }
@@ -283,18 +283,18 @@ int init()
   p->priority = 0;
   p->ppid = 0;// P0 is its own parent
 
-  printList("freeList", freeList);
-  printf("init complete: P0 running\n"); 
+  //printList("freeList", freeList);
+  //printf("init complete: P0 running\n"); 
 }
 
 
 /*********** scheduler *************/
 int scheduler()
 { 
-  printf("proc %d in scheduler()\n", running->pid);
+  //printf("proc %d in scheduler()\n", running->pid);
   if (running->status == READY)
      enqueue(&readyQueue, running);
-  printList("readyQueue", readyQueue);
+  //printList("readyQueue", readyQueue);
   running = dequeue(&readyQueue);
-  printf("next running = %d\n", running->pid);  
+  //printf("next running = %d\n", running->pid);  
 }
