@@ -1,0 +1,66 @@
+
+<!-- saved from url=(0044)https://www.eecs.wsu.edu/~cs360/LAB3pre.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+<pre>             CS360 LAB#3 PreWork DUE: 2-14/15
+
+NOTE: LAB#3 PreWork require you to turn in a harcopy of your code
+
+
+1. Download samples/LAB3/mtx.tgz
+
+   Run      zcat mtx.tgz | tar xvf -
+
+   to extract files MTX1, MTX2, README, LAB3pre.bin
+
+2. Run programs in MTX1 and MTX2, as shown and EXPLAINED in class.
+
+3. Modify MTX2 to the following:
+
+(1). char *myname = "YOUR_NAME";  // your name 
+
+     Rewrite the body() function as 
+             int body(char *myname){ printf("%s", myname);  .....  }
+     Modify kfork() to do the following:
+
+        When a new proc starts to execute body(), print the myname string,
+             which should be YOUR name.
+
+        When body() ends, e.g. by a null command string, retrun to do_exit();
+
+  HINT: AS IF the proc has CALLED body(), passing myname as parameter.
+
+(2). Modify kfork() to implement process family tree as a binary tree
+       In the body() function, print the children list of the running proc.
+
+(3). Implement  kexit(int exitValue):
+       P1 never die;
+       give away children, if any, to P1
+       record exitValue in proc's exitCode;
+       become a ZOMBIE;
+       wakeup parent (by parent proc address);
+       tswitch();
+
+(4). Implement  int wait(int *status):
+       return -1 for ERROR if no child;
+
+       while(1){
+          if (found a ZOMBIE child){
+             copyt ZOMBIE child exitCode to *status;
+             bury the ZOMBIE child (put into freeList as FREE);
+             return ZOMBIE child pid;
+          }
+          sleep on OWN proc address;
+        }
+
+(5). Add a "wait" command and a do_wait() function to allow (running) proc to 
+     wait for a ZOMBIE child; print the ZOMBIE child's pid and exit status.
+
+ 
+4. DEMO your work on 2-14/15.
+
+5. Sample solution: samples/LAB3/LAB3pre.bin
+
+          
+
+
+</pre></body></html>
