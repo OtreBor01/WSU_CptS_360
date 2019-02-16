@@ -1,2 +1,5 @@
-# Pre-Lab 3
-### To run code, cd into the 'PreLab3' and run './mk'
+## 1. Description:
+  * This Assinment was designed to help us further understand how an operating system is a multitasking system. In an operating system, tasks are also called processes. For all practical purposes, the terms task and process can be used interchangeably. In Chap. 2, we defined an execution image as a memory area containing the execution’s code, data and stack. Formally, we define process as A process is the execution of an image. It is a sequence of executions regarded by the OS kernel as a single entity for using system resources. System resources include memory space, I/O devices and, most importantly, CPU time. In an OS kernel, each process is represented by a unique data structure, called the Process Control Block (PCB) or Task Control Block (TCB), etc. In this book, we shall simply call it the PROC structure. Like a personal record, which contains all the information of a person, a PROC structure contains all the information of a process. In a real OS, the PROC structure may contain many fields and quite large. To begin with, we shall define a very simple PROC structure to represent processes.
+
+## 2. Execution:
+  * To run code, cd into the 'PreLab3' and run './mk'
