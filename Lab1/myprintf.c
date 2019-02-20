@@ -96,8 +96,7 @@ int printo(u32 x){//Octal
 }
 
 int myprintf(char *fmt, ...){
-	//Node *arg_types = NULL; 
- 	va_list ap;
+    va_list ap;
     va_start(ap, fmt); // Requires the last fixed parameter (to get the address) 
     int i = 0;
 	for (; fmt[i] != '\0' ; i++) {
