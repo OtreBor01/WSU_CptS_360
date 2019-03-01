@@ -1,0 +1,4 @@
+rm a.out
+gcc -m32 Part1.c -pthread
+ls -l a.out
+time ./a.out
