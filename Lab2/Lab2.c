@@ -37,8 +37,7 @@ Node *root, *cwd, *start; // root and CWD (Current Working Directory) pointers
 char pathname[PATH] = ROOT, cwPath[PATH] = "",  dname[PATH] = "", bname[PATH] = "";
 char *cmd[] = {"mkdir", "rmdir", "ls", "cd", "pwd", "creat", "rm",
 			   "reload", "save", "menu", "quit", NULL};
-int (*fptr[ ])(char *)={(int (*)())mkdir,rmdir,ls,cd,pwd,creat,rm,
-									reload,save,menu,quit};
+int (*fptr[ ])(char *)={(int (*)())mkdir,rmdir,ls,cd,pwd,creat,rm,reload,save,menu,quit};
 
 int main(void){
 	initialize(); //initialize root node of the file system tree
