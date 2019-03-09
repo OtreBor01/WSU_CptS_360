@@ -1,4 +1,4 @@
-# WSU_CptS_360
+# CptS 360: Systems Programming
 ## COURSE CONTENTS
 ### Introduction to Unix/Linux and MTX Operating Systems: 
   * Files, directories, special files, logical organization of 
