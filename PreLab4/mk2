@@ -1,4 +1,3 @@
-rm a.out
-gcc -m32 Part2.c -pthread
-ls -l a.out
-time ./a.out
+rm part2
+gcc -m32 -o part2 Code/Part2.c -pthread
+time ./part2

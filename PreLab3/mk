@@ -1,4 +1,3 @@
-rm a.out
-gcc -m32 t.c ts.s
-ls -l a.out
-./a.out
+rm PreLab3
+gcc -m32 -o PreLab3 Code/t.c Code/ts.s
+./PreLab3

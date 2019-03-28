@@ -1,9 +1,4 @@
-D /d1
-F /d1/test1.txt
-D /d1/d3
-F /d1/d3/test3.html
-D /d2
-F /d2/test2.csv
-D /d2/d4
-F /d2/d4/test4.js
-F /test.txt
+D /a
+D /a/b
+D /a/b/c
+F /file1

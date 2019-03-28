@@ -38,6 +38,7 @@ void *func(void *arg)        // threads function
 
 int main (int argc, char *argv[])
 {
+   puts("\n\n\n***** Part 2 *****\n");
    struct timeval start, end;
    gettimeofday(&start, NULL);
    pthread_mutex_init(&m, NULL); 

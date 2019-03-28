@@ -1,0 +1,4 @@
+rm a.out
+./mk1
+./mk2
+./mk3

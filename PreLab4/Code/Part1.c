@@ -28,6 +28,7 @@ void *func(void *arg)              // threads function
 
 int main (int argc, char *argv[])
 {
+   puts("\n\n\n***** Part 1 *****\n");
    struct timeval t1, t2;
    gettimeofday(&t1, NULL);
    pthread_t thread[M];      // thread IDs

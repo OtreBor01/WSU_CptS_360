@@ -52,6 +52,7 @@ void timer_handler (int sig)
 
 int main ()
 {
+    puts("\n\n\n***** Part 3 *****\n");
 	struct itimerval itimer;
 	tick = hh = mm = ss = 0;
 
