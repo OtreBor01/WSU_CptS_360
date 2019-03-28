@@ -1,0 +1,6 @@
+rm a.out
+rm server
+gcc -m32 server.c
+mv a.out server
+ls -l server
+./server

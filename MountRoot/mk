@@ -1,0 +1,4 @@
+rm a.out 2> /dev/null
+rm mountroot 2> /dev/null
+gcc -m32 -o mountroot Main.c util.c Commands.c Helpers.c ls_l.c
+./mountroot
