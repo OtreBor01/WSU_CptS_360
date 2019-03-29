@@ -123,32 +123,86 @@ FinalProject/fast:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/build
 .PHONY : FinalProject/fast
 
-main.o: main.c.o
+Code/Level1/mount_root.o: Code/Level1/mount_root.c.o
 
-.PHONY : main.o
+.PHONY : Code/Level1/mount_root.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/main.c.o
-.PHONY : main.c.o
+Code/Level1/mount_root.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/mount_root.c.o
+.PHONY : Code/Level1/mount_root.c.o
 
-main.i: main.c.i
+Code/Level1/mount_root.i: Code/Level1/mount_root.c.i
 
-.PHONY : main.i
+.PHONY : Code/Level1/mount_root.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/main.c.i
-.PHONY : main.c.i
+Code/Level1/mount_root.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/mount_root.c.i
+.PHONY : Code/Level1/mount_root.c.i
 
-main.s: main.c.s
+Code/Level1/mount_root.s: Code/Level1/mount_root.c.s
 
-.PHONY : main.s
+.PHONY : Code/Level1/mount_root.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/main.c.s
-.PHONY : main.c.s
+Code/Level1/mount_root.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/mount_root.c.s
+.PHONY : Code/Level1/mount_root.c.s
+
+Code/main.o: Code/main.c.o
+
+.PHONY : Code/main.o
+
+# target to build an object file
+Code/main.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/main.c.o
+.PHONY : Code/main.c.o
+
+Code/main.i: Code/main.c.i
+
+.PHONY : Code/main.i
+
+# target to preprocess a source file
+Code/main.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/main.c.i
+.PHONY : Code/main.c.i
+
+Code/main.s: Code/main.c.s
+
+.PHONY : Code/main.s
+
+# target to generate assembly for a file
+Code/main.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/main.c.s
+.PHONY : Code/main.c.s
+
+Code/utility_functions.o: Code/utility_functions.c.o
+
+.PHONY : Code/utility_functions.o
+
+# target to build an object file
+Code/utility_functions.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/utility_functions.c.o
+.PHONY : Code/utility_functions.c.o
+
+Code/utility_functions.i: Code/utility_functions.c.i
+
+.PHONY : Code/utility_functions.i
+
+# target to preprocess a source file
+Code/utility_functions.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/utility_functions.c.i
+.PHONY : Code/utility_functions.c.i
+
+Code/utility_functions.s: Code/utility_functions.c.s
+
+.PHONY : Code/utility_functions.s
+
+# target to generate assembly for a file
+Code/utility_functions.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/utility_functions.c.s
+.PHONY : Code/utility_functions.c.s
 
 # Help Target
 help:
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... FinalProject"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Code/Level1/mount_root.o"
+	@echo "... Code/Level1/mount_root.i"
+	@echo "... Code/Level1/mount_root.s"
+	@echo "... Code/main.o"
+	@echo "... Code/main.i"
+	@echo "... Code/main.s"
+	@echo "... Code/utility_functions.o"
+	@echo "... Code/utility_functions.i"
+	@echo "... Code/utility_functions.s"
 .PHONY : help
 
 

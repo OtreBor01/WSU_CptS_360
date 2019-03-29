@@ -78,7 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/main.c">
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/mount_root.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/main.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/utility_functions.c">
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/CMakeLists.txt">
