@@ -1,0 +1,3 @@
+rm project
+gcc -m32 -o project Code/*.c
+./project
