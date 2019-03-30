@@ -2,24 +2,18 @@
 #define TYPE_H
 
 //***** Defined Constants *****
-// Default dir and regular file modes
-#define DIR_MODE        0x41ED
-#define FILE_MODE       0x81AE
-#define SUPER_MAGIC     0xEF53
-#define SUPER_USER      0
 
 // Proc status
-#define FREE    0
-#define READY   1
-#define BUSY    2
+#define PROC_FREE    0
+#define PROC_BUSY    1
 
 // file system table sizes
-#define NMINODE     100
-#define NMTABLE     10
-#define NPROC       2
-#define NFD         10
-#define NOFT        40
-#define BLKSIZE     1024
+#define NUM_MINODE     100
+#define NUM_MTABLE     10
+#define NUM_PROC       2
+#define NUM_FD         10
+#define NUM_OFT        40
+#define BLKSIZE        1024
 
 // Block number of EXT2 FS on FD
 #define SUPERBLOCK      1
@@ -63,7 +57,7 @@ typedef struct proc{
   int          ppid;
   int          status;
   MINODE*      cwd;
-  OFT*         fd[NFD];
+  OFT*         fd[NUM_FD];
 }PROC;
 
 // Mount Table structure
@@ -85,10 +79,10 @@ typedef struct mtable{
 SUPER*      _Super;
 GD*         _GroupDec;
 MINODE*      _Root;
-MINODE      _MINode[NMINODE]; //in memory INODEs
-MTABLE      _MTable[NMTABLE]; //mount tables
-OFT         _Oft[NOFT]; //Opened file instance
-PROC        _Procs[NPROC]; //PROC structures
+MINODE      _MINodes[NUM_MINODE]; //in memory INODEs
+MTABLE      _MTables[NUM_MTABLE]; //mount tables
+OFT         _Ofts[NUM_OFT]; //Opened file instance
+PROC        _Procs[NUM_PROC]; //PROC structures
 PROC*       _Running; //current executing PROC
 int         _IStartBlock;
 int         _NumberOfBlocks;

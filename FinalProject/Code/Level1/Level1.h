@@ -14,13 +14,15 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 */
 
 //***** Libraries *****
-#include "Header.h"
+#include "../Header.h"
 
 //***** Defined Constants *****
 
 //***** Global Variables *****
 
 //***** Function Prototypes *****
-
+int _cd(char*);
+int _pwd(MINODE*);
+int _ls(char*);
 
 #endif

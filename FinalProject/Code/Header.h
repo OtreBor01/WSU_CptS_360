@@ -30,6 +30,7 @@ int     _PathTokenCount;
 //***** Function Prototypes *****
 //Utility_functions: Function Prototypes
 int tokenize(char*);
+int search(MINODE*,char*);
 void print_error(char*,char*);
 MINODE* mialloc(void);
 int midalloc(MINODE*);
@@ -37,6 +38,11 @@ int get_block(int,int,char*), put_block(int,int,char*);
 MINODE *iget(int,int);
 int iput(MINODE*);
 int getino(char*);
+
+//Level1: Function Prototypes
+extern int _cd(char*);
+extern int _pwd(MINODE*);
+extern int _ls(char*);
 
 #endif
 

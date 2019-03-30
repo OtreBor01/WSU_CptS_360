@@ -78,7 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/mount_root.c">
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/cd_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/ls_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/pwd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/main.c">

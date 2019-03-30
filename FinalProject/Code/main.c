@@ -2,73 +2,93 @@
 
 int init()
 {
-    for (int i=0; i<NMINODE; i++) {
-        _MINode[i].refCount = 0;
+    //Sets all MINODE's refCount to 0 in the array
+    for (int i = 0; i < NUM_MINODE; i++) {
+        _MINodes[i].refCount = 0;
+        _MINodes[i].dev = 0;
+        _MINodes[i].ino = 0;
+        _MINodes[i].refCount = 0;
+        _MINodes[i].mounted = 0;
+        _MINodes[i].mptr = 0;
     }
-    for (int i=0; i<NMTABLE; i++) {
-        _MTable[i].dev = 0;
+    for (int i = 0; i < NUM_MTABLE; i++) {
+        _MTables[i].dev = 0;
     }
-    for (int i=0; i<NOFT; i++) {
-        _Oft[i].refCount = 0;
+    for (int i = 0; i < NUM_OFT; i++) {
+        _Ofts[i].refCount = 0;
     }
-    for (int i=0; i<NPROC; i++){
-        _Procs[i].status = READY; //
-        _Procs[i].pid = i;
+    for (int i = 0; i < NUM_PROC; i++){
+        _Procs[i].pid = i; //sets the id of the procs
         _Procs[i].uid = i;
-        for (int j=0; j<NFD; j++) {
+        _Procs[i].cwd = 0;
+        _Procs[i].status = PROC_FREE; //sets all procs to free
+        for (int j = 0; j < NUM_FD; j++) {
             _Procs[i].fd[j] = 0;
         }
-        _Procs[i].next = &_Procs[i+1];
+        _Procs[i].next = &_Procs[i+1]; //set the address of the next proc
     }
-    _Procs[NPROC-1].next = &_Procs[0];
-    _Running = &_Procs[0];
+    _Procs[NUM_PROC-1].next = &_Procs[0]; //circular linked list
+    _Running = &_Procs[0]; //sets the running proc to P0
 }
 
 int mount_root(char *rootdev) {
-    char buf[BLKSIZE];
-    int dev = open(rootdev, O_RDWR);
+    char device[64] = "../";
+    strcat(device, rootdev);
+    printf("Device: '%s'\n", device);
+    int dev = open(device, O_RDWR | O_RDONLY);
     if (dev < 0) {
-        printf("panic : can’t open root device\n");
-        exit(1);
+        print_error("mount_root", "Unable to Open Root Device");
     }
     /* get super block of rootdev */
-    get_block(dev, 1, buf);
+    char buf[BLKSIZE];
+    get_block(dev, SUPERBLOCK, buf);
     _Super = (SUPER *) buf;
     /* check magic number */
-    if (_Super->s_magic != SUPER_MAGIC) {
+    if (_Super->s_magic != EXT2_SUPER_MAGIC) {
         printf("super magic = %x : %s is not an EXT2 filesys\n", _Super->s_magic, rootdev);
         exit(0);
     }
     // fill mount table mtable[0] with rootdev information
-    MTABLE *mp = &_MTable[0];
+    MTABLE* mp = &_MTables[0];
     // use mtable[0]
     mp->dev = dev;
     // copy super block info into mtable[0]
-    _IStartBlock = mp->ninodes = _Super->s_inodes_count;
+    mp->ninodes = _Super->s_inodes_count;
     _NumberOfBlocks = mp->nblocks = _Super->s_blocks_count;
     strcpy(mp->devName, rootdev);
     strcpy(mp->mntName, PATH_DELIMITER);
-    get_block(dev, 2, buf);
+    get_block(dev, GDBLOCK, buf);
     _GroupDec = (GD *)buf;
     int bmap = mp->bmap = _GroupDec->bg_block_bitmap;
     int imap = mp->imap = _GroupDec->bg_inode_bitmap;
-    int iblock = mp->iblock = _GroupDec->bg_inode_table;
+    int iblock = _IStartBlock = mp->iblock  = _GroupDec->bg_inode_table;
     printf("bmap=%d imap=%d iblock=%d\n", bmap, imap, iblock);
     // call iget(), which inc minode’s refCount
-    _Root = iget(dev, 2); // get root inode
+    _Root = iget(dev, ROOT_INODE); // get root inode
     mp->mntDirPtr = _Root; // double link
+    _Root->dev = dev;
     //_Root->mptr = mp;
-    for (int i=0; i<NPROC; i++) // set proc’s CWD
+    for (int i=0; i<NUM_PROC; i++) // set proc’s CWD
     {
-        _Procs[i].cwd = iget(dev, 2); // each inc refCount by 1
+        _Procs[i].cwd = iget(dev, ROOT_INODE); // each inc refCount by 1
     }
     printf("mount : %s mounted on / \n", rootdev);
-    return 0;
+    return dev;
 }
+
+int init_proc(int dev){
+    printf("Root Ref-Count = %d\n", _Root->refCount);
+    puts("Creating P0 as Running Process");
+    _Running = &_Procs[0];
+    _Running->status = PROC_BUSY;
+    _Running->cwd = _Root;
+    printf("Root Ref-Count = %d\n", _Root->refCount);
+}
+
 int quit() // write all modified minodes to disk
 {
-    for (int i = 0; i<NMINODE; i++){
-        MINODE *mip = &_MINode[i];
+    for (int i = 0; i<NUM_MINODE; i++){
+        MINODE *mip = &_MINodes[i];
         if (mip->refCount && mip->dirty){
             mip->refCount = 1;
             iput(mip);
@@ -77,30 +97,37 @@ int quit() // write all modified minodes to disk
     exit(0);
 }
 
+void get_line(char* line){
+    puts("\n***** [ls|cd|pwd|quit] *****");
+    printf("Command: ");
+    fgets(line, 256, stdin);
+    line[strlen(line)-1] = 0;
+}
+
 int main(int argc, char *argv[ ])
 {
-    char line[128], cmd[16], pathname[64];
-    char* rootdev = "disk";
+    char* rootdev = "mydisk";
     if (argc > 1) {
         rootdev = argv[1];
     }
     init();
-    mount_root(rootdev);
+    int dev = mount_root(rootdev);
+    init_proc(dev);
     while(1){
-        printf("P%d running: ", _Running->pid);
-        printf("Command: ");
-        fgets(line, 128, stdin);
-        line[strlen(line)-1] = 0;
+        char line[128] = "", cmd[16] = "", pathname[64] = "";
+        printf("***** P%d Running *****\n", _Running->pid);
+        get_line(line);
         if (line[0] == 0) { continue; }
         sscanf(line, "%s %s", cmd, pathname);
+        printf("Command: '%s' | Path: '%s'\n", cmd, pathname);
         if (!strcmp(cmd, "ls")){
-            //ls(pathname);
+            _ls(pathname);
         }
         else if (!strcmp(cmd, "cd")) {
-            //cd(pathname);
+            _cd(pathname);
         }
         else if (!strcmp(cmd, "pwd")) {
-            //pwd(_Running->cwd);
+            _pwd(_Running->cwd);
         }
         else if (!strcmp(cmd, "quit")) {
             quit();

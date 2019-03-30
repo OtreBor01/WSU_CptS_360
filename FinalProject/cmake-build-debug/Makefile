@@ -123,32 +123,86 @@ FinalProject/fast:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/build
 .PHONY : FinalProject/fast
 
-Code/Level1/mount_root.o: Code/Level1/mount_root.c.o
+Code/Level1/cd_command.o: Code/Level1/cd_command.c.o
 
-.PHONY : Code/Level1/mount_root.o
+.PHONY : Code/Level1/cd_command.o
 
 # target to build an object file
-Code/Level1/mount_root.c.o:
-	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/mount_root.c.o
-.PHONY : Code/Level1/mount_root.c.o
+Code/Level1/cd_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o
+.PHONY : Code/Level1/cd_command.c.o
 
-Code/Level1/mount_root.i: Code/Level1/mount_root.c.i
+Code/Level1/cd_command.i: Code/Level1/cd_command.c.i
 
-.PHONY : Code/Level1/mount_root.i
+.PHONY : Code/Level1/cd_command.i
 
 # target to preprocess a source file
-Code/Level1/mount_root.c.i:
-	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/mount_root.c.i
-.PHONY : Code/Level1/mount_root.c.i
+Code/Level1/cd_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.i
+.PHONY : Code/Level1/cd_command.c.i
 
-Code/Level1/mount_root.s: Code/Level1/mount_root.c.s
+Code/Level1/cd_command.s: Code/Level1/cd_command.c.s
 
-.PHONY : Code/Level1/mount_root.s
+.PHONY : Code/Level1/cd_command.s
 
 # target to generate assembly for a file
-Code/Level1/mount_root.c.s:
-	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/mount_root.c.s
-.PHONY : Code/Level1/mount_root.c.s
+Code/Level1/cd_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.s
+.PHONY : Code/Level1/cd_command.c.s
+
+Code/Level1/ls_command.o: Code/Level1/ls_command.c.o
+
+.PHONY : Code/Level1/ls_command.o
+
+# target to build an object file
+Code/Level1/ls_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o
+.PHONY : Code/Level1/ls_command.c.o
+
+Code/Level1/ls_command.i: Code/Level1/ls_command.c.i
+
+.PHONY : Code/Level1/ls_command.i
+
+# target to preprocess a source file
+Code/Level1/ls_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.i
+.PHONY : Code/Level1/ls_command.c.i
+
+Code/Level1/ls_command.s: Code/Level1/ls_command.c.s
+
+.PHONY : Code/Level1/ls_command.s
+
+# target to generate assembly for a file
+Code/Level1/ls_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.s
+.PHONY : Code/Level1/ls_command.c.s
+
+Code/Level1/pwd_command.o: Code/Level1/pwd_command.c.o
+
+.PHONY : Code/Level1/pwd_command.o
+
+# target to build an object file
+Code/Level1/pwd_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o
+.PHONY : Code/Level1/pwd_command.c.o
+
+Code/Level1/pwd_command.i: Code/Level1/pwd_command.c.i
+
+.PHONY : Code/Level1/pwd_command.i
+
+# target to preprocess a source file
+Code/Level1/pwd_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.i
+.PHONY : Code/Level1/pwd_command.c.i
+
+Code/Level1/pwd_command.s: Code/Level1/pwd_command.c.s
+
+.PHONY : Code/Level1/pwd_command.s
+
+# target to generate assembly for a file
+Code/Level1/pwd_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.s
+.PHONY : Code/Level1/pwd_command.c.s
 
 Code/main.o: Code/main.c.o
 
@@ -213,9 +267,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... FinalProject"
 	@echo "... edit_cache"
-	@echo "... Code/Level1/mount_root.o"
-	@echo "... Code/Level1/mount_root.i"
-	@echo "... Code/Level1/mount_root.s"
+	@echo "... Code/Level1/cd_command.o"
+	@echo "... Code/Level1/cd_command.i"
+	@echo "... Code/Level1/cd_command.s"
+	@echo "... Code/Level1/ls_command.o"
+	@echo "... Code/Level1/ls_command.i"
+	@echo "... Code/Level1/ls_command.s"
+	@echo "... Code/Level1/pwd_command.o"
+	@echo "... Code/Level1/pwd_command.i"
+	@echo "... Code/Level1/pwd_command.s"
 	@echo "... Code/main.o"
 	@echo "... Code/main.i"
 	@echo "... Code/main.s"

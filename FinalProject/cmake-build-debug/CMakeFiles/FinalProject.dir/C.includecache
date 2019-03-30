@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Header.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+fcntl.h
+-
+libgen.h
+-
+sys/stat.h
+-
+ext2fs/ext2_fs.h
+-
+unistd.h
+-
+Type.h
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Type.h
+
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Type.h
+
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/main.c
+Header.h
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Header.h
+
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/utility_functions.c
+Header.h
+/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Header.h
+

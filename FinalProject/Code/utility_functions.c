@@ -7,6 +7,7 @@
 void print_error(char* function, char* message)
 {
     printf("Error: %s -> %s\n", function, message);
+    exit(1);
 }
 
 int tokenize(char *pathname)
@@ -47,9 +48,9 @@ int search(MINODE* mip, char* name)
 
 MINODE* mialloc(void) // allocate a FREE minode for use
 {
-    for (int i=0; i<NMINODE; i++)
+    for (int i=0; i<NUM_MINODE; i++)
     {
-        MINODE* mp = &_MINode[i];
+        MINODE* mp = &_MINodes[i];
         if (mp->refCount == 0)
         {
             mp->refCount = 1;
@@ -94,12 +95,10 @@ int put_block(int dev, int blk, char* buf)
 MINODE *iget(int dev, int ino)
 {
     MINODE* mip;
-    MTABLE* mp;
-    char buf[BLKSIZE];
     // serach in-memory minodes first
-    for(int i = 0; i < NMINODE; i++)
+    for(int i = 0; i < NUM_MINODE; i++)
     {
-        mip = &_MINode[i];
+        mip = &_MINodes[i];
         if (mip->refCount
             && (mip->dev == dev)
             && (mip->ino == ino))
@@ -114,17 +113,18 @@ MINODE *iget(int dev, int ino)
     mip->dev = dev;
     mip->ino = ino;
     int block = (ino - 1) / 8 + _IStartBlock; // disk block containing this inode
-    int offset= (ino - 1) % 8; // which inode in this block
+    int offset = (ino - 1) % 8; // which inode in this block
+    char buf[BLKSIZE];
     get_block(dev, block, buf);
     INODE* ip = (INODE *)buf + offset;
     mip->INODE = *ip; // copy inode to minode.INODE
     // initialize minode
-    mip->refCount = 1;
     mip->mounted = 0;
     mip->dirty = 0;
     mip->mptr = 0;
     return mip;
 }
+
 
 /*iput(INODE *mip) function:
     This function releases a used minode pointed by mip.
@@ -174,8 +174,8 @@ int getino(char *pathname)
     }
     mip->refCount++; //in order to iput(mip) later
     tokenize(pathname); // assume: name[ ], nname are globals
-    int ino;
-    for (int i = 0; i<_PathTokenCount; i++) // search for each component string
+    int ino = mip->ino;
+    for (int i = 0; i < _PathTokenCount; i++) // search for each component string
     {
         char* name = _PathTokens[i];
         if (!S_ISDIR(mip->INODE.i_mode)) // check DIR type
