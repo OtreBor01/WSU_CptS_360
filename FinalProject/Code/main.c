@@ -98,10 +98,12 @@ int quit() // write all modified minodes to disk
 }
 
 void get_line(char* line){
-    puts("\n***** [ls|cd|pwd|quit] *****");
+    puts("\n***** [ls|cd|pwd|link|quit] *****");
     printf("Command: ");
     fgets(line, 256, stdin);
-    line[strlen(line)-1] = 0;
+    if (!strstr(line,"link")) {
+        line[strlen(line) - 1] = 0;
+    }
 }
 
 int main(int argc, char *argv[ ])
@@ -118,7 +120,7 @@ int main(int argc, char *argv[ ])
         printf("***** P%d Running *****\n", _Running->pid);
         get_line(line);
         if (line[0] == 0) { continue; }
-        sscanf(line, "%s %s", cmd, pathname);
+        sscanf(line, "%s %[^\n]s", cmd, pathname);
         printf("Command: '%s' | Path: '%s'\n", cmd, pathname);
         if (!strcmp(cmd, "ls")){
             _ls(pathname);
@@ -131,6 +133,9 @@ int main(int argc, char *argv[ ])
         }
         else if (!strcmp(cmd, "quit")) {
             quit();
+        }
+        else if (!strcmp(cmd,"link")){
+            _link(pathname);
         }
     }
 }

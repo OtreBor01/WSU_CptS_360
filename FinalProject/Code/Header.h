@@ -38,6 +38,13 @@ int get_block(int,int,char*), put_block(int,int,char*);
 MINODE *iget(int,int);
 int iput(MINODE*);
 int getino(char*);
+int enter_name( MINODE *pip, int ino, char *name);
+int balloc(int dev);
+int ialloc(int dev);
+int set_bit(char *buf, int bit);
+int clr_bit(char *buf, int bit);
+int tst_bit(char *buf, int bit);
+
 
 //Level1: Function Prototypes
 extern int _cd(char*);

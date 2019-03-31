@@ -197,3 +197,173 @@ int getino(char *pathname)
     iput(mip);
     return ino;
 }
+
+
+
+int enter_name( MINODE *pip, int ino, char *name){
+    /*
+    SUPER* sp = (SUPER*)malloc(1024);//Super Size
+    int bytes_read;
+    int dev = pip->dev;
+    lseek(dev, (long)1024,0);
+    bytes_read = read(dev, sp,1024);
+    if(bytes_read != 1024){
+        printf("Error reading super");
+    }
+    int block_size = 1024 << sp->s_log_block_size;
+    free(sp);
+    */
+    char* cp;
+    INODE *ip = &pip->INODE;
+    char buf[BLKSIZE];
+    int i = 0, ndLen = 0, remaining = 0;
+
+
+    for( i = 0; i < 12;i++){
+        if(pip->INODE.i_block[i] == 0){
+            break;
+        }
+    }
+
+    get_block(pip->dev,pip->INODE.i_block[i],buf);
+    cp = buf;
+    DIR* dp = (DIR*) buf;
+    if(dp->name_len == 0)
+    {
+        dp->inode=ino;
+        dp->rec_len = BLKSIZE;
+        dp->name_len = strlen(name);
+        strcpy(dp->name, name);
+        put_block(pip->dev,pip->INODE.i_block[i],buf);
+        return 0;
+    }
+    while(cp + dp->rec_len <(buf + BLKSIZE)){
+        cp += dp->rec_len;
+        dp = (DIR*)cp;
+    }
+
+    ndLen = (4*((8+strlen(name)+3)/4));
+    remaining = dp->rec_len - (4*((8+dp->name_len+3)/4));
+
+    if(remaining >= ndLen){
+        dp->rec_len = 4 *((8+dp->name_len+3)/4);
+        cp += dp ->rec_len;
+        dp = (DIR*) cp;
+        dp->inode = ino;
+        dp->rec_len = remaining;
+        dp->name_len = strlen(name);
+        strcpy(dp->name, name);
+        put_block(pip->dev, pip->INODE.i_block[i],buf);
+        return 0;
+    }
+
+    for(i = 0; i < 12; i++)
+    {
+        if(pip->INODE.i_block[i] == 0){
+            pip ->INODE.i_block[i] = 0; //This line is incorrect and needs to be balloc
+        }
+    }
+
+
+}
+
+
+///// THESE FUNCTIONS DONT WORK YET BUT THEY ARE NEEDED
+///// FOR LINK AND MKDIR AS FAR AS I KNOW
+/*
+int tst_bit(char *buf, int bit)
+{
+    int i, j;
+    i = bit/8; j=bit%8;
+    if (buf[i] & (1 << j))
+        return 1;
+    return 0;
+}
+
+int set_bit(char *buf, int bit)
+{
+    int i, j;
+    i = bit/8; j=bit%8;
+    buf[i] |= (1 << j);
+}
+
+int clr_bit(char *buf, int bit)
+{
+    int i, j;
+    i = bit/8; j=bit%8;
+    buf[i] &= ~(1 << j);
+}
+
+int decFreeInodes(int dev)
+{
+// dec free inodes count in SUPER and GD
+    get_block(dev, 1, buf);
+    _Super = (SUPER *)buf;
+    sp->s_free_inodes_count--;
+    put_block(dev, 1, buf);
+    get_block(dev, 2, buf);
+    gp = (GD *)buf;
+    gp->bg_free_inodes_count--;
+    put_block(dev, 2, buf);
+}
+
+int ialloc(int dev)
+{
+    int i;
+    char buf[BLKSIZE];
+// use imap, ninodes in mount table of dev
+    MTABLE *mp = (MTABLE *)get_mtable(dev);
+    get_block(dev, mp->imap, buf);
+    for (i=0; i<mp->ninodes; i++){
+        if (tst_bit(buf, i)==0){
+            set_bit(buf, i);
+            put_block(dev, mp->imap, buf);
+// update free inode count in SUPER and GD
+            decFreeInodes(dev);
+            return (i+1);
+        }
+    }
+    return 0; // out of FREE inodes
+}
+/*
+int balloc(int dev){
+
+    char buf[1024];
+    MTABLE* mp = &_MTables[0];
+    int bmap = mp->bmap;
+    int nblocks = mp->nblocks;
+    get_block(dev, bmap, buf);
+
+    int i;
+
+    for (i = 0; i < nblocks; i++){
+        if (tst_bit(buf,i) == 0){
+            set_bit(buf,i);
+            decFreeBlocks(dev);
+            put_block(dev, bmap, buf);
+            printf("balloc(): bno = %d\n", i+1);
+            return i+1;
+        }
+    }
+    printf("balloc(): no more data blocks\n");
+}
+
+int decFreeBlocks(int dev){
+    //decrement free blocks in super and gd
+
+    char buf[BLKSIZE];
+
+    get_block(dev, 1, buf);
+    _Super = (SUPER *)buf;
+    _Super->s_free_blocks_count--;
+    put_block(dev, 1, buf);
+
+    get_block(dev, 2, buf);
+    _GroupDec = (GD *)buf;
+    _GroupDec->bg_free_blocks_count--;
+    put_block(dev, 2, buf);
+    MTABLE* mp = &_MTables[0];
+    mp->nblocks--;
+    //nblocks--;
+}
+*/
