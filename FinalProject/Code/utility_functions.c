@@ -10,6 +10,11 @@ void print_error(char* function, char* message)
     exit(1);
 }
 
+void print_notice( char* message)
+{
+    printf("Notice: %s\n", message);
+}
+
 int tokenize(char *pathname)
 {
     strcpy(_Path, pathname);
@@ -288,6 +293,28 @@ int ialloc(int dev)
     return 0; // out of FREE inodes
 }
 
+/*
+int ialloc(int dev)
+{
+    int i;
+    char buf[BLKSIZE];
+// use imap, ninodes in mount table of dev
+    //MTABLE *mp = (MTABLE *)get_mtable(dev);
+    MTABLE *mp = &_MTables[0];
+    get_block(dev, mp->imap, buf);
+    for (i=0; i<mp->ninodes; i++){
+        if (tst_bit(buf, i)==0){
+            set_bit(buf, i);
+            put_block(dev, mp->imap, buf);
+// update free inode count in SUPER and GD
+            decFreeInodes(dev);
+            return (i+1);
+        }
+    }
+    return 0; // out of FREE inodes
+}
+*/
+
 int tst_bit(char *buf, int bit)
 {
     int i = bit / 8;
@@ -312,45 +339,37 @@ int clr_bit(char *buf, int bit)
     buf[i] &= ~(1 << j);
 }
 
-/*
-int balloc(int dev){
 
-    char buf[1024];
-    MTABLE* mp = &_MTables[0];
-    int bmap = mp->bmap;
-    int nblocks = mp->nblocks;
-    get_block(dev, bmap, buf);
-
-    int i;
-
-    for (i = 0; i < nblocks; i++){
-        if (tst_bit(buf,i) == 0){
-            set_bit(buf,i);
-            decFreeBlocks(dev);
-            put_block(dev, bmap, buf);
-            printf("balloc(): bno = %d\n", i+1);
-            return i+1;
-        }
-    }
-    printf("balloc(): no more data blocks\n");
-}
-
-int decFreeBlocks(int dev){
-    //decrement free blocks in super and gd
-
+int decFreeBlocks(int dev)
+{
+// dec free inodes count in SUPER and GD
     char buf[BLKSIZE];
-
     get_block(dev, 1, buf);
     _Super = (SUPER *)buf;
-    _Super->s_free_blocks_count--;
+    _Super->s_free_blocks_count;
     put_block(dev, 1, buf);
-
     get_block(dev, 2, buf);
     _GroupDec = (GD *)buf;
     _GroupDec->bg_free_blocks_count--;
     put_block(dev, 2, buf);
-    MTABLE* mp = &_MTables[0];
-    mp->nblocks--;
-    //nblocks--;
 }
-*/
+
+int balloc(int dev)
+{
+    int i;
+    char buf[BLKSIZE];
+// use bmap, nblocks in mount table of dev
+    //MTABLE *mp = (MTABLE *)get_mtable(dev);
+    MTABLE *mp = &_MTables[0];
+    get_block(dev, mp->bmap, buf);
+    for (i=0; i<mp->nblocks; i++){
+        if (tst_bit(buf, i)==0){
+            set_bit(buf, i);
+            put_block(dev, mp->bmap, buf);
+// update free blocks count in SUPER and GD
+            decFreeBlocks(dev);
+            return (i+1);
+        }
+    }
+    return 0; // out of FREE blocks
+}

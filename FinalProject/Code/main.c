@@ -138,7 +138,11 @@ int main(int argc, char *argv[ ])
             _creat(pathname);
         }
         else if (!strcmp(cmd,"link")){
-            //_link(pathname);
+            continue;
         }
+        else if(!strcmp(cmd, "mkdir")){
+            _mkdir(pathname);
+        }
+
     }
 }

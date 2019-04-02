@@ -32,6 +32,7 @@ int     _PathTokenCount;
 int tokenize(char*);
 int search(MINODE*,char*);
 void print_error(char*,char*);
+void print_notice(char*);
 MINODE* mialloc(void);
 int midalloc(MINODE*);
 int get_block(int,int,char*), put_block(int,int,char*);
@@ -42,14 +43,15 @@ int enter_name(MINODE*,char*,int,int);
 int set_bit(char*,int);
 int clr_bit(char*,int);
 int tst_bit(char*,int);
-int ialloc(int);
-//int balloc(int dev);
+int ialloc(int dev);
+int balloc(int dev);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
 extern int _pwd(MINODE*);
 extern int _ls(char*);
 extern int _creat(char*);
+extern int _mkdir(char*);
 
 #endif
 
