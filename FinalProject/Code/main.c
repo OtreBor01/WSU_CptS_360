@@ -108,7 +108,7 @@ void get_line(char* line){
 
 int main(int argc, char *argv[ ])
 {
-    char* rootdev = "mydisk";
+    char* rootdev = "disk";
     if (argc > 1) {
         rootdev = argv[1];
     }
@@ -122,7 +122,7 @@ int main(int argc, char *argv[ ])
         if (line[0] == 0) { continue; }
         sscanf(line, "%s %[^\n]s", cmd, pathname);
         printf("Command: '%s' | Path: '%s'\n", cmd, pathname);
-        if (!strcmp(cmd, "ls")){
+        if (!strcmp(cmd, "ls")) {
             _ls(pathname);
         }
         else if (!strcmp(cmd, "cd")) {
@@ -132,10 +132,13 @@ int main(int argc, char *argv[ ])
             _pwd(_Running->cwd);
         }
         else if (!strcmp(cmd, "quit")) {
-            quit();
+            quit(); break;
+        }
+        else if (!strcmp(cmd, "creat")) {
+            _creat(pathname);
         }
         else if (!strcmp(cmd,"link")){
-            _link(pathname);
+            //_link(pathname);
         }
     }
 }

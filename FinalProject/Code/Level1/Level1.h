@@ -25,5 +25,6 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 int _cd(char*);
 int _pwd(MINODE*);
 int _ls(char*);
-int _link(char*);
+//int _link(char*);
+int _creat(char*);
 #endif

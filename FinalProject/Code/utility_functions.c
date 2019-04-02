@@ -34,7 +34,7 @@ int search(MINODE* mip, char* name)
         while (cp < (buf + BLKSIZE)){
             strncpy(temp, dp->name, dp->name_len);
             temp[dp->name_len] = 0;
-            printf("%8d%8d%8u %s\n", dp->inode, dp->rec_len, dp->name_len, temp);
+            //printf("%8d%8d%8u %s\n", dp->inode, dp->rec_len, dp->name_len, temp);
             if (!strcmp(name, temp)){
                 printf("Found '%s': inumber = %d\n", name, dp->inode);
                 return dp->inode;
@@ -200,131 +200,118 @@ int getino(char *pathname)
 
 
 
-int enter_name( MINODE *pip, int ino, char *name){
-    /*
-    SUPER* sp = (SUPER*)malloc(1024);//Super Size
-    int bytes_read;
-    int dev = pip->dev;
-    lseek(dev, (long)1024,0);
-    bytes_read = read(dev, sp,1024);
-    if(bytes_read != 1024){
-        printf("Error reading super");
-    }
-    int block_size = 1024 << sp->s_log_block_size;
-    free(sp);
-    */
-    char* cp;
-    INODE *ip = &pip->INODE;
-    char buf[BLKSIZE];
-    int i = 0, ndLen = 0, remaining = 0;
+int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
+{
+    int block_index = 0;
+    while(1)
+    {
+        char buf[BLKSIZE];
+        int blk = p_mip->INODE.i_block[block_index];
+        if (blk == 0) { return 0; }
+        get_block(p_mip->dev, blk, buf);
+        DIR *dp = (DIR *) buf;
+        char *cp = buf;
+        //All dir_entries rec_len = ideal_length, except the last entry.
+        //The rec_len of the LAST entry is to the end of the block, which may be larger than its ideal_length.
+        int name_len = strlen(base);
+        int ideal_length = dp->rec_len;//4 * ((8 + name_len + 3) / 4);
+        //In order to enter a new entry of name with n_len, the needed length is
+        int need_length = 4 * ((8 + name_len + 3) / 4);
+        while ((cp + dp->rec_len) < (buf + BLKSIZE)) {
 
-
-    for( i = 0; i < 12;i++){
-        if(pip->INODE.i_block[i] == 0){
+            cp += dp->rec_len;
+            dp = (DIR *) cp;
+        }
+        /*if(dp == NULL){
+            //The new data block containins only one entry.
+            dp->rec_len = BLKSIZE;
+        }*/
+        // dp NOW points at last entry in block
+        int remain = dp->rec_len - ideal_length;
+        if (remain >= need_length) {
+            //trim the previous entry rec_len to its ideal_length;
+            dp->rec_len = ideal_length;
+            //enter the new entry as the LAST entry and
+            cp += dp->rec_len;
+            dp = (DIR *) cp;
+            dp->rec_len = remain;
+            dp->file_type = fileType;
+            dp->name_len = name_len;
+            dp->inode = ino;
+            strcpy(dp->name, base);
+            put_block(p_mip->dev, blk, buf);
+            return dp->inode;
+        }
+        else if (block_index < 12){
+            if((p_mip->INODE.i_blocks - 1) <= ++block_index){
+                p_mip->INODE.i_size += BLKSIZE;
+                p_mip->INODE.i_blocks++;
+            }
+        }
+        else{
+            printf("Cannot Allocate Anymore Blocks to INODE");
             break;
         }
     }
-
-    get_block(pip->dev,pip->INODE.i_block[i],buf);
-    cp = buf;
-    DIR* dp = (DIR*) buf;
-    if(dp->name_len == 0)
-    {
-        dp->inode=ino;
-        dp->rec_len = BLKSIZE;
-        dp->name_len = strlen(name);
-        strcpy(dp->name, name);
-        put_block(pip->dev,pip->INODE.i_block[i],buf);
-        return 0;
-    }
-    while(cp + dp->rec_len <(buf + BLKSIZE)){
-        cp += dp->rec_len;
-        dp = (DIR*)cp;
-    }
-
-    ndLen = (4*((8+strlen(name)+3)/4));
-    remaining = dp->rec_len - (4*((8+dp->name_len+3)/4));
-
-    if(remaining >= ndLen){
-        dp->rec_len = 4 *((8+dp->name_len+3)/4);
-        cp += dp ->rec_len;
-        dp = (DIR*) cp;
-        dp->inode = ino;
-        dp->rec_len = remaining;
-        dp->name_len = strlen(name);
-        strcpy(dp->name, name);
-        put_block(pip->dev, pip->INODE.i_block[i],buf);
-        return 0;
-    }
-
-    for(i = 0; i < 12; i++)
-    {
-        if(pip->INODE.i_block[i] == 0){
-            pip ->INODE.i_block[i] = 0; //This line is incorrect and needs to be balloc
-        }
-    }
-
-
 }
-
-
-///// THESE FUNCTIONS DONT WORK YET BUT THEY ARE NEEDED
-///// FOR LINK AND MKDIR AS FAR AS I KNOW
-/*
-int tst_bit(char *buf, int bit)
-{
-    int i, j;
-    i = bit/8; j=bit%8;
-    if (buf[i] & (1 << j))
-        return 1;
-    return 0;
-}
-
-int set_bit(char *buf, int bit)
-{
-    int i, j;
-    i = bit/8; j=bit%8;
-    buf[i] |= (1 << j);
-}
-
-int clr_bit(char *buf, int bit)
-{
-    int i, j;
-    i = bit/8; j=bit%8;
-    buf[i] &= ~(1 << j);
-}
-
 int decFreeInodes(int dev)
 {
-// dec free inodes count in SUPER and GD
-    get_block(dev, 1, buf);
+    char buf[BLKSIZE];
+    // dec free inodes count in SUPER and GD
+    get_block(dev, 1, buf); //get super
     _Super = (SUPER *)buf;
-    sp->s_free_inodes_count--;
-    put_block(dev, 1, buf);
-    get_block(dev, 2, buf);
-    gp = (GD *)buf;
-    gp->bg_free_inodes_count--;
+    _Super->s_free_inodes_count--;
+    put_block(dev, 1, buf); //update super
+    get_block(dev, 2, buf); //group descipter
+    _GroupDec = (GD *)buf;
+    _GroupDec->bg_free_inodes_count--;
     put_block(dev, 2, buf);
 }
 
+
 int ialloc(int dev)
 {
-    int i;
     char buf[BLKSIZE];
-// use imap, ninodes in mount table of dev
-    MTABLE *mp = (MTABLE *)get_mtable(dev);
+    // use imap, ninodes in mount table of dev
+    MTABLE *mp = &_MTables[0];
     get_block(dev, mp->imap, buf);
-    for (i=0; i<mp->ninodes; i++){
-        if (tst_bit(buf, i)==0){
+    for (int i=0; i < mp->ninodes; i++)
+    {
+        if (tst_bit(buf, i) == 0){
             set_bit(buf, i);
             put_block(dev, mp->imap, buf);
-// update free inode count in SUPER and GD
+            // update free inode count in SUPER and GD
             decFreeInodes(dev);
             return (i+1);
         }
     }
     return 0; // out of FREE inodes
 }
+
+int tst_bit(char *buf, int bit)
+{
+    int i = bit / 8;
+    int j = bit % 8;
+    if (buf[i] & (1 << j)) {
+        return 1;
+    }
+    return 0;
+}
+
+int set_bit(char *buf, int bit)
+{
+    int i = bit / 8;
+    int j = bit % 8;
+    buf[i] |= (1 << j);
+}
+
+int clr_bit(char *buf, int bit)
+{
+    int i = bit / 8;
+    int j = bit % 8;
+    buf[i] &= ~(1 << j);
+}
+
 /*
 int balloc(int dev){
 

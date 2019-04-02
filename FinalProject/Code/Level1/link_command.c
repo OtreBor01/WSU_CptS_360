@@ -3,7 +3,7 @@
 //
 #include "Level1.h"
 
-
+/*
 int _link(char* pathname){
     int dev;
     char* oldFile ,*newFile, temp[100], temp2[100], *parentDirName, *childBaseName;
@@ -67,4 +67,4 @@ int _link(char* pathname){
 
     return 0;
 }
-
+*/
