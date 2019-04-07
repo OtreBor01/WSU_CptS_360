@@ -1,6 +1,6 @@
 #include "Header.h"
 
-int init()
+int init(void)
 {
     //Sets all MINODE's refCount to 0 in the array
     for (int i = 0; i < NUM_MINODE; i++) {
@@ -36,7 +36,8 @@ int mount_root(char *rootdev) {
     strcat(device, rootdev);
     printf("Device: '%s'\n", device);
     int dev = open(device, O_RDWR | O_RDONLY);
-    if (dev < 0) {
+    if (dev < 0)
+    {
         print_error("mount_root", "Unable to Open Root Device");
     }
     /* get super block of rootdev */
@@ -44,9 +45,9 @@ int mount_root(char *rootdev) {
     get_block(dev, SUPERBLOCK, buf);
     _Super = (SUPER *) buf;
     /* check magic number */
-    if (_Super->s_magic != EXT2_SUPER_MAGIC) {
-        printf("super magic = %x : %s is not an EXT2 filesys\n", _Super->s_magic, rootdev);
-        exit(0);
+    if (_Super->s_magic != EXT2_SUPER_MAGIC)
+    {
+        print_error("mount_root", "Root Device is Not a Valid EXT2 File System");
     }
     // fill mount table mtable[0] with rootdev information
     MTABLE* mp = &_MTables[0];
@@ -72,7 +73,7 @@ int mount_root(char *rootdev) {
     {
         _Procs[i].cwd = iget(dev, ROOT_INODE); // each inc refCount by 1
     }
-    printf("mount : %s mounted on / \n", rootdev);
+    printf("root_mount: '%s' mounted on / \n", rootdev);
     return dev;
 }
 
@@ -85,7 +86,7 @@ int init_proc(int dev){
     printf("Root Ref-Count = %d\n", _Root->refCount);
 }
 
-int quit() // write all modified minodes to disk
+int quit(void) // write all modified minodes to disk
 {
     for (int i = 0; i<NUM_MINODE; i++){
         MINODE *mip = &_MINodes[i];
@@ -98,8 +99,8 @@ int quit() // write all modified minodes to disk
 }
 
 void get_line(char* line){
-    puts("\n***** [ls|cd|pwd|link|quit] *****");
-    printf("Command: ");
+    puts("|***** [ls|cd|pwd|creat|mkdir|link|quit] *****");
+    printf("|Command: ");
     fgets(line, 256, stdin);
     if (!strstr(line,"link")) {
         line[strlen(line) - 1] = 0;
@@ -117,11 +118,11 @@ int main(int argc, char *argv[ ])
     init_proc(dev);
     while(1){
         char line[128] = "", cmd[16] = "", pathname[64] = "";
-        printf("***** P%d Running *****\n", _Running->pid);
+        printf("\n|================= P%d Running =================\n",  _Running->pid);
         get_line(line);
         if (line[0] == 0) { continue; }
         sscanf(line, "%s %[^\n]s", cmd, pathname);
-        printf("Command: '%s' | Path: '%s'\n", cmd, pathname);
+        printf("|Cmd: '%s' | Path: '%s'\n", cmd, pathname);
         if (!strcmp(cmd, "ls")) {
             _ls(pathname);
         }
@@ -137,12 +138,14 @@ int main(int argc, char *argv[ ])
         else if (!strcmp(cmd, "creat")) {
             _creat(pathname);
         }
-        else if (!strcmp(cmd,"link")){
+        else if (!strcmp(cmd,"link")) {
             continue;
         }
-        else if(!strcmp(cmd, "mkdir")){
+        else if (!strcmp(cmd, "mkdir")) {
             _mkdir(pathname);
         }
-
+        else {
+            printf("Invalid Command Entered...\n");
+        }
     }
 }

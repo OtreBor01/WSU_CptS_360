@@ -222,8 +222,8 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
         int ideal_length = dp->rec_len;//4 * ((8 + name_len + 3) / 4);
         //In order to enter a new entry of name with n_len, the needed length is
         int need_length = 4 * ((8 + name_len + 3) / 4);
-        while ((cp + dp->rec_len) < (buf + BLKSIZE)) {
-
+        while ((cp + dp->rec_len) < (buf + BLKSIZE))
+        {
             cp += dp->rec_len;
             dp = (DIR *) cp;
         }
