@@ -39,7 +39,7 @@ int _link(char* pathname){
     }
 
     //Check if new File exist yet
-    nino = getino(temp);
+    nino = getino(newFile);//temp never set check this
     if(nino != 0){
         printf("Error: New File must not exist yet");
         return -1;

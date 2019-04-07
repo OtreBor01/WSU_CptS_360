@@ -102,9 +102,8 @@ void get_line(char* line){
     puts("|***** [ls|cd|pwd|creat|mkdir|link|quit] *****");
     printf("|Command: ");
     fgets(line, 256, stdin);
-    if (!strstr(line,"link")) {
-        line[strlen(line) - 1] = 0;
-    }
+    line[strlen(line) - 1] = 0;
+
 }
 
 int main(int argc, char *argv[ ])
@@ -139,7 +138,7 @@ int main(int argc, char *argv[ ])
             _creat(pathname);
         }
         else if (!strcmp(cmd,"link")) {
-            continue;
+            _link(pathname);
         }
         else if (!strcmp(cmd, "mkdir")) {
             _mkdir(pathname);
