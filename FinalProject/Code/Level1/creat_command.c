@@ -8,6 +8,7 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     MINODE *mip = iget(p_mip->dev, ino);
     INODE* ip = &mip->INODE;
     mip->dev = p_mip->dev;
+    mip->ino = ino;
     ip->i_mode = 33188; //reg file
     ip->i_uid = _Running->uid; // owner uid
     ip->i_gid = _Running->gid; // group Id
@@ -20,7 +21,6 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     }
     //set dirty and iput
     mip->dirty = 1;
-    mip->ino = ino;
     iput(mip);
 }
 
