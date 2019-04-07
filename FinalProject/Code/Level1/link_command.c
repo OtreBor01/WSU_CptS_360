@@ -20,12 +20,15 @@ int _link(char* pathname){
     printf("newFile:  %s\n\n",newFile);
 
     //Grab dev by checking path
+    /*
     if(oldFile[0] == '/'){
         dev = _Root->dev;
     }
     else{
         dev = _Running->cwd->dev;
     }
+    */
+    dev = _Root->dev;
 
     //Get old File inode and check File type
     oino = getino(oldFile);
@@ -58,7 +61,7 @@ int _link(char* pathname){
     }
 
     pmip = iget(dev, pino);
-    //enter_name(pmip, oino, childBaseName); //Is incomplete as of now
+    //Create entry in new parent DIR with same inode number of old_file
     enter_name(pmip,childBaseName,oino,S_IFREG);
 
     omip->INODE.i_links_count++;
