@@ -96,10 +96,20 @@
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/pwd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/readlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+=======
+<<<<<<< HEAD
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/rmdir_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/main.c">
+=======
+>>>>>>> f450b192d22b718e7e89460aa10968dd19ab8d29
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c">
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/main.c">

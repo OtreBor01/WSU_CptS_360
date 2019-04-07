@@ -143,6 +143,9 @@ int main(int argc, char *argv[ ])
         else if (!strcmp(cmd, "mkdir")) {
             _mkdir(pathname);
         }
+        else if (!strcmp(cmd, "rmdir")) {
+            _rmdir(pathname);
+        }
         else if(!strcmp(cmd, "symlink")){
             _symlink(pathname);
         }
