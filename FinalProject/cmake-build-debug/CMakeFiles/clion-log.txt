@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 /snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/austinmm/Desktop/WSU_CptS_360/FinalProject
-=======
-/snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /home/noah/Documents/cpts360/Project/FinalProject
->>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
--- Configuring done
--- Generating done
--- Build files have been written to: /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug
+CMake Error at CMakeLists.txt:6:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
+
+
+-- Configuring incomplete, errors occurred!

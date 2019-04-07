@@ -143,13 +143,11 @@ int main(int argc, char *argv[ ])
         else if (!strcmp(cmd, "mkdir")) {
             _mkdir(pathname);
         }
-<<<<<<< HEAD
         else if (!strcmp(cmd, "rmdir")) {
             _rmdir(pathname);
-=======
+        }
         else if(!strcmp(cmd, "symlink")){
             _symlink(pathname);
->>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         }
         else {
             printf("Invalid Command Entered...\n");
