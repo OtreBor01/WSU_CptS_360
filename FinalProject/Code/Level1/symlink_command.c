@@ -45,9 +45,18 @@ int _symlink(char* pathname){
     ip->i_mode = S_IFLNK;
 
     //store oldFile name into newFile INODE blocks area
-    enter_name(nmip,basename(oldFile),oino,S_IFREG);
+
+
+    int i = 0;
+    for(i; i < strlen(oldFile);i++){
+        ip->i_block[i] = oldFile[i];
+    }
+
+    //ip->i_block[i+1] = basename(oldFile)[i+1];
+
+
     //Set file size to be size of oldFile name
-    nmip->INODE.i_size = strlen(basename(oldFile));
+    nmip->INODE.i_size = strlen(oldFile);
     nmip->dirty = 1;
     //Write to disk
     iput(nmip);

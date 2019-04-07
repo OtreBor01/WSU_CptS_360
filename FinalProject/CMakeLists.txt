@@ -3,4 +3,4 @@ project(FinalProject C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(FinalProject Code/main.c Code/Level1/ls_command.c  Code/Level1/cd_command.c  Code/Level1/pwd_command.c Code/utility_functions.c Code/Level1/link_command.c Code/Level1/creat_command.c Code/Level1/mkdir_command.c Code/Level1/symlink_command.c)
+add_executable(FinalProject Code/main.c Code/Level1/ls_command.c  Code/Level1/cd_command.c  Code/Level1/pwd_command.c Code/utility_functions.c Code/Level1/link_command.c Code/Level1/creat_command.c Code/Level1/mkdir_command.c Code/Level1/symlink_command.c Code/Level1/readlink_command.c)

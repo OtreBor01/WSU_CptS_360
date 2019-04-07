@@ -54,6 +54,7 @@ extern int _creat(char*);
 extern int _mkdir(char*);
 extern int _link(char*);
 extern int _symlink(char*);
+extern int _readlink(char*);
 #endif
 
 //#include <fcntl.h>
