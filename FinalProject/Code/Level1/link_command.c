@@ -3,7 +3,7 @@
 //
 #include "Level1.h"
 
-/*
+
 int _link(char* pathname){
     int dev;
     char* oldFile ,*newFile, temp[100], temp2[100], *parentDirName, *childBaseName;
@@ -58,13 +58,13 @@ int _link(char* pathname){
     }
 
     pmip = iget(dev, pino);
-    enter_name(pmip, oino, childBaseName); //Is incomplete as of now
-
+    //enter_name(pmip, oino, childBaseName); //Is incomplete as of now
+    enter_name(pmip,childBaseName,oino,S_IFREG);
 
     omip->INODE.i_links_count++;
     omip->dirty=1;
     iput(omip);
+    iput(pmip);
 
     return 0;
 }
-*/
