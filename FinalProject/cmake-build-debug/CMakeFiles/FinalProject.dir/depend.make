@@ -31,10 +31,17 @@ CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o: ../Code/Level1/Level1.h
 CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o: ../Code/Level1/pwd_command.c
 CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o: ../Code/Type.h
 
+<<<<<<< HEAD
 CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: ../Code/Level1/Level1.h
 CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: ../Code/Level1/rmdir_command.c
 CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: ../Code/Type.h
+=======
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Level1/Level1.h
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Level1/symlink_command.c
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Type.h
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 
 CMakeFiles/FinalProject.dir/Code/main.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/main.c.o: ../Code/Type.h

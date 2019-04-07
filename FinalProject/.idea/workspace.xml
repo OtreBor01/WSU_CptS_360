@@ -12,13 +12,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cf43065-ab8d-4654-8fc9-45612139231a" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Code/Level1/rmdir_command.c" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/Code/Level1/symlink_command.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Header.h" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Header.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Level1/Level1.h" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Level1/Level1.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Level1/creat_command.c" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Level1/creat_command.c" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Code/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Code/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/utility_functions.c" beforeDir="false" afterPath="$PROJECT_DIR$/Code/utility_functions.c" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Code/Level1/link_command.c" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Level1/link_command.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Code/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/C.includecache" afterDir="false" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FinalProject.dir/cmake_clean.cmake" afterDir="false" />
@@ -28,6 +39,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/FinalProject" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FinalProject" afterDir="false" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/FinalProject.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FinalProject.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/disk" beforeDir="false" afterPath="$PROJECT_DIR$/disk" afterDir="false" />
@@ -42,8 +57,23 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Level1/Level1.h">
@@ -143,9 +173,98 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mount</find>
+=======
+    <splitter split-orientation="horizontal" split-proportion="0.5169539">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Code/main.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-359">
+                  <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Code/Level1/symlink_command.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="596">
+                  <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Code/Type.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="186">
+                  <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Code/Header.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#59#109#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Code/Level1/creat_command.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Code/Level1/link_command.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="504">
+                  <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Code/utility_functions.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1830">
+                  <caret line="127" column="14" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Code/Level1/Level1.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="434">
+                  <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
       <find>mount_root</find>
       <find>S_ISDIR</find>
-      <find>iput</find>
       <find>put</find>
       <find>getino</find>
       <find>get</find>
@@ -160,7 +279,6 @@
       <find>nblocks</find>
       <find>mp</find>
       <find>name</find>
-      <find>iget</find>
       <find>get_blocks_count</find>
       <find>create</find>
       <find>put_block</find>
@@ -169,14 +287,23 @@
       <find>enter_name</find>
       <find>imap</find>
       <find>search</find>
+<<<<<<< HEAD
       <find>decFreeInodes</find>
       <find>idalloc</find>
       <find>dp-&gt;</find>
+=======
+      <find>iput</find>
+      <find>i_mode</find>
+      <find>iget</find>
+      <find>i_block</find>
+      <find>enter</find>
+      <find>size</find>
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
     </findStrings>
     <replaceStrings>
       <replace>FILE</replace>
-      <replace>newfile</replace>
       <replace>File</replace>
+      <replace>newfile</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/cmake-build-debug/CMakeFiles</dir>
@@ -204,21 +331,29 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
         <option value="$PROJECT_DIR$/Code/Type.h" />
         <option value="$PROJECT_DIR$/Code/Level1/ls_command.c" />
-        <option value="$PROJECT_DIR$/Code/Level1/link_command.c" />
+        <option value="$PROJECT_DIR$/Code/utility_functions.c" />
         <option value="$PROJECT_DIR$/Code/Level1/Level1.h" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Code/Level1/creat_command.c" />
         <option value="$PROJECT_DIR$/Code/Header.h" />
         <option value="$PROJECT_DIR$/Code/main.c" />
         <option value="$PROJECT_DIR$/Code/Level1/rmdir_command.c" />
         <option value="$PROJECT_DIR$/Code/utility_functions.c" />
+=======
+        <option value="$PROJECT_DIR$/Code/Header.h" />
+        <option value="$PROJECT_DIR$/Code/main.c" />
+        <option value="$PROJECT_DIR$/Code/Level1/creat_command.c" />
+        <option value="$PROJECT_DIR$/Code/Level1/link_command.c" />
+        <option value="$PROJECT_DIR$/Code/Level1/symlink_command.c" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-563" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="67" />
     <option name="y" value="31" />
-    <option name="width" value="1843" />
-    <option name="height" value="786" />
+    <option name="width" value="1178" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -226,7 +361,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,6 +383,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +442,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="63504000" />
+=======
+    <option name="totallyTimeSpent" value="59439000" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,15 +458,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="35" width="3840" height="2125" extended-state="6" />
+=======
+    <frame x="67" y="31" width="1178" height="1049" extended-state="4" />
+    <editor active="true" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22707888" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2669039" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32867134" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45293167" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3277405" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.45190156" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32974717" />
@@ -335,12 +479,12 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32920924" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32867134" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3277405" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32902583" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -373,13 +517,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Code/Level1/link_command.c</url>
-          <line>49</line>
+          <line>53</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Code/utility_functions.c</url>
           <line>147</line>
           <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Code/Level1/symlink_command.c</url>
+          <line>19</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -388,9 +537,6 @@
         <watch expression="_Root" language="ObjectiveC" />
         <watch expression="_Running" language="ObjectiveC" />
         <watch expression="sp-&gt;s_log_block_size" language="ObjectiveC" />
-        <watch expression="child" language="ObjectiveC" />
-        <watch expression="ip" />
-        <watch expression="ip-&gt;osd1" />
       </configuration>
     </watches-manager>
   </component>
@@ -615,6 +761,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Code/Level1/link_command.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -626,10 +773,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1798">
           <caret line="62" column="6" selection-start-line="62" selection-end-line="63" />
+=======
+    <entry file="file://$PROJECT_DIR$/Code/Type.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Level1/ls_command.c">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
@@ -640,20 +794,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1682">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Level1/Level1.h">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="870">
           <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+=======
+        <state relative-caret-position="434">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Header.h">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="946">
           <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+=======
+        <state relative-caret-position="396">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
           <folding>
             <element signature="e#59#109#0" expanded="true" />
           </folding>
@@ -662,27 +831,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/main.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="685">
           <caret line="143" column="25" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
+=======
+        <state relative-caret-position="-359">
+          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Level1/rmdir_command.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="859">
           <caret line="106" column="9" selection-start-line="106" selection-end-line="107" />
+=======
+        <state relative-caret-position="504">
+          <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Level1/creat_command.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="279">
           <caret line="41" column="22" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="22" />
+=======
+        <state relative-caret-position="252">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/utility_functions.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-388">
           <caret line="215" column="10" selection-start-line="215" selection-end-line="216" />
         </state>
@@ -692,6 +877,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
           <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+=======
+        <state relative-caret-position="-1830">
+          <caret line="127" column="14" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Level1/symlink_command.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         </state>
       </provider>
     </entry>

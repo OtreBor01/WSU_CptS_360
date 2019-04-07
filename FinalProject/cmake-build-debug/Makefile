@@ -48,10 +48,10 @@ RM = /snap/clion/67/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/austinmm/Desktop/WSU_CptS_360/FinalProject
+CMAKE_SOURCE_DIR = /home/noah/Documents/cpts360/Project/FinalProject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug
+CMAKE_BINARY_DIR = /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles /home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -285,6 +285,7 @@ Code/Level1/pwd_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.s
 .PHONY : Code/Level1/pwd_command.c.s
 
+<<<<<<< HEAD
 Code/Level1/rmdir_command.o: Code/Level1/rmdir_command.c.o
 
 .PHONY : Code/Level1/rmdir_command.o
@@ -311,6 +312,34 @@ Code/Level1/rmdir_command.s: Code/Level1/rmdir_command.c.s
 Code/Level1/rmdir_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s
 .PHONY : Code/Level1/rmdir_command.c.s
+=======
+Code/Level1/symlink_command.o: Code/Level1/symlink_command.c.o
+
+.PHONY : Code/Level1/symlink_command.o
+
+# target to build an object file
+Code/Level1/symlink_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o
+.PHONY : Code/Level1/symlink_command.c.o
+
+Code/Level1/symlink_command.i: Code/Level1/symlink_command.c.i
+
+.PHONY : Code/Level1/symlink_command.i
+
+# target to preprocess a source file
+Code/Level1/symlink_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i
+.PHONY : Code/Level1/symlink_command.c.i
+
+Code/Level1/symlink_command.s: Code/Level1/symlink_command.c.s
+
+.PHONY : Code/Level1/symlink_command.s
+
+# target to generate assembly for a file
+Code/Level1/symlink_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s
+.PHONY : Code/Level1/symlink_command.c.s
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 
 Code/main.o: Code/main.c.o
 
@@ -393,9 +422,15 @@ help:
 	@echo "... Code/Level1/pwd_command.o"
 	@echo "... Code/Level1/pwd_command.i"
 	@echo "... Code/Level1/pwd_command.s"
+<<<<<<< HEAD
 	@echo "... Code/Level1/rmdir_command.o"
 	@echo "... Code/Level1/rmdir_command.i"
 	@echo "... Code/Level1/rmdir_command.s"
+=======
+	@echo "... Code/Level1/symlink_command.o"
+	@echo "... Code/Level1/symlink_command.i"
+	@echo "... Code/Level1/symlink_command.s"
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 	@echo "... Code/main.o"
 	@echo "... Code/main.i"
 	@echo "... Code/main.s"

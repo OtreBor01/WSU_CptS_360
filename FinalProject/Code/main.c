@@ -99,12 +99,11 @@ int quit(void) // write all modified minodes to disk
 }
 
 void get_line(char* line){
-    puts("|***** [ls|cd|pwd|creat|mkdir|link|quit] *****");
+    puts("|***** [ls|cd|pwd|creat|mkdir|link|symlink|quit] *****");
     printf("|Command: ");
     fgets(line, 256, stdin);
-    if (!strstr(line,"link")) {
-        line[strlen(line) - 1] = 0;
-    }
+    line[strlen(line) - 1] = 0;
+
 }
 
 int main(int argc, char *argv[ ])
@@ -139,13 +138,18 @@ int main(int argc, char *argv[ ])
             _creat(pathname);
         }
         else if (!strcmp(cmd,"link")) {
-            continue;
+            _link(pathname);
         }
         else if (!strcmp(cmd, "mkdir")) {
             _mkdir(pathname);
         }
+<<<<<<< HEAD
         else if (!strcmp(cmd, "rmdir")) {
             _rmdir(pathname);
+=======
+        else if(!strcmp(cmd, "symlink")){
+            _symlink(pathname);
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
         }
         else {
             printf("Invalid Command Entered...\n");

@@ -51,8 +51,13 @@ extern int _pwd(MINODE*);
 extern int _ls(char*);
 extern int _creat(char*);
 extern int _mkdir(char*);
+<<<<<<< HEAD
 extern int _rmdir(char*);
 
+=======
+extern int _link(char*);
+extern int _symlink(char*);
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 #endif
 
 //#include <fcntl.h>

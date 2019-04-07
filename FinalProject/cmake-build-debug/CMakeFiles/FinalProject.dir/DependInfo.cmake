@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+<<<<<<< HEAD
   "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/cd_command.c" "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o"
   "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/creat_command.c" "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o"
   "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/link_command.c" "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o"
@@ -13,6 +14,17 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/rmdir_command.c" "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o"
   "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/main.c" "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/main.c.o"
   "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/utility_functions.c" "/home/austinmm/Desktop/WSU_CptS_360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
+=======
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/cd_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/creat_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/link_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/ls_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/mkdir_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/pwd_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/main.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/main.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
+>>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
