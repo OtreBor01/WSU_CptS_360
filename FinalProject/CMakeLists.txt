@@ -1,14 +1,24 @@
 cmake_minimum_required(VERSION 3.13)
-project(FinalProject C)
+project(FinalProject)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 14)
 
-<<<<<<< HEAD
-add_executable(FinalProject Code/main.c Code/Level1/ls_command.c  Code/Level1/cd_command.c  Code/Level1/pwd_command.c Code/utility_functions.c Code/Level1/link_command.c Code/Level1/creat_command.c Code/Level1/mkdir_command.c Code/Level1/symlink_command.c Code/Level1/readlink_command.c)
-=======
-<<<<<<< HEAD
-add_executable(FinalProject Code/main.c Code/Level1/ls_command.c  Code/Level1/cd_command.c  Code/Level1/pwd_command.c Code/utility_functions.c Code/Level1/link_command.c Code/Level1/creat_command.c Code/Level1/mkdir_command.c Code/Level1/rmdir_command.c)
-=======
-add_executable(FinalProject Code/main.c Code/Level1/ls_command.c  Code/Level1/cd_command.c  Code/Level1/pwd_command.c Code/utility_functions.c Code/Level1/link_command.c Code/Level1/creat_command.c Code/Level1/mkdir_command.c Code/Level1/symlink_command.c)
->>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
->>>>>>> f450b192d22b718e7e89460aa10968dd19ab8d29
+include_directories(Code)
+include_directories(Code/Level1)
+
+add_executable(FinalProject
+        Code/Level1/cd_command.c
+        Code/Level1/creat_command.c
+        Code/Level1/Level1.h
+        Code/Level1/link_command.c
+        Code/Level1/ls_command.c
+        Code/Level1/mkdir_command.c
+        Code/Level1/pwd_command.c
+        Code/Level1/readlink_command.c
+        Code/Level1/rmdir_command.c
+        Code/Level1/symlink_command.c
+        Code/Header.h
+        Code/main.c
+        Code/Type.h
+        Code/utility_functions.c
+        ReadMe.md)

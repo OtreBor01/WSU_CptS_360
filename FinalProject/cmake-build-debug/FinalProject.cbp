@@ -34,6 +34,11 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code"/>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
@@ -54,6 +59,11 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code"/>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
@@ -78,6 +88,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/Level1.h">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/cd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
@@ -96,26 +112,25 @@
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/pwd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-<<<<<<< HEAD
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/readlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-=======
-<<<<<<< HEAD
-		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/Level1/rmdir_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/WSU_CptS_360/FinalProject/Code/main.c">
-=======
->>>>>>> f450b192d22b718e7e89460aa10968dd19ab8d29
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c">
->>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h">
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/main.c">
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/ReadMe.md">
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/CMakeLists.txt">

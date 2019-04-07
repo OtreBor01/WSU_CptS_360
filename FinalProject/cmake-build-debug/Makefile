@@ -285,7 +285,6 @@ Code/Level1/pwd_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.s
 .PHONY : Code/Level1/pwd_command.c.s
 
-<<<<<<< HEAD
 Code/Level1/readlink_command.o: Code/Level1/readlink_command.c.o
 
 .PHONY : Code/Level1/readlink_command.o
@@ -313,8 +312,6 @@ Code/Level1/readlink_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.s
 .PHONY : Code/Level1/readlink_command.c.s
 
-=======
-<<<<<<< HEAD
 Code/Level1/rmdir_command.o: Code/Level1/rmdir_command.c.o
 
 .PHONY : Code/Level1/rmdir_command.o
@@ -341,8 +338,7 @@ Code/Level1/rmdir_command.s: Code/Level1/rmdir_command.c.s
 Code/Level1/rmdir_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s
 .PHONY : Code/Level1/rmdir_command.c.s
-=======
->>>>>>> f450b192d22b718e7e89460aa10968dd19ab8d29
+
 Code/Level1/symlink_command.o: Code/Level1/symlink_command.c.o
 
 .PHONY : Code/Level1/symlink_command.o
@@ -369,7 +365,6 @@ Code/Level1/symlink_command.s: Code/Level1/symlink_command.c.s
 Code/Level1/symlink_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s
 .PHONY : Code/Level1/symlink_command.c.s
->>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 
 Code/main.o: Code/main.c.o
 
@@ -452,21 +447,15 @@ help:
 	@echo "... Code/Level1/pwd_command.o"
 	@echo "... Code/Level1/pwd_command.i"
 	@echo "... Code/Level1/pwd_command.s"
-<<<<<<< HEAD
 	@echo "... Code/Level1/readlink_command.o"
 	@echo "... Code/Level1/readlink_command.i"
 	@echo "... Code/Level1/readlink_command.s"
-=======
-<<<<<<< HEAD
 	@echo "... Code/Level1/rmdir_command.o"
 	@echo "... Code/Level1/rmdir_command.i"
 	@echo "... Code/Level1/rmdir_command.s"
-=======
->>>>>>> f450b192d22b718e7e89460aa10968dd19ab8d29
 	@echo "... Code/Level1/symlink_command.o"
 	@echo "... Code/Level1/symlink_command.i"
 	@echo "... Code/Level1/symlink_command.s"
->>>>>>> 94e1b2b06239c86f28a18b6475cf5aaa85e84867
 	@echo "... Code/main.o"
 	@echo "... Code/main.i"
 	@echo "... Code/main.s"
