@@ -28,4 +28,5 @@ int _ls(char*);
 int _link(char*);
 int _creat(char*);
 int _mkdir(char*);
+int _symlink(char*);
 #endif

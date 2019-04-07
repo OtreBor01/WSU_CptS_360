@@ -62,5 +62,5 @@ int _creat(char* pathname)
         return -1;
     }
     printf("Successfully Created '%s' in '%s'\n", base, dir);
-    return 0;
+    return ino; //returns ino for use by link
 }

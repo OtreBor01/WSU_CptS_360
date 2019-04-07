@@ -10,7 +10,7 @@ int _link(char* pathname){
     int oino, nino, pino; //old inode and new inode and parent inode
     MINODE * omip , *pmip; //old mip and parent mip
 
-    printf("\n\npathname: %s\n\n",pathname);
+    //printf("\n\npathname: %s\n\n",pathname);
 
     oldFile = strtok(pathname, " "); //old File pathname
     newFile = strtok(0, " "); //new File pathname
@@ -32,6 +32,10 @@ int _link(char* pathname){
 
     //Get old File inode and check File type
     oino = getino(oldFile);
+    if (oino == 0){
+        print_notice("Old file does not exist");
+        return -1;
+    }
     omip = iget(dev,oino);
     if(S_ISDIR(omip->INODE.i_mode)){
        printf("Error: File Type must not be DIR");

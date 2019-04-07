@@ -96,6 +96,9 @@
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/pwd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/main.c">
 			<Option target="FinalProject"/>
 		</Unit>
