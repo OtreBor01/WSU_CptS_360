@@ -293,28 +293,6 @@ int ialloc(int dev)
     return 0; // out of FREE inodes
 }
 
-/*
-int ialloc(int dev)
-{
-    int i;
-    char buf[BLKSIZE];
-// use imap, ninodes in mount table of dev
-    //MTABLE *mp = (MTABLE *)get_mtable(dev);
-    MTABLE *mp = &_MTables[0];
-    get_block(dev, mp->imap, buf);
-    for (i=0; i<mp->ninodes; i++){
-        if (tst_bit(buf, i)==0){
-            set_bit(buf, i);
-            put_block(dev, mp->imap, buf);
-// update free inode count in SUPER and GD
-            decFreeInodes(dev);
-            return (i+1);
-        }
-    }
-    return 0; // out of FREE inodes
-}
-*/
-
 int tst_bit(char *buf, int bit)
 {
     int i = bit / 8;
@@ -356,17 +334,16 @@ int decFreeBlocks(int dev)
 
 int balloc(int dev)
 {
-    int i;
     char buf[BLKSIZE];
-// use bmap, nblocks in mount table of dev
+    // use bmap, nblocks in mount table of dev
     //MTABLE *mp = (MTABLE *)get_mtable(dev);
     MTABLE *mp = &_MTables[0];
     get_block(dev, mp->bmap, buf);
-    for (i=0; i<mp->nblocks; i++){
+    for (int i=0; i < mp->nblocks; i++){
         if (tst_bit(buf, i)==0){
             set_bit(buf, i);
             put_block(dev, mp->bmap, buf);
-// update free blocks count in SUPER and GD
+            // update free blocks count in SUPER and GD
             decFreeBlocks(dev);
             return (i+1);
         }
