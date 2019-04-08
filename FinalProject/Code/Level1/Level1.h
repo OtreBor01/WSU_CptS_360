@@ -30,5 +30,7 @@ int _creat(char*);
 int _mkdir(char*);
 int _rmdir(char*);
 int _symlink(char*);
-int _readlink_command(char*);
+int _readlink(char*);
+int _unlink(char*);
+int remove_child(MINODE*, char*);
 #endif
