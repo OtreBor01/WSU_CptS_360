@@ -36,7 +36,7 @@ int remove_child(MINODE *mip, char* name)
         get_block(mip->dev, blk, buf);
         DIR *dp = (DIR *) buf;
         char* cp = buf;
-        char newBuf[BLKSIZE];
+        char newBuf[BLKSIZE] = "";
         char temp[256] = "";
         int isFound = 0;
         while(cp < (BLKSIZE + buf))
