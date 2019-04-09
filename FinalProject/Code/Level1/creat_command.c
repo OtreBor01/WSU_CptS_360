@@ -56,7 +56,7 @@ int _creat(char* pathname)
     //allocate inode for new file
     int ino = ialloc(dev);
     create_REG_INODE(ino, p_mip);
-    ino = enter_name(p_mip, base, ino, 1);
+    ino = enter_name(p_mip, base, ino, EXT2_S_IFREG);
     if(ino == 0){
         printf("Failed to add new file to cwd block\n");
         return -1;

@@ -219,7 +219,6 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
         //All dir_entries rec_len = ideal_length, except the last entry.
         //The rec_len of the LAST entry is to the end of the block, which may be larger than its ideal_length.
         int name_len = strlen(base);
-        int ideal_length = dp->rec_len+1;//4 * ((8 + name_len + 3) / 4);
         //In order to enter a new entry of name with n_len, the needed length is
         int need_length = 4 * ((8 + name_len + 3) / 4);
         while ((cp + dp->rec_len) < (buf + BLKSIZE))
@@ -232,6 +231,7 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
             dp->rec_len = BLKSIZE;
         }*/
         // dp NOW points at last entry in block
+        int ideal_length = 4 * ((8 + dp->name_len + 3) / 4);
         int remain = dp->rec_len - ideal_length;
         if (remain >= need_length) {
             //trim the previous entry rec_len to its ideal_length;
@@ -314,7 +314,7 @@ int ialloc(int dev)
 increments the free inodes count in both superblock and group descriptor by 1.*/
 int idalloc(int dev, int ino) {
     char buf[BLKSIZE];
-    MTABLE *mp = _MTables;
+    MTABLE *mp = &_MTables[0];
     if (ino > mp->ninodes){ // niodes global
         print_notice("INode number is out of range");
         return -1;
@@ -359,7 +359,7 @@ int incFreeBlocks(int dev)
     char buf[BLKSIZE];
     get_block(dev, 1, buf);
     _Super = (SUPER *)buf;
-    _Super->s_free_blocks_count++;
+    _Super->s_free_blocks_count;
     put_block(dev, 1, buf);
     get_block(dev, 2, buf);
     _GroupDec = (GD *)buf;
@@ -374,7 +374,7 @@ int decFreeBlocks(int dev)
     char buf[BLKSIZE];
     get_block(dev, 1, buf);
     _Super = (SUPER *)buf;
-    _Super->s_free_blocks_count--;
+    _Super->s_free_blocks_count;
     put_block(dev, 1, buf);
     get_block(dev, 2, buf);
     _GroupDec = (GD *)buf;
@@ -406,7 +406,7 @@ int balloc(int dev)
 int bdalloc(int dev, int bno)
 {
     char buf[BLKSIZE];
-    MTABLE *mp = _MTables;
+    MTABLE *mp = &_MTables[0];
     if (bno > mp->nblocks){
         print_notice("Block-Node number is out of range");
         return -1;

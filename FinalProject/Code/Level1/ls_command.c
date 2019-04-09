@@ -60,11 +60,9 @@ int ls_dir(MINODE *mip){
             strncpy(temp, dp->name, dp->name_len); // make name a string
             temp[dp->name_len] = 0; // ensure NULL at end
             MINODE *temp_mip = iget(mip->dev, dp->inode);
-            if(temp_mip != NULL)
-            {
-                ls_reg(temp_mip, temp);
-                iput(temp_mip);
-            }
+            if(temp_mip->ino == 0){ break; }
+            ls_reg(temp_mip, temp);
+            iput(temp_mip);
             cp += dp->rec_len; // advance cp by rec_len
             dp = (DIR*)cp; // pull dp to next entry
         }

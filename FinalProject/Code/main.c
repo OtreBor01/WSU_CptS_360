@@ -78,7 +78,6 @@ int mount_root(char *rootdev) {
 }
 
 int init_proc(int dev){
-    printf("Root Ref-Count = %d\n", _Root->refCount);
     puts("Creating P0 as Running Process");
     _Running = &_Procs[0];
     _Running->status = PROC_BUSY;

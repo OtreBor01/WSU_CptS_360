@@ -20,6 +20,10 @@
 #define GDBLOCK         2
 #define ROOT_INODE      2
 
+//i_mode vlaues of EXT2 Reg and Dir
+#define EXT2_S_IFREG	0x8000	/* regular file */
+#define EXT2_S_IFDIR	0x4000	/* directory */
+
 //***** Custom Defined Types *****
 typedef unsigned char       u8;
 typedef unsigned short      u16;
