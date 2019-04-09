@@ -1,4 +1,0 @@
-rm a.out 2> /dev/null
-rm mountroot 2> /dev/null
-gcc -m32 -o mountroot Code/Main.c Code/util.c Code/Commands.c Code/Helpers.c Code/ls_l.c
-./mountroot

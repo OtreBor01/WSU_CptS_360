@@ -1,3 +1,0 @@
-rm lab6
-gcc -m32 -o lab6 Code/Main.c Code/Functions.c
-./lab6 diskimage /Z/hugefile
