@@ -127,6 +127,9 @@
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/symlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/touch_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Type.h">
 			<Option target="FinalProject"/>
 		</Unit>

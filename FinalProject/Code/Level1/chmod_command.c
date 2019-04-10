@@ -25,6 +25,9 @@ int _chmod(char* pathname)
     //(2). get information from INODE or modify the INODE;
     //int octal = permission & (S_IRWXU | S_IRWXG | S_IRWXO);
     mip->INODE.i_mode = octal;
+    time_t now;
+    //Change - the last time meta data of the file was changed (e.g. permissions)
+    mip->INODE.i_ctime = time(&now);
     //(3). if INODE is modified, set mip->dirty to zonzero for write back;
     mip->dirty = 1;
     iput(mip);

@@ -27,6 +27,7 @@ int _pwd(MINODE*);
 int _ls(char*);
 int _link(char*);
 int _creat(char*);
+int _touch(char*);
 int _mkdir(char*);
 int _rmdir(char*);
 int _symlink(char*);

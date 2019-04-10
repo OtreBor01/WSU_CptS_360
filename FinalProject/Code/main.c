@@ -136,6 +136,9 @@ int main(int argc, char *argv[ ])
         else if (!strcmp(cmd, "creat")) {
             _creat(pathname);
         }
+        else if (!strcmp(cmd, "touch")) {
+            _touch(pathname);
+        }
         else if (!strcmp(cmd,"link")) {
             _link(pathname);
         }

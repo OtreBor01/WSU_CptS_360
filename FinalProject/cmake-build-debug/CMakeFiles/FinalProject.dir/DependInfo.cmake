@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rmdir_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/stat_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/symlink_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o"
+  "/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/touch_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/main.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/main.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/utility_functions.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
   )

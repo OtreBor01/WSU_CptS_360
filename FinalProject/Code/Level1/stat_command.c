@@ -36,27 +36,27 @@ int _stat(char* pathname)
     printf("Size: %d\tBlocks: %d\tIO Block: %d\t%s\n", ip->i_size, ip->i_blocks, BLKSIZE, fileType);
     printf("Device: %d\tInode: %d\tLinks: %d\n", mip->dev, mip->ino,ip->i_links_count);
     printf("Access: (%04o/%s)\tUid: (%d)\tGid: (%d)\n", octalPermission, mode_str, ip->i_uid,ip->i_gid);
-    //last accessed time
-    time_t* t = (time_t*)&ip->i_atime;
-    char *time = ctime(t);
+    //Access - the last time the file was read
+    time_t t = (time_t)ip->i_atime;
+    char *time = ctime(&t);
     if(time == NULL){ time = "-"; }
     else{ time[strlen(time) - 1] = 0;}	//remove \r from time
     printf("Access: %s\n", time);
-    //last modified time
-    t = (time_t*)&ip->i_mtime;
-    time = ctime(t); //ctime is the inode or file change time.
+    //Modify - the last time the file was modified (content has been modified)
+    t = (time_t)ip->i_mtime;
+    time = ctime(&t); //ctime is the inode or file change time.
     if(time == NULL){ time = "-"; }
     else{ time[strlen(time) - 1] = 0;}	//remove \r from time
     printf("Modify: %s\n", time);
-    //last changed time
-    t = (time_t*)&ip->i_ctime;
-    time = ctime(t); //ctime is the inode or file change time.
+    //Change - the last time meta data of the file was changed (e.g. permissions)
+    t = (time_t)ip->i_ctime;
+    time = ctime(&t); //ctime is the inode or file change time.
     if(time == NULL){ time = "-"; }
     else{ time[strlen(time) - 1] = 0;}	//remove \r from time
     printf("Change: %s\n", time);
     //Birth time
-    t = (time_t*)&ip->i_dtime;
-    time = ctime(t); //ctime is the inode or file change time.
+    t = (time_t)ip->i_dtime;
+    time = ctime(&t); //ctime is the inode or file change time.
     if(time == NULL){ time = "-"; }
     else{ time[strlen(time) - 1] = 0;}	//remove \r from time
     printf("Birth: %s\n", time);

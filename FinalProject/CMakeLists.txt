@@ -21,4 +21,4 @@ add_executable(FinalProject
         Code/main.c
         Code/Type.h
         Code/utility_functions.c
-        ReadMe.md Code/Level1/stat_command.c Code/Level1/chmod_command.c)
+        ReadMe.md Code/Level1/stat_command.c Code/Level1/chmod_command.c Code/Level1/touch_command.c)

@@ -50,6 +50,7 @@ extern int _cd(char*);
 extern int _pwd(MINODE*);
 extern int _ls(char*);
 extern int _creat(char*);
+extern int _touch(char*);
 extern int _mkdir(char*);
 extern int _rmdir(char*);
 extern int _link(char*);
