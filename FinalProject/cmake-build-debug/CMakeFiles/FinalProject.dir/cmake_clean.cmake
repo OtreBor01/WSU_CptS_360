@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FinalProject.dir/Code/main.c.o"
   "CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o"
+  "CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o"
   "FinalProject.pdb"
   "FinalProject"
 )

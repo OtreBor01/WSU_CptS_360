@@ -97,6 +97,9 @@
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/cd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/chmod_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/creat_command.c">
 			<Option target="FinalProject"/>
 		</Unit>

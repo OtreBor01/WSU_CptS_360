@@ -150,6 +150,33 @@ Code/Level1/cd_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.s
 .PHONY : Code/Level1/cd_command.c.s
 
+Code/Level1/chmod_command.o: Code/Level1/chmod_command.c.o
+
+.PHONY : Code/Level1/chmod_command.o
+
+# target to build an object file
+Code/Level1/chmod_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o
+.PHONY : Code/Level1/chmod_command.c.o
+
+Code/Level1/chmod_command.i: Code/Level1/chmod_command.c.i
+
+.PHONY : Code/Level1/chmod_command.i
+
+# target to preprocess a source file
+Code/Level1/chmod_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i
+.PHONY : Code/Level1/chmod_command.c.i
+
+Code/Level1/chmod_command.s: Code/Level1/chmod_command.c.s
+
+.PHONY : Code/Level1/chmod_command.s
+
+# target to generate assembly for a file
+Code/Level1/chmod_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s
+.PHONY : Code/Level1/chmod_command.c.s
+
 Code/Level1/creat_command.o: Code/Level1/creat_command.c.o
 
 .PHONY : Code/Level1/creat_command.o
@@ -459,6 +486,9 @@ help:
 	@echo "... Code/Level1/cd_command.o"
 	@echo "... Code/Level1/cd_command.i"
 	@echo "... Code/Level1/cd_command.s"
+	@echo "... Code/Level1/chmod_command.o"
+	@echo "... Code/Level1/chmod_command.i"
+	@echo "... Code/Level1/chmod_command.s"
 	@echo "... Code/Level1/creat_command.o"
 	@echo "... Code/Level1/creat_command.i"
 	@echo "... Code/Level1/creat_command.s"

@@ -74,8 +74,11 @@ int _ls(char* path)
 {
     MINODE *mip = _Running->cwd;
     int ino = getino(path);
-    if(ino == 0) { return -1; }
-    mip = iget(mip->dev, ino);
+    if(ino == 0)
+    {
+        print_notice("Unable to locate the file specified");
+        return -1;
+    }    mip = iget(mip->dev, ino);
     if(S_ISDIR(mip->INODE.i_mode))
     {
         ls_dir(mip);

@@ -16,6 +16,11 @@ int _stat(char* pathname)
      */
     char* fileType = "unknown";
     int ino = getino(pathname);
+    if(ino == 0)
+    {
+        print_notice("Unable to locate the file specified");
+        return -1;
+    }
     MINODE* mip = iget(_Running->cwd->dev, ino);
     INODE* ip = &mip->INODE;
     //Get file type name

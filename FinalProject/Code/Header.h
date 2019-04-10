@@ -56,6 +56,7 @@ extern int _link(char*);
 extern int _symlink(char*);
 extern int _readlink(char*);
 extern int _stat(char*);
+extern int _chmod(char*);
 #endif
 
 //#include <fcntl.h>

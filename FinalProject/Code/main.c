@@ -154,6 +154,9 @@ int main(int argc, char *argv[ ])
         else if(!strcmp(cmd, "stat")){
             _stat(pathname);
         }
+        else if(!strcmp(cmd, "chmod")){
+            _chmod(pathname);
+        }
         else {
             printf("Invalid Command Entered...\n");
         }

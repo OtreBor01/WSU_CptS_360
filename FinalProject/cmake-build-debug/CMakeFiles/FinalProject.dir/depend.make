@@ -6,6 +6,11 @@ CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o: ../Code/Level1/Level1.h
 CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o: ../Code/Level1/cd_command.c
 CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o: ../Code/Type.h
 
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Level1/Level1.h
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Level1/chmod_command.c
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Type.h
+
 CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o: ../Code/Level1/Level1.h
 CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o: ../Code/Level1/creat_command.c
