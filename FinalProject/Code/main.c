@@ -151,6 +151,9 @@ int main(int argc, char *argv[ ])
         else if(!strcmp(cmd, "readlink")){
             _readlink(pathname);
         }
+        else if(!strcmp(cmd, "stat")){
+            _stat(pathname);
+        }
         else {
             printf("Invalid Command Entered...\n");
         }

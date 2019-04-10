@@ -31,4 +31,7 @@ int _mkdir(char*);
 int _rmdir(char*);
 int _symlink(char*);
 int _readlink_command(char*);
+int _stat(char*);
+void mode_to_letters(mode_t,char*);
+
 #endif
