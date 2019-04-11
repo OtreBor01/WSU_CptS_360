@@ -56,8 +56,11 @@ int remove_child(MINODE *pmip, char* name)
                 {
                    bdalloc(pmip->dev, pmip->INODE.i_block[i]);
                    pmip->INODE.i_size -= BLKSIZE;
-                   for(int j = i; j < pmip->INODE.i_blocks; j++) {
-                       memmove(pmip->INODE.i_block[j], pmip->INODE.i_block[j+1], sizeof( pmip->INODE.i_block[j+1]));
+                   for(int j = i; j < pmip->INODE.i_blocks; j++)
+                   {
+                       void * dest = (void*) &pmip->INODE.i_block[j];
+                       void * src = (void*) &pmip->INODE.i_block[j+1];
+                       memmove(dest, src, sizeof( pmip->INODE.i_block[j+1]));
                    }
                    pmip->INODE.i_blocks--;
                 }

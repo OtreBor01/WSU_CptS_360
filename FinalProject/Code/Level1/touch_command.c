@@ -14,6 +14,7 @@ int _touch(char* pathname)
         time_t now;
         //Access - the last time the file was read
         mip->INODE.i_atime = time(&now);
+        printf("The Access Time of '%s' has been Updated to Current Time.", basename(pathname));
         return 0;
     }
     return r;

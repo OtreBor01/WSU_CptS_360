@@ -78,7 +78,8 @@ int _ls(char* path)
     {
         print_notice("Unable to locate the file specified");
         return -1;
-    }    mip = iget(mip->dev, ino);
+    }
+    mip = iget(mip->dev, ino);
     if(S_ISDIR(mip->INODE.i_mode))
     {
         ls_dir(mip);
