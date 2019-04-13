@@ -32,7 +32,15 @@ Type.h
 ../Header.h
 /home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h
 
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/mkdir_command.c
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c
+Level1.h
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/Level1.h
+
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/stat_command.c
+Level1.h
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/Level1.h
+
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/touch_command.c
 Level1.h
 /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/Level1.h
 

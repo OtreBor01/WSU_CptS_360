@@ -150,6 +150,33 @@ Code/Level1/cd_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.s
 .PHONY : Code/Level1/cd_command.c.s
 
+Code/Level1/chmod_command.o: Code/Level1/chmod_command.c.o
+
+.PHONY : Code/Level1/chmod_command.o
+
+# target to build an object file
+Code/Level1/chmod_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o
+.PHONY : Code/Level1/chmod_command.c.o
+
+Code/Level1/chmod_command.i: Code/Level1/chmod_command.c.i
+
+.PHONY : Code/Level1/chmod_command.i
+
+# target to preprocess a source file
+Code/Level1/chmod_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i
+.PHONY : Code/Level1/chmod_command.c.i
+
+Code/Level1/chmod_command.s: Code/Level1/chmod_command.c.s
+
+.PHONY : Code/Level1/chmod_command.s
+
+# target to generate assembly for a file
+Code/Level1/chmod_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s
+.PHONY : Code/Level1/chmod_command.c.s
+
 Code/Level1/creat_command.o: Code/Level1/creat_command.c.o
 
 .PHONY : Code/Level1/creat_command.o
@@ -339,6 +366,33 @@ Code/Level1/rmdir_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s
 .PHONY : Code/Level1/rmdir_command.c.s
 
+Code/Level1/stat_command.o: Code/Level1/stat_command.c.o
+
+.PHONY : Code/Level1/stat_command.o
+
+# target to build an object file
+Code/Level1/stat_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o
+.PHONY : Code/Level1/stat_command.c.o
+
+Code/Level1/stat_command.i: Code/Level1/stat_command.c.i
+
+.PHONY : Code/Level1/stat_command.i
+
+# target to preprocess a source file
+Code/Level1/stat_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.i
+.PHONY : Code/Level1/stat_command.c.i
+
+Code/Level1/stat_command.s: Code/Level1/stat_command.c.s
+
+.PHONY : Code/Level1/stat_command.s
+
+# target to generate assembly for a file
+Code/Level1/stat_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.s
+.PHONY : Code/Level1/stat_command.c.s
+
 Code/Level1/symlink_command.o: Code/Level1/symlink_command.c.o
 
 .PHONY : Code/Level1/symlink_command.o
@@ -365,6 +419,33 @@ Code/Level1/symlink_command.s: Code/Level1/symlink_command.c.s
 Code/Level1/symlink_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s
 .PHONY : Code/Level1/symlink_command.c.s
+
+Code/Level1/touch_command.o: Code/Level1/touch_command.c.o
+
+.PHONY : Code/Level1/touch_command.o
+
+# target to build an object file
+Code/Level1/touch_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o
+.PHONY : Code/Level1/touch_command.c.o
+
+Code/Level1/touch_command.i: Code/Level1/touch_command.c.i
+
+.PHONY : Code/Level1/touch_command.i
+
+# target to preprocess a source file
+Code/Level1/touch_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.i
+.PHONY : Code/Level1/touch_command.c.i
+
+Code/Level1/touch_command.s: Code/Level1/touch_command.c.s
+
+.PHONY : Code/Level1/touch_command.s
+
+# target to generate assembly for a file
+Code/Level1/touch_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.s
+.PHONY : Code/Level1/touch_command.c.s
 
 Code/Level1/unlink_command.o: Code/Level1/unlink_command.c.o
 
@@ -459,6 +540,9 @@ help:
 	@echo "... Code/Level1/cd_command.o"
 	@echo "... Code/Level1/cd_command.i"
 	@echo "... Code/Level1/cd_command.s"
+	@echo "... Code/Level1/chmod_command.o"
+	@echo "... Code/Level1/chmod_command.i"
+	@echo "... Code/Level1/chmod_command.s"
 	@echo "... Code/Level1/creat_command.o"
 	@echo "... Code/Level1/creat_command.i"
 	@echo "... Code/Level1/creat_command.s"
@@ -480,9 +564,15 @@ help:
 	@echo "... Code/Level1/rmdir_command.o"
 	@echo "... Code/Level1/rmdir_command.i"
 	@echo "... Code/Level1/rmdir_command.s"
+	@echo "... Code/Level1/stat_command.o"
+	@echo "... Code/Level1/stat_command.i"
+	@echo "... Code/Level1/stat_command.s"
 	@echo "... Code/Level1/symlink_command.o"
 	@echo "... Code/Level1/symlink_command.i"
 	@echo "... Code/Level1/symlink_command.s"
+	@echo "... Code/Level1/touch_command.o"
+	@echo "... Code/Level1/touch_command.i"
+	@echo "... Code/Level1/touch_command.s"
 	@echo "... Code/Level1/unlink_command.o"
 	@echo "... Code/Level1/unlink_command.i"
 	@echo "... Code/Level1/unlink_command.s"

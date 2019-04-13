@@ -31,7 +31,7 @@ int _unlink(char* pathname){
             mip->INODE.i_block[i] = 0;
         }
 
-        idalloc()
+        //idalloc()
 
     }
     iput(mip);
