@@ -13,7 +13,10 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     ip->i_uid = _Running->uid; // owner uid
     ip->i_gid = _Running->gid; // group Id
     ip->i_links_count = 1; // links count = 1 because of '.'
-    ip->i_atime = ip->i_ctime = ip->i_mtime = time(0L);
+    // time_t is arithmetic time type
+    time_t now;
+    // time() returns the current time of the system as a time_t value
+    ip->i_atime = ip->i_ctime = ip->i_mtime = time(&now);;
     //set data blocks to 0
     for(int i = 0; i < 15; i++)
     {
@@ -49,14 +52,16 @@ int _creat(char* pathname)
         printf("'%s' is not a valid directory\n", dir);
         return -1;
     }
-    if(search(p_mip, base) != 0){
+    int ino = search(p_mip, base);
+    if(ino != 0)
+    {
         printf("'%s' already exist in '%s'\n", base, dir);
-        return -1;
+        return -2; //this is -2 so that touch command can know that the file exist and to update the access time
     }
     //allocate inode for new file
-    int ino = ialloc(dev);
+    ino = ialloc(dev);
     create_REG_INODE(ino, p_mip);
-    ino = enter_name(p_mip, base, ino, 1);
+    ino = enter_name(p_mip, base, ino, EXT2_S_IFREG);
     if(ino == 0){
         printf("Failed to add new file to cwd block\n");
         return -1;

@@ -41,14 +41,13 @@ int kmkdir(MINODE* pmip, char* baseName){
     dp->name_len = 1;
     dp->name[0] = '.';
     // make .. entry: pino=parent DIR ino, blk=allocated block
-    dp = (char *)dp + 12;
+    dp = (char*)dp + 12;
     dp->inode = pmip->ino;
     dp->rec_len = BLKSIZE-12;// rec_len spans block
     dp->name_len = 2;
     dp->name[0] = dp->name[1] = '.';
     put_block(_Root->dev, blk, buf);// write to blk on diks
-    enter_name(pmip,baseName,ino, S_IFDIR);
-
+    enter_name(pmip,baseName,ino, EXT2_S_IFDIR);
 }
 
 
@@ -79,7 +78,4 @@ int _mkdir(char* pathname){
     pmip->INODE.i_links_count = 1;
     pmip->dirty = 1;
     iput(pmip);
-
-
-
 }

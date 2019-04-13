@@ -27,10 +27,15 @@ int _pwd(MINODE*);
 int _ls(char*);
 int _link(char*);
 int _creat(char*);
+int _touch(char*);
 int _mkdir(char*);
 int _rmdir(char*);
 int _symlink(char*);
 int _readlink(char*);
 int _unlink(char*);
 int remove_child(MINODE*, char*);
+int _stat(char*);
+int _chmod(char*);
+void mode_to_letters(mode_t,char*);
+
 #endif

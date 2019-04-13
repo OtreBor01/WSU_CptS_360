@@ -1,3 +1,0 @@
-rm part1
-gcc -m32 -o part1 Code/Part1.c -pthread
-time ./part1

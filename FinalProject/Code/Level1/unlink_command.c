@@ -27,14 +27,16 @@ int _unlink(char* pathname){
         mip->dirty=1; //for write INODE back to disk
     }
     else{
-        for(int i = 0; i < mip->INODE.i_blocks; i++){
-            mip->INODE.i_block[i] = 0;
+        //deallocate all iblocks
+        for(int i = 0; i < 12 && i < mip->INODE.i_blocks; i++){
+            bdealloc(dev,mip->INODE.i_block[i]);
         }
 
-        //idalloc()
+        idealloc(dev, mip->ino);
 
     }
     iput(mip);
+    printf("Successfully unlinked %s\n",pathname);
 
 
 }

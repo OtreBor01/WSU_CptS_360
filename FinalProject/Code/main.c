@@ -78,7 +78,6 @@ int mount_root(char *rootdev) {
 }
 
 int init_proc(int dev){
-    printf("Root Ref-Count = %d\n", _Root->refCount);
     puts("Creating P0 as Running Process");
     _Running = &_Procs[0];
     _Running->status = PROC_BUSY;
@@ -137,6 +136,9 @@ int main(int argc, char *argv[ ])
         else if (!strcmp(cmd, "creat")) {
             _creat(pathname);
         }
+        else if (!strcmp(cmd, "touch")) {
+            _touch(pathname);
+        }
         else if (!strcmp(cmd,"link")) {
             _link(pathname);
         }
@@ -151,6 +153,15 @@ int main(int argc, char *argv[ ])
         }
         else if(!strcmp(cmd, "readlink")){
             _readlink(pathname);
+        }
+        else if(!strcmp(cmd, "stat")){
+            _stat(pathname);
+        }
+        else if(!strcmp(cmd, "chmod")){
+            _chmod(pathname);
+        }
+        else if(!strcmp(cmd, "unlink")){
+            _unlink(pathname);
         }
         else {
             printf("Invalid Command Entered...\n");

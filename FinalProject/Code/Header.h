@@ -44,18 +44,23 @@ int set_bit(char*,int), clr_bit(char*,int), tst_bit(char*,int);
 int ialloc(int dev), idalloc(int,int);
 int incFreeBlocks(int), decFreeBlocks(int);
 int balloc(int dev), bdalloc(int,int);
+int bdealloc(int dev, int bno);
+int idealloc(int dev, int ino);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
 extern int _pwd(MINODE*);
 extern int _ls(char*);
 extern int _creat(char*);
+extern int _touch(char*);
 extern int _mkdir(char*);
 extern int _rmdir(char*);
 extern int _link(char*);
 extern int _symlink(char*);
 extern int _readlink(char*);
 extern int _unlink(char*);
+extern int _stat(char*);
+extern int _chmod(char*);
 #endif
 
 //#include <fcntl.h>

@@ -1,3 +1,0 @@
-rm PreLab3
-gcc -m32 -o PreLab3 Code/t.c Code/ts.s
-./PreLab3

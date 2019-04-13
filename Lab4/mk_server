@@ -1,3 +1,0 @@
-rm server
-gcc -m32 -o server Code/server.c
-./server
