@@ -98,7 +98,7 @@ int quit(void) // write all modified minodes to disk
 }
 
 void get_line(char* line){
-    puts("|***** [ls|cd|pwd|creat|mkdir|link|symlink|readlink|unlink|quit] *****");
+    puts("|***** [ls|cd|pwd|creat|touch|mkdir|rmdir|stat|chmod|link|symlink|readlink|unlink|quit] *****");
     printf("|Command: ");
     fgets(line, 256, stdin);
     line[strlen(line) - 1] = 0;

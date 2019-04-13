@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Header.h
 stdio.h
 -
 stdlib.h
@@ -26,11 +26,11 @@ ext2fs/ext2_fs.h
 unistd.h
 -
 Type.h
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Type.h
 
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Type.h
 
-/home/noah/Documents/cpts360/Project/FinalProject/Code/main.c
+/home/austinmm/Desktop/CS360/FinalProject/Code/main.c
 Header.h
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Header.h
 

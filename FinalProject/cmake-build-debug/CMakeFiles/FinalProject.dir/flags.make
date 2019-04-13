@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/noah/Documents/cpts360/Project/FinalProject/Code -I/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1 
+C_INCLUDES = -I/home/austinmm/Desktop/CS360/FinalProject/Code -I/home/austinmm/Desktop/CS360/FinalProject/Code/Level1 
 
