@@ -17,8 +17,11 @@ add_executable(FinalProject
         Code/Level1/readlink_command.c
         Code/Level1/rmdir_command.c
         Code/Level1/symlink_command.c
+        Code/Level1/unlink_command.c
         Code/Header.h
         Code/main.c
         Code/Type.h
         Code/utility_functions.c
-        ReadMe.md Code/Level1/unlink_command.c)
+        disk
+        mk
+        ReadMe.md)

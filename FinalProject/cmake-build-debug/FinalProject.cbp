@@ -136,6 +136,12 @@
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/ReadMe.md">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/disk">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/mk">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

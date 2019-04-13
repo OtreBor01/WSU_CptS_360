@@ -24,11 +24,17 @@ int _unlink(char* pathname){
     //Decrement INODE's link count by 1
     mip->INODE.i_links_count--;
     if(mip->INODE.i_links_count>0){
-        mip->dirty=1;
+        mip->dirty=1; //for write INODE back to disk
     }
     else{
+        for(int i = 0; i < mip->INODE.i_blocks; i++){
+            mip->INODE.i_block[i] = 0;
+        }
+
+        idalloc()
 
     }
+    iput(mip);
 
 
 }

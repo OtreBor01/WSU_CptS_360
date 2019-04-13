@@ -41,7 +41,7 @@ int kmkdir(MINODE* pmip, char* baseName){
     dp->name_len = 1;
     dp->name[0] = '.';
     // make .. entry: pino=parent DIR ino, blk=allocated block
-    dp = (DIR *)dp + 12;
+    dp = (char *)dp + 12;
     dp->inode = pmip->ino;
     dp->rec_len = BLKSIZE-12;// rec_len spans block
     dp->name_len = 2;
