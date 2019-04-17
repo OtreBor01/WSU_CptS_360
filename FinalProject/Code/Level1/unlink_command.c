@@ -29,10 +29,10 @@ int _unlink(char* pathname){
     else{
         //deallocate all iblocks
         for(int i = 0; i < 12 && i < mip->INODE.i_blocks; i++){
-            bdealloc(dev,mip->INODE.i_block[i]);
+            bdalloc(dev,mip->INODE.i_block[i]);
         }
 
-        idealloc(dev, mip->ino);
+        idalloc(dev, mip->ino);
 
     }
     iput(mip);
