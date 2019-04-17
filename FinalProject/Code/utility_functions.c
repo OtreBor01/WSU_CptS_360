@@ -433,7 +433,7 @@ int bdealloc(int dev, int bno)
 
     byte = bno / 8;
     bit = bno % 8;
-
+    //Negate it
     buf[byte] &= ~(1 << bit);
 
     put_block(dev, mp->bmap, buf);
