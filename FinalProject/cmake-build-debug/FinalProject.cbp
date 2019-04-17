@@ -8,150 +8,150 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug"/>
+				<Option working_dir="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug"/>
+				<Option working_dir="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="FinalProject">
-				<Option output="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/FinalProject" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug"/>
+				<Option output="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/FinalProject" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/austinmm/Desktop/CS360/FinalProject/Code"/>
-					<Add directory="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code"/>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 FinalProject"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 FinalProject"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="FinalProject/fast">
-				<Option output="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/FinalProject" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug"/>
+				<Option output="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/FinalProject" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/austinmm/Desktop/CS360/FinalProject/Code"/>
-					<Add directory="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code"/>
+					<Add directory="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 FinalProject/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 FinalProject/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug"/>
+				<Option working_dir="/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Header.h">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/Level1.h">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/Level1.h">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/cd_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/cd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/chmod_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/creat_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/creat_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/link_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/link_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/ls_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/ls_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/mkdir_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/mkdir_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/pwd_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/pwd_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/readlink_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/readlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rmdir_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/stat_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/stat_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/symlink_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/touch_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/touch_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/unlink_command.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Type.h">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/main.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/main.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/utility_functions.c">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/ReadMe.md">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/ReadMe.md">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/disk">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/disk">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/mk">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/mk">
 			<Option target="FinalProject"/>
 		</Unit>
-		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/CMakeLists.txt">
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
