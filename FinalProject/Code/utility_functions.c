@@ -419,6 +419,7 @@ int bdalloc(int dev, int bno)
     // update free iblocks count in SUPER and GD
     incFreeBlocks(dev);
 }
+//***************** Talk to Noah about deleting these two functions *****************
 
 //deallocate a block
 //once deallocated we also increment the number of free blocks
@@ -430,7 +431,6 @@ int bdealloc(int dev, int bno)
     MTABLE *mp = &_MTables[0];
     //clear bit(bmap, bno)
     get_block(dev, mp->bmap, buf);
-
     byte = bno / 8;
     bit = bno % 8;
 
