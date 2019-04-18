@@ -32,13 +32,3 @@ int _pfd(char*pathname)
     printf("|=======================================================\n");
     return 0;
 }
-/*
- for(int i; i < NUM_OFT; i++){
-        oft = &_Ofts[i];
-        if(oft != NULL && oft->minodePtr != NULL){
-
-            printf("%02d   %04d   %04d   %06d   [%02d, %02d]   %s\n",
-                    i, oft->mode, oft->refCount, oft->offset, oft->minodePtr->dev, oft->minodePtr->ino, oft->fileName == NULL? "": oft->fileName);
-        }
-    }
- */
