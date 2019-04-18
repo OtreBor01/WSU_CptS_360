@@ -483,3 +483,14 @@ int bdalloc(int dev, int bno)
     // update free iblocks count in SUPER and GD
     incFreeBlocks(dev);
 }
+
+
+//function clears and entry from the OFT by its file descriptor
+int clearOftEntry(int fd){
+    _Ofts[fd].minodePtr = NULL;
+    _Ofts[fd].refCount = 0;
+    _Ofts[fd].mode = 0;
+    _Ofts[fd].offset = 0;
+    strcpy(_Ofts[fd].fileName,"");
+    _OpenOFT--;
+}

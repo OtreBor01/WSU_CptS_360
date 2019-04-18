@@ -54,17 +54,17 @@ int openCmd(char *filename, int flags){
     oft = &_Ofts[_OpenOFT++];
     //Depending on the open mode 0|1|2|3, set the OFT's offset accordingly:
     switch(flags){
-        case READ:
+        case READ: //0
             oft->offset = 0;
             break;
-        case WRITE:
-            truncateHelper(oft->minodePtr);
+        case WRITE: //1
+            truncateHelper(mip);
             oft->offset = 0;
             break;
-        case RDWR:
+        case RDWR: //2
             oft->offset = 0;
             break;
-        case APPEND:
+        case APPEND: //3
             oft->offset = mip->INODE.i_size;
             break;
         default:
