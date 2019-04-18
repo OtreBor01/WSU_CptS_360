@@ -163,6 +163,9 @@ int main(int argc, char *argv[ ])
         else if(!strcmp(cmd, "unlink")){
             _unlink(pathname);
         }
+        else if(!strcmp(cmd, "mv")){
+            _mv(pathname);
+        }
         else {
             printf("Invalid Command Entered...\n");
         }

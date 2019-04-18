@@ -33,7 +33,6 @@ int _rmdir(char*);
 int _symlink(char*);
 int _readlink(char*);
 int _unlink(char*);
-int remove_child(MINODE*, char*);
 int _stat(char*);
 int _chmod(char*);
 void mode_to_letters(mode_t,char*);

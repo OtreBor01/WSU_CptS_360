@@ -18,7 +18,7 @@ int _unlink(char* pathname){
     strcpy(child, basename(pathname));
     int pino = getino(parent);
     MINODE* pmip = iget(dev, pino);
-    remove_child(pmip,child);
+    remove_name(pmip,child);
     pmip->dirty=1;
     iput(pmip);
     //Decrement INODE's link count by 1

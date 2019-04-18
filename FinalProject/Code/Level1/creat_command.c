@@ -27,7 +27,6 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     iput(mip);
 }
 
-
 /************** Algorithm of creat *************/
 //It is noted that the above creat algorithm differs from Unix/Linux in that..
 // it does not open the file for WRITE mode and return a file descriptor.

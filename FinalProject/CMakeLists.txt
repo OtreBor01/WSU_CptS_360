@@ -27,5 +27,5 @@ add_executable(FinalProject
         ReadMe.md
         Code/Level1/stat_command.c
         Code/Level1/chmod_command.c
-        Code/Level1/touch_command.c)
+        Code/Level1/touch_command.c Code/Level2/read_command.c Code/Level2/mv_command.c)
 

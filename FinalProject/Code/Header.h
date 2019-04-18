@@ -39,13 +39,12 @@ MINODE *iget(int,int);
 int iput(MINODE*);
 int getino(char*);
 int enter_name(MINODE*,char*,int,int);
+int remove_name(MINODE*,char*);
 int incFreeInodes(int), decFreeInodes(int);
 int set_bit(char*,int), clr_bit(char*,int), tst_bit(char*,int);
 int ialloc(int dev), idalloc(int,int);
 int incFreeBlocks(int), decFreeBlocks(int);
 int balloc(int dev), bdalloc(int,int);
-int bdealloc(int dev, int bno);
-int idealloc(int dev, int ino);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
@@ -61,6 +60,9 @@ extern int _readlink(char*);
 extern int _unlink(char*);
 extern int _stat(char*);
 extern int _chmod(char*);
+
+//Level1: Function Prototypes
+extern int _mv(char*);
 #endif
 
 //#include <fcntl.h>

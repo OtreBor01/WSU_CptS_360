@@ -262,6 +262,70 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
     }
 }
 
+int remove_name(MINODE *pmip, char* name)
+{
+    for(int i = 0; i < 12; i++) {
+        char buf[BLKSIZE];
+        int blk = pmip->INODE.i_block[i];
+        get_block(pmip->dev, blk, buf);
+        DIR *curr = (DIR *) buf, *prev = NULL;
+        char* cp = buf;
+        char temp[256] = "";
+        int isFound = 0;
+        int rec_len_move = 0, removed_rec_len = 0;
+        while(cp < (BLKSIZE + buf) && curr->inode != 0)
+        {
+            int isAtEnd = (cp + curr->rec_len) >= (BLKSIZE + buf) ? 1 : 0;
+            strncpy(temp, curr->name, curr->name_len);
+            temp[curr->name_len] = 0;
+            rec_len_move = curr->rec_len;
+            if(!strcmp(temp, name))
+            {
+                //if directory to remove is found indicate it was found and record the size of the directory and reset the memory space
+                removed_rec_len = rec_len_move;
+                isFound = 1;
+                memset(curr, 0, rec_len_move);
+                //if the dir to remove is at the beginning of the block
+                if(isAtEnd && prev == NULL)
+                {
+                    bdalloc(pmip->dev, pmip->INODE.i_block[i]);
+                    pmip->INODE.i_size -= BLKSIZE;
+                    for(int j = i; j < pmip->INODE.i_blocks; j++)
+                    {
+                        void * dest = (void*) &pmip->INODE.i_block[j];
+                        void * src = (void*) &pmip->INODE.i_block[j+1];
+                        memmove(dest, src, sizeof( pmip->INODE.i_block[j+1]));
+                    }
+                    pmip->INODE.i_blocks--;
+                }
+                    //LAST entry in block: Absorb its rec_len to the predecessor entry
+                else if(isAtEnd)
+                {
+                    prev->rec_len += rec_len_move;
+                }
+            }
+                //if the dir to remove has been found
+            else if(isFound)
+            {
+                if(isAtEnd){
+                    curr->rec_len += removed_rec_len;
+                }
+                memcpy(prev, curr, curr->rec_len);
+            }
+            prev = curr;
+            cp += rec_len_move;
+            curr = (DIR *) cp;
+        }
+        if(isFound == 1)
+        {
+            //write the new block, excluding the removed directory back to the buf
+            put_block(pmip->dev, blk, buf);
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int incFreeInodes(int dev)
 {
     char buf[BLKSIZE];
