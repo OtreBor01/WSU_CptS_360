@@ -75,12 +75,6 @@ int openCmd(char *filename, int flags){
     oft->refCount =1;
     oft->minodePtr = mip;
 
-    //find the SMALLEST i in running PROC's fd[ ] such that fd[i] is NULL
-    int i = 0;
-    for(; _Running->fd[i] != NULL; i++);
-    //Let running->fd[i] point at the OFT entry
-    _Running->fd[i] = oft;
-
     //update INODE's time field
     time_t now;
     oft->minodePtr->INODE.i_atime = time(&now);//update INODE's atime field
@@ -89,6 +83,13 @@ int openCmd(char *filename, int flags){
     }
     oft->minodePtr->dirty = 1;//mark node as dirty
     strcpy(oft->fileName, filename);
+
+    //find the SMALLEST i in running PROC's fd[ ] such that fd[i] is NULL
+    int i = 0;
+    for(; _Running->fd[i] != NULL; i++);
+    //Let running->fd[i] point at the OFT entry
+    _Running->fd[i] = oft;
+
     return i;
 }
 

@@ -32,7 +32,15 @@ Type.h
 ../Header.h
 /home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h
 
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/open_command.c
+Level2.h
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
+
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/pfd.c
+Level2.h
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
+
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c
 Level2.h
 /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
 
