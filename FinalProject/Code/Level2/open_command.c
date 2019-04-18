@@ -9,6 +9,11 @@ int truncateHelper(MINODE* mip){
         int blk = mip->INODE.i_block[i];
         bdalloc(mip->dev,blk);
     }
+    time_t now;
+    mip->INODE.i_atime=time(&now);//update times
+    mip->INODE.i_mtime=time(&now);
+    mip->INODE.i_size = 0;
+    mip->dirty=1;
 }
 
 
