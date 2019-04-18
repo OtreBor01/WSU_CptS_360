@@ -1,4 +1,4 @@
-# Install script for directory: /home/austinmm/Desktop/CS360/FinalProject
+# Install script for directory: /home/noah/Documents/cpts360/Project/FinalProject
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

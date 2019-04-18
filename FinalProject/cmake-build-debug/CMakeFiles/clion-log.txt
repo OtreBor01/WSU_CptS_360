@@ -1,6 +1,6 @@
-/snap/clion/68/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/austinmm/Desktop/CS360/FinalProject
--- The C compiler identification is GNU 7.3.0
--- The CXX compiler identification is GNU 7.3.0
+/snap/clion/67/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /home/noah/Documents/cpts360/Project/FinalProject
+-- The C compiler identification is GNU 8.2.0
+-- The CXX compiler identification is GNU 8.2.0
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
 -- Detecting C compiler ABI info
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug
+-- Build files have been written to: /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug
