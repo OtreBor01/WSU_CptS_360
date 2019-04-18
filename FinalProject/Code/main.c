@@ -233,6 +233,9 @@ int main(int argc, char *argv[ ])
         else if(!strcmp(cmd, "close")){
             _close(pathname);
         }
+        else if(!strcmp(cmd, "lseek")){
+            _lseek(pathname);
+        }
         else if(!strcmp(cmd, "read")){
             _read(pathname);
         }

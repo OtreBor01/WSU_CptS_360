@@ -528,6 +528,33 @@ Code/Level2/close_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s
 .PHONY : Code/Level2/close_command.c.s
 
+Code/Level2/lseek_command.o: Code/Level2/lseek_command.c.o
+
+.PHONY : Code/Level2/lseek_command.o
+
+# target to build an object file
+Code/Level2/lseek_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o
+.PHONY : Code/Level2/lseek_command.c.o
+
+Code/Level2/lseek_command.i: Code/Level2/lseek_command.c.i
+
+.PHONY : Code/Level2/lseek_command.i
+
+# target to preprocess a source file
+Code/Level2/lseek_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i
+.PHONY : Code/Level2/lseek_command.c.i
+
+Code/Level2/lseek_command.s: Code/Level2/lseek_command.c.s
+
+.PHONY : Code/Level2/lseek_command.s
+
+# target to generate assembly for a file
+Code/Level2/lseek_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s
+.PHONY : Code/Level2/lseek_command.c.s
+
 Code/Level2/mv_command.o: Code/Level2/mv_command.c.o
 
 .PHONY : Code/Level2/mv_command.o
@@ -744,6 +771,9 @@ help:
 	@echo "... Code/Level2/close_command.o"
 	@echo "... Code/Level2/close_command.i"
 	@echo "... Code/Level2/close_command.s"
+	@echo "... Code/Level2/lseek_command.o"
+	@echo "... Code/Level2/lseek_command.i"
+	@echo "... Code/Level2/lseek_command.s"
 	@echo "... Code/Level2/mv_command.o"
 	@echo "... Code/Level2/mv_command.i"
 	@echo "... Code/Level2/mv_command.s"

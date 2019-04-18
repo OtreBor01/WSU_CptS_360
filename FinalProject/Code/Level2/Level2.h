@@ -31,5 +31,6 @@ int _open(char*);
 int _read(char*);
 int _pfd(char*);
 int _close(char*);
+int _lseek(char*);
 
 #endif
