@@ -32,6 +32,7 @@ int init(void)
 }
 
 int mount_root(char *rootdev) {
+    _OpenOFT = 0;//Set the number of open oft values
     char device[64] = "../";
     strcat(device, rootdev);
     printf("Device: '%s'\n", device);
@@ -162,6 +163,9 @@ int main(int argc, char *argv[ ])
         }
         else if(!strcmp(cmd, "unlink")){
             _unlink(pathname);
+        }
+        else if(!strcmp(cmd, "open")){
+            _open(pathname);
         }
         else {
             printf("Invalid Command Entered...\n");

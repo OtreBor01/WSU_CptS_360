@@ -20,6 +20,7 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 //***** Global Variables *****
 
 //***** Function Prototypes *****
+int _open(char *);
 
 
 #endif

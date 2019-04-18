@@ -61,6 +61,11 @@ extern int _readlink(char*);
 extern int _unlink(char*);
 extern int _stat(char*);
 extern int _chmod(char*);
+
+//Level2: Function Prototypes
+extern int _open(char *);
+
+
 #endif
 
 //#include <fcntl.h>

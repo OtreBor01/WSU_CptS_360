@@ -28,9 +28,13 @@ unistd.h
 Type.h
 /home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h
 
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h
-
-/home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c
-Header.h
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
+../Header.h
 /home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h
+
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/open_command.c
+Level2.h
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
+
+/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h
 
