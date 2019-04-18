@@ -26,6 +26,7 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 //***** Global Variables *****
 
 //***** Function Prototypes *****
+int lbk_to_blk(MINODE*, int);
 int _mv(char*);
 int _open(char*);
 int _read(char*);
