@@ -117,6 +117,8 @@ void menu(void)
     puts("|--------------------------------------------------------------------------------------------------------|");
     puts("| touch <filename: string>                      - change file timestamps and possibly create a file      |");
     puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| rm <filename: string>                         - remove files or directories                            |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
     puts("| link <filename: string> <linkname: string>    - call the link function to create a link to a file      |");
     puts("|--------------------------------------------------------------------------------------------------------|");
     puts("| symlink <filename: string> <linkname: string> - make a new name for a file                             |");
@@ -194,6 +196,9 @@ int main(int argc, char *argv[ ])
         }
         else if (!strcmp(cmd, "touch")) {
             _touch(pathname);
+        }
+        else if (!strcmp(cmd, "rm")) {
+            _rm(pathname);
         }
         else if (!strcmp(cmd,"link")) {
             _link(pathname);

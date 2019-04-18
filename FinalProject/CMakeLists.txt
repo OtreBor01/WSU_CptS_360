@@ -17,6 +17,7 @@ add_executable(FinalProject
         Code/Level1/pwd_command.c
         Code/Level1/readlink_command.c
         Code/Level1/rmdir_command.c
+        Code/Level1/rm_command.c
         Code/Level1/symlink_command.c
         Code/Level1/unlink_command.c
         Code/Header.h
@@ -31,5 +32,7 @@ add_executable(FinalProject
         Code/Level1/touch_command.c
         Code/Level2/read_command.c
         Code/Level2/mv_command.c
-        Code/Level2/open_command.c Code/Level2/pfd.c Code/Level2/close_command.c)
+        Code/Level2/open_command.c
+        Code/Level2/pfd.c
+        Code/Level2/close_command.c)
 

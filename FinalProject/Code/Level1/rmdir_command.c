@@ -45,6 +45,11 @@ int _rmdir(char* pathname)
         print_notice("Cannot rmdir because directory is currently being used");
         return -1;
     }
+    if(!S_ISDIR(mip->INODE.i_mode))//minode is not BUSY (refCount = 1);
+    {
+        print_notice("Cannot rmdir because file is not a valid directory");
+        return -1;
+    }
     if(!isEmpty(mip))
     {
         print_notice("Cannot rmdir because directory is not empty");
