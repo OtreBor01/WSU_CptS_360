@@ -165,8 +165,13 @@ int main(int argc, char *argv[ ])
             _unlink(pathname);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if(!strcmp(cmd, "mv")){
             _mv(pathname);
+=======
+        else if(!strcmp(cmd, "open")){
+            _open(pathname);
+>>>>>>> e4f93f23fa66d3d1b962855f67ae24f34d4e7efe
 =======
         else if(!strcmp(cmd, "open")){
             _open(pathname);
