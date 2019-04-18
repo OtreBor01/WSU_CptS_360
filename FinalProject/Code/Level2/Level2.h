@@ -30,5 +30,6 @@ int _mv(char*);
 int _open(char*);
 int _read(char*);
 int _pfd(char*);
+int _close(char*);
 
 #endif

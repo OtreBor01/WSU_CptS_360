@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"
+  "CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o"
   "FinalProject.pdb"
   "FinalProject"
 )

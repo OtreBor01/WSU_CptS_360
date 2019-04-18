@@ -45,6 +45,7 @@ int set_bit(char*,int), clr_bit(char*,int), tst_bit(char*,int);
 int ialloc(int dev), idalloc(int,int);
 int incFreeBlocks(int), decFreeBlocks(int);
 int balloc(int dev), bdalloc(int,int);
+int clearOftEntry(int);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
@@ -67,6 +68,8 @@ extern int _mv(char*);
 extern int _open(char *);
 extern int _read(char*);
 extern int _pfd(char*);
+extern int _close(char*);
+
 
 #endif
 
