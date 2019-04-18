@@ -161,9 +161,22 @@ CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rmdir_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s
 
+CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o: ../Code/Level1/rm_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rm_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rm_command.c > CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rm_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s
+
 CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Level1/symlink_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/symlink_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: ../Code/Level1/unlink_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/unlink_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/main.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/main.c.o: ../Code/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/FinalProject.dir/Code/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/FinalProject.dir/Code/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/main.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/main.c
 
 CMakeFiles/FinalProject.dir/Code/main.c.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/FinalProject.dir/Code/main.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/utility_functions.c.o: ../Code/utility_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/utility_functions.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/utility_functions.c
 
 CMakeFiles/FinalProject.dir/Code/utility_functions.c.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/FinalProject.dir/Code/utility_functions.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o: ../Code/Level1/stat_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/stat_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.i: cmake_force
@@ -228,7 +241,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Level1/chmod_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/chmod_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o: ../Code/Level1/touch_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level1/touch_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Level2/read_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level2/read_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: ../Code/Level2/mv_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level2/mv_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o: ../Code/Level2/open_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level2/open_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.i: cmake_force
@@ -293,7 +306,7 @@ CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o: ../Code/Level2/pfd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o   -c /home/austinmm/Desktop/CS360/FinalProject/Code/Level2/pfd.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.i: cmake_force
@@ -314,6 +327,7 @@ FinalProject_OBJECTS = \
 "CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/main.c.o" \
@@ -337,6 +351,7 @@ FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/main.c.o
@@ -350,7 +365,7 @@ FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o
 FinalProject: CMakeFiles/FinalProject.dir/build.make
 FinalProject: CMakeFiles/FinalProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking C executable FinalProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C executable FinalProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FinalProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

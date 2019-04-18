@@ -120,6 +120,9 @@
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/readlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rm_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rmdir_command.c">
 			<Option target="FinalProject"/>
 		</Unit>

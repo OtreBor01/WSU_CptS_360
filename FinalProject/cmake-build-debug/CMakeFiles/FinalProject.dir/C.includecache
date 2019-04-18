@@ -28,17 +28,13 @@ unistd.h
 Type.h
 /home/austinmm/Desktop/CS360/FinalProject/Code/Type.h
 
-/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/Level2.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/Level1.h
 ../Header.h
 /home/austinmm/Desktop/CS360/FinalProject/Code/Header.h
 
-/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/open_command.c
-Level2.h
-/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/Level2.h
-
-/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/read_command.c
-Level2.h
-/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/Level2.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/rm_command.c
+Level1.h
+/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/Level1.h
 
 /home/austinmm/Desktop/CS360/FinalProject/Code/Type.h
 

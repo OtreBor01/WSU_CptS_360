@@ -339,6 +339,33 @@ Code/Level1/readlink_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.s
 .PHONY : Code/Level1/readlink_command.c.s
 
+Code/Level1/rm_command.o: Code/Level1/rm_command.c.o
+
+.PHONY : Code/Level1/rm_command.o
+
+# target to build an object file
+Code/Level1/rm_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o
+.PHONY : Code/Level1/rm_command.c.o
+
+Code/Level1/rm_command.i: Code/Level1/rm_command.c.i
+
+.PHONY : Code/Level1/rm_command.i
+
+# target to preprocess a source file
+Code/Level1/rm_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.i
+.PHONY : Code/Level1/rm_command.c.i
+
+Code/Level1/rm_command.s: Code/Level1/rm_command.c.s
+
+.PHONY : Code/Level1/rm_command.s
+
+# target to generate assembly for a file
+Code/Level1/rm_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s
+.PHONY : Code/Level1/rm_command.c.s
+
 Code/Level1/rmdir_command.o: Code/Level1/rmdir_command.c.o
 
 .PHONY : Code/Level1/rmdir_command.o
@@ -669,6 +696,9 @@ help:
 	@echo "... Code/Level1/readlink_command.o"
 	@echo "... Code/Level1/readlink_command.i"
 	@echo "... Code/Level1/readlink_command.s"
+	@echo "... Code/Level1/rm_command.o"
+	@echo "... Code/Level1/rm_command.i"
+	@echo "... Code/Level1/rm_command.s"
 	@echo "... Code/Level1/rmdir_command.o"
 	@echo "... Code/Level1/rmdir_command.i"
 	@echo "... Code/Level1/rmdir_command.s"

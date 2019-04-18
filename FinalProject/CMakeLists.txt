@@ -17,6 +17,7 @@ add_executable(FinalProject
         Code/Level1/pwd_command.c
         Code/Level1/readlink_command.c
         Code/Level1/rmdir_command.c
+        Code/Level1/rm_command.c
         Code/Level1/symlink_command.c
         Code/Level1/unlink_command.c
         Code/Header.h
