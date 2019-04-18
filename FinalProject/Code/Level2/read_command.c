@@ -50,10 +50,10 @@ int lbk_to_blk(MINODE* mip, int lbk)
 int _read(char* pathname)
 {
     // number of bytes read
-    int nbytes = 0;
-    sscanf(pathname, "%d %s", &nbytes, pathname);
+    int nbytes = 0, fd = 0;
+    sscanf(pathname, "%d %d", &fd, &nbytes);
     // byte offset in file to READ
-    OFT* oft = &_Ofts[_OpenOFT]; //_Running->fd[0]
+    OFT* oft = &_Running->fd[fd];
     int offset = oft->offset;
     MINODE* mip = oft->minodePtr;
     //compute bytes available in file: avil = fileSize – offset;
