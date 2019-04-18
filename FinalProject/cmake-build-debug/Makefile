@@ -474,6 +474,7 @@ Code/Level1/unlink_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s
 .PHONY : Code/Level1/unlink_command.c.s
 
+<<<<<<< HEAD
 Code/Level2/mv_command.o: Code/Level2/mv_command.c.o
 
 .PHONY : Code/Level2/mv_command.o
@@ -527,6 +528,34 @@ Code/Level2/read_command.s: Code/Level2/read_command.c.s
 Code/Level2/read_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s
 .PHONY : Code/Level2/read_command.c.s
+=======
+Code/Level2/open_command.o: Code/Level2/open_command.c.o
+
+.PHONY : Code/Level2/open_command.o
+
+# target to build an object file
+Code/Level2/open_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o
+.PHONY : Code/Level2/open_command.c.o
+
+Code/Level2/open_command.i: Code/Level2/open_command.c.i
+
+.PHONY : Code/Level2/open_command.i
+
+# target to preprocess a source file
+Code/Level2/open_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.i
+.PHONY : Code/Level2/open_command.c.i
+
+Code/Level2/open_command.s: Code/Level2/open_command.c.s
+
+.PHONY : Code/Level2/open_command.s
+
+# target to generate assembly for a file
+Code/Level2/open_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.s
+.PHONY : Code/Level2/open_command.c.s
+>>>>>>> e51e80a0e15bc8576b422eba22a6681fff0aa3f1
 
 Code/main.o: Code/main.c.o
 
@@ -630,12 +659,18 @@ help:
 	@echo "... Code/Level1/unlink_command.o"
 	@echo "... Code/Level1/unlink_command.i"
 	@echo "... Code/Level1/unlink_command.s"
+<<<<<<< HEAD
 	@echo "... Code/Level2/mv_command.o"
 	@echo "... Code/Level2/mv_command.i"
 	@echo "... Code/Level2/mv_command.s"
 	@echo "... Code/Level2/read_command.o"
 	@echo "... Code/Level2/read_command.i"
 	@echo "... Code/Level2/read_command.s"
+=======
+	@echo "... Code/Level2/open_command.o"
+	@echo "... Code/Level2/open_command.i"
+	@echo "... Code/Level2/open_command.s"
+>>>>>>> e51e80a0e15bc8576b422eba22a6681fff0aa3f1
 	@echo "... Code/main.o"
 	@echo "... Code/main.i"
 	@echo "... Code/main.s"

@@ -61,8 +61,9 @@ extern int _unlink(char*);
 extern int _stat(char*);
 extern int _chmod(char*);
 
-//Level1: Function Prototypes
+//Level2: Function Prototypes
 extern int _mv(char*);
+extern int _open(char *);
 #endif
 
 //#include <fcntl.h>

@@ -21,5 +21,6 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 
 //***** Function Prototypes *****
 int _mv(char*);
+int _open(char *);
 
 #endif

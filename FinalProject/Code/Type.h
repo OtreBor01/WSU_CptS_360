@@ -86,6 +86,7 @@ MINODE*      _Root;
 MINODE      _MINodes[NUM_MINODE]; //in memory INODEs
 MTABLE      _MTables[NUM_MTABLE]; //mount tables
 OFT         _Ofts[NUM_OFT]; //Opened file instance
+int         _OpenOFT;
 PROC        _Procs[NUM_PROC]; //PROC structures
 PROC*       _Running; //current executing PROC
 int         _IStartBlock;

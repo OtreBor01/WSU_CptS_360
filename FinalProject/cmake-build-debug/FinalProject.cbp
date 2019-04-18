@@ -133,7 +133,14 @@
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/unlink_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/mv_command.c">
+=======
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/open_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h">
+>>>>>>> e51e80a0e15bc8576b422eba22a6681fff0aa3f1
 			<Option target="FinalProject"/>
 		</Unit>
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/read_command.c">
