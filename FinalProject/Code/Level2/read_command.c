@@ -53,7 +53,7 @@ int _read(char* pathname)
     int nbytes = 0, fd = 0;
     sscanf(pathname, "%d %d", &fd, &nbytes);
     // byte offset in file to READ
-    OFT* oft = &_Running->fd[fd];
+    OFT* oft = _Running->fd[fd];
     int offset = oft->offset;
     MINODE* mip = oft->minodePtr;
     //compute bytes available in file: avil = fileSize – offset;
