@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/open_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/pfd.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/read_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o"
+  "/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/write_command.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/main.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/main.c.o"
   "/home/austinmm/Desktop/CS360/FinalProject/Code/utility_functions.c" "/home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
   )

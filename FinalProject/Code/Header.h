@@ -69,7 +69,7 @@ extern int _open(char *);
 extern int _read(char*);
 extern int _pfd(char*);
 extern int _close(char*);
-
+extern int _write(char*);
 
 #endif
 

@@ -636,6 +636,33 @@ Code/Level2/read_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s
 .PHONY : Code/Level2/read_command.c.s
 
+Code/Level2/write_command.o: Code/Level2/write_command.c.o
+
+.PHONY : Code/Level2/write_command.o
+
+# target to build an object file
+Code/Level2/write_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o
+.PHONY : Code/Level2/write_command.c.o
+
+Code/Level2/write_command.i: Code/Level2/write_command.c.i
+
+.PHONY : Code/Level2/write_command.i
+
+# target to preprocess a source file
+Code/Level2/write_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i
+.PHONY : Code/Level2/write_command.c.i
+
+Code/Level2/write_command.s: Code/Level2/write_command.c.s
+
+.PHONY : Code/Level2/write_command.s
+
+# target to generate assembly for a file
+Code/Level2/write_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s
+.PHONY : Code/Level2/write_command.c.s
+
 Code/main.o: Code/main.c.o
 
 .PHONY : Code/main.o
@@ -756,6 +783,9 @@ help:
 	@echo "... Code/Level2/read_command.o"
 	@echo "... Code/Level2/read_command.i"
 	@echo "... Code/Level2/read_command.s"
+	@echo "... Code/Level2/write_command.o"
+	@echo "... Code/Level2/write_command.i"
+	@echo "... Code/Level2/write_command.s"
 	@echo "... Code/main.o"
 	@echo "... Code/main.i"
 	@echo "... Code/main.s"
