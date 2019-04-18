@@ -9,7 +9,8 @@ int _close(char* fdString){
         print_notice("File descriptor out of range.");
         return -1;
     }
-    //Hello
+
+    //Starting to check
     if(_Running->fd[fd]!=NULL){ //If file descriptor in process is not null
         _Ofts[fd].refCount--; //decrease refcount of OFT
         if(_Ofts[fd].refCount == 0){  //If last process using OFT

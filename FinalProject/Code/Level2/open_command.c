@@ -50,7 +50,6 @@ int openCmd(char *filename, int flags){
         print_notice("open: unable to allocate anymore space to open new file");
         return -1;
     }
-
     oft = &_Ofts[_OpenOFT++];
     //Depending on the open mode 0|1|2|3, set the OFT's offset accordingly:
     switch(flags){
