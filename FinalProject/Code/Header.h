@@ -64,6 +64,9 @@ extern int _chmod(char*);
 //Level2: Function Prototypes
 extern int _mv(char*);
 extern int _open(char *);
+extern int _read(char*);
+extern int _pfd(char*);
+
 #endif
 
 //#include <fcntl.h>

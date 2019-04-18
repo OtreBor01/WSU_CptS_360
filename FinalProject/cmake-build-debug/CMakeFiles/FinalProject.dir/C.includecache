@@ -28,25 +28,13 @@ unistd.h
 Type.h
 /home/austinmm/Desktop/CS360/FinalProject/Code/Type.h
 
-<<<<<<< HEAD
 /home/austinmm/Desktop/CS360/FinalProject/Code/Level2/Level2.h
 ../Header.h
 /home/austinmm/Desktop/CS360/FinalProject/Code/Header.h
 
-/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/mv_command.c
+/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/pfd.c
 Level2.h
 /home/austinmm/Desktop/CS360/FinalProject/Code/Level2/Level2.h
 
 /home/austinmm/Desktop/CS360/FinalProject/Code/Type.h
-=======
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
-../Header.h
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Header.h
->>>>>>> e51e80a0e15bc8576b422eba22a6681fff0aa3f1
-
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/open_command.c
-Level2.h
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/Level2.h
-
-/home/noah/Documents/cpts360/Project/FinalProject/Code/Type.h
 

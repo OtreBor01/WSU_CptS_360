@@ -16,11 +16,19 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 
 
 //***** Defined Constants *****
+#define READ 0
+#define WRITE 1
+#define RDWR 2
+#define APPEND 3
+
+
 
 //***** Global Variables *****
 
 //***** Function Prototypes *****
 int _mv(char*);
-int _open(char *);
+int _open(char*);
+int _read(char*);
+int _pfd(char*);
 
 #endif

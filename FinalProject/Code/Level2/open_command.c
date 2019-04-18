@@ -20,77 +20,76 @@ int truncateHelper(MINODE* mip){
 int openCmd(char *filename, int flags){
     //Get files minode
     int ino = getino(filename);
-
     if(ino == 0){//if file doesnt exist
-        _creat(filename); //create file
-        ino = getino(filename);
+        ino = _creat(filename); //create file
     }
-    MINODE* mip = iget(_Running->cwd->dev, ino);
 
+    MINODE* mip = iget(_Running->cwd->dev, ino);
+     //check if file is regular
     if(!S_ISREG(mip->INODE.i_mode)){
-        print_notice("File type is not regular");
+        print_notice("open: file type is not regular");
         return -1;
     }
 
-    //Check if file is open in a incompatable mode
-    OFT* coftp = &_Ofts[0];
+    //Check if file is open in a compatible mode
+    OFT* oft = &_Ofts[0];
     int c = 0;
-    for(; c< NUM_OFT & coftp->minodePtr != NULL; c++){
-        if(coftp->minodePtr->ino == mip->ino & coftp->mode != 0){//If file is open and type incompatible
-            print_notice("File already open with incompatible type");
+    for(; (c < NUM_OFT) && (oft->minodePtr != NULL) ; c++)
+    {
+        //If file is already open and has an incompatible type
+        if(oft->minodePtr->ino == mip->ino & oft->mode != 0)
+        {
+            print_notice("open: file already open with incompatible type");
             return -1;
         }
-        coftp = &_Ofts[c];
+        oft = &_Ofts[c];
     }
-
-
 
     //allocate an openTable entry OFT; initilaize OFT entries
-    if(_OpenOFT+1 > NUM_OFT){return -1;}
+    if(_OpenOFT >= NUM_OFT){
+        print_notice("open: unable to allocate anymore space to open new file");
+        return -1;
+    }
 
-    OFT* oftp = &_Ofts[_OpenOFT++];
-    oftp->mode = flags;
-    oftp->refCount =1;
-    oftp->minodePtr = mip;
-
+    oft = &_Ofts[_OpenOFT++];
     //Depending on the open mode 0|1|2|3, set the OFT's offset accordingly:
     switch(flags){
-        case 0:
-            oftp->offset = 0;
+        case READ:
+            oft->offset = 0;
             break;
-        case 1:
-            truncateHelper(oftp->minodePtr);
-            oftp->offset = 0;
+        case WRITE:
+            truncateHelper(oft->minodePtr);
+            oft->offset = 0;
             break;
-        case 2:
-            oftp->offset = 0;
+        case RDWR:
+            oft->offset = 0;
             break;
-        case 3:
-            oftp->offset = mip->INODE.i_size;
+        case APPEND:
+            oft->offset = mip->INODE.i_size;
             break;
         default:
-            print_notice("invalid mode\n");
+            print_notice("open: invalid mode entered\n");
             return -1;
-
     }
+    oft->mode = flags;
+    oft->refCount =1;
+    oft->minodePtr = mip;
 
     //find the SMALLEST i in running PROC's fd[ ] such that fd[i] is NULL
     int i = 0;
-    for(; _Running->fd[i] != NULL;i++);
-    //      Let running->fd[i] point at the OFT entry
-    _Running->fd[i] = oftp;
-
+    for(; _Running->fd[i] != NULL; i++);
+    //Let running->fd[i] point at the OFT entry
+    _Running->fd[i] = oft;
 
     //update INODE's time field
     time_t now;
-    oftp->minodePtr->INODE.i_atime = time(&now);//update INODE's atime field
+    oft->minodePtr->INODE.i_atime = time(&now);//update INODE's atime field
     if(flags == 2 || flags == 3 || flags == 1) {//RW APPEND and W
-        oftp->minodePtr->INODE.i_mtime = time(&now);//update INODE's mtime field
+        oft->minodePtr->INODE.i_mtime = time(&now);//update INODE's mtime field
     }
-    oftp->minodePtr->dirty=1;//mark node as dirty
+    oft->minodePtr->dirty = 1;//mark node as dirty
+    strcpy(oft->fileName, filename);
     return i;
-
-
 }
 
 int _open(char* pathname){
@@ -98,6 +97,6 @@ int _open(char* pathname){
     int mode=-1;
     int fd;
     sscanf(pathname,"%s %d", filename, &mode);
-    fd =openCmd(filename, mode);
+    fd = openCmd(filename, mode);
     return fd;
 }

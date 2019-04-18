@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(Code)
 include_directories(Code/Level1)
+include_directories(Code/Level2)
 
 add_executable(FinalProject
         Code/Level1/cd_command.c
@@ -30,5 +31,5 @@ add_executable(FinalProject
         Code/Level1/touch_command.c
         Code/Level2/read_command.c
         Code/Level2/mv_command.c
-        Code/Level2/open_command.c)
+        Code/Level2/open_command.c Code/Level2/pfd.c)
 

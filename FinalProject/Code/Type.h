@@ -50,6 +50,7 @@ typedef struct oft{
   int          refCount;
   MINODE*      minodePtr;;
   int          offset;
+  char        fileName[EXT2_NAME_LEN];
 }OFT;
 
 // PROC structure

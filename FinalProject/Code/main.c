@@ -98,8 +98,60 @@ int quit(void) // write all modified minodes to disk
     exit(0);
 }
 
+void menu(void)
+{
+    puts("\n|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Commands $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|");
+    puts("|                                                                                                        |");
+    puts("|===============================================  Level1  ===============================================|");
+    puts("|                                                                                                        |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| ls <filename: string>                         - list directory contents                                |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| cd <filename: string>                         - change working directory                               |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| pwd                                           - print name of current/working directory                |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| quit                                          - terminates program                                     |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| creat <filename: string>                      - open and possibly create a file                        |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| touch <filename: string>                      - change file timestamps and possibly create a file      |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| link <filename: string> <linkname: string>    - call the link function to create a link to a file      |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| symlink <filename: string> <linkname: string> - make a new name for a file                             |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| readlink <linkname: string>                   - print resolved symbolic links or canonical file names  |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| unlink <linkname: string>                     - call the unlink function to remove the specified file  |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| mkdir <filename: string>                      - make directories                                       |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| rmdir <filename: string>                      - remove empty directories                               |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| stat <filename: string>                       - display file or file system status                     |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| chmod <mode: octal> <filename: string>        - change file mode bits                                  |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("|                                                                                                        |");
+    puts("|===============================================  Level2  ===============================================|");
+    puts("|                                                                                                        |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| mv <source: string> <destination: string>                      - move (rename) files                   |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| open <filename: string> <mode: int (0->R, 1->W, 2->RW, 3->AP)> - open and possibly create a file       |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| read <fd: int> <nbytes: int>                                   - read from a file descriptor           |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| write <fd: int> <text: string>                                 - write to a file descriptor            |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| pfd                                                            - display opened file descriptors       |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|\n");
+}
+
 void get_line(char* line){
-    puts("|***** [ls|cd|pwd|creat|touch|mkdir|rmdir|stat|chmod|link|symlink|readlink|unlink|quit] *****");
+
     printf("|Command: ");
     fgets(line, 256, stdin);
     line[strlen(line) - 1] = 0;
@@ -122,7 +174,10 @@ int main(int argc, char *argv[ ])
         if (line[0] == 0) { continue; }
         sscanf(line, "%s %[^\n]s", cmd, pathname);
         printf("|Cmd: '%s' | Path: '%s'\n", cmd, pathname);
-        if (!strcmp(cmd, "ls")) {
+        if (!strcmp(cmd, "menu")) {
+            menu();
+        }
+        else if (!strcmp(cmd, "ls")) {
             _ls(pathname);
         }
         else if (!strcmp(cmd, "cd")) {
@@ -169,6 +224,12 @@ int main(int argc, char *argv[ ])
         }
         else if(!strcmp(cmd, "open")){
             _open(pathname);
+        }
+        else if(!strcmp(cmd, "read")){
+            _read(pathname);
+        }
+        else if(!strcmp(cmd, "pfd")){
+            _pfd(pathname);
         }
         else {
             printf("Invalid Command Entered...\n");
