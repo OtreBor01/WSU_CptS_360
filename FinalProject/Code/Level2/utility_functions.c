@@ -2,6 +2,16 @@
 // Created by austinmm on 4/18/19.
 //
 #include "Level2.h"
+//converts a open type flag to string
+char* flag_to_string(int flag){
+    switch(flag){
+        case READ: return "READ";
+        case WRITE: return "WRITE";
+        case RDWR: return "RD/WR";
+        case APPEND: return "APPEND";
+        default: return "N/A";
+    }
+}
 
 /* Algorithm of Converting Logical Blocks to Physical Blocks */
 int lbk_to_blk(MINODE* mip, int lbk)
@@ -41,4 +51,29 @@ int lbk_to_blk(MINODE* mip, int lbk)
         get_block(mip->dev, block, ibuf);
         return ibuf + offset;
     }
+}
+
+int fd_can_read(int flag)
+{
+    if(flag == RDWR || flag == READ){
+        return 1;
+    }
+    return 0;
+}
+
+int fd_can_write(int flag)
+{
+    if(flag == WRITE || flag == APPEND || flag == RDWR){
+        return 1;
+    }
+    return 0;
+}
+
+OFT* get_open_fd(int fd)
+{
+    OFT* oft = _Running->fd[fd];
+    if(oft == NULL || oft->minodePtr == NULL) {
+        return NULL;
+    }
+    return oft;
 }

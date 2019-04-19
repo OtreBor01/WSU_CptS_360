@@ -4,16 +4,6 @@
 
 #include "Level2.h"
 
-char* flag_to_string(int flag){
-    switch(flag){
-        case READ: return "READ";
-        case WRITE: return "WRITE";
-        case RDWR: return "RD/WR";
-        case APPEND: return "APPEND";
-        default: return "N/A";
-    }
-}
-
 int _pfd(char*pathname)
 {
     printf("\n|=====================   pid = %d   =====================\n", _Running->pid);

@@ -50,7 +50,7 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     INODE* ip = &mip->INODE;
     mip->dev = p_mip->dev;
     mip->ino = ino;
-    ip->i_mode = 33188; //reg file
+    ip->i_mode = S_IFREG; //reg file
     ip->i_uid = _Running->uid; // owner uid
     ip->i_gid = _Running->gid; // group Id
     ip->i_links_count = 1; // links count = 1 because of '.'
@@ -66,6 +66,7 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     //set dirty and iput
     mip->dirty = 1;
     iput(mip);
+    mip->dirty = 0;
 }
 
 

@@ -26,12 +26,20 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 //***** Global Variables *****
 
 //***** Function Prototypes *****
-int lbk_to_blk(MINODE*, int);
+//*** Commands ***
 int _mv(char*);
 int _open(char*);
 int _read(char*);
 int _pfd(char*);
 int _close(char*);
 int _write(char*);
+
+//*** Utility Functions ***
+char* flag_to_string(int);
+int lbk_to_blk(MINODE*, int);
+int fd_can_read(int);
+int fd_can_write(int);
+OFT* get_open_fd(int);
+
 
 #endif

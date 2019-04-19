@@ -23,7 +23,6 @@ int openCmd(char *filename, int flags){
     if(ino == 0){//if file doesnt exist
         ino = _creat(filename); //create file
     }
-
     MINODE* mip = iget(_Running->cwd->dev, ino);
      //check if file is regular
     if(!S_ISREG(mip->INODE.i_mode)){
