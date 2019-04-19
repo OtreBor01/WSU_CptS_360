@@ -41,7 +41,7 @@ int search(MINODE* mip, char* name)
 {
     for (int i = 0; i < 12; i++)  // search DIR direct blocks only
     {
-        char temp[256], buf[BLKSIZE];
+        char temp[PATH_SIZE], buf[BLKSIZE];
         int blk = mip->INODE.i_block[i];
         if (blk == 0) { return 0; }
         get_block(mip->dev, blk, buf);
@@ -214,7 +214,7 @@ int getino(char *pathname)
 }
 
 int check_dup_file(DIR* dp, char* name, int fileType){
-    char temp[256];
+    char temp[PATH_SIZE];
     strncpy(temp, dp->name, dp->name_len);
     temp[dp->name_len] = 0;
     //file already exist in current dir with the same name and same type
@@ -329,7 +329,7 @@ int remove_name(MINODE *pmip, char* name, int isDir)
         get_block(pmip->dev, blk, buf);
         DIR *curr = (DIR *) buf, *prev = NULL;
         char* cp = buf;
-        char temp[256] = "";
+        char temp[PATH_SIZE] = "";
         int isFound = 0;
         int rec_len_move = 0, removed_rec_len = 0;
         while(cp < (BLKSIZE + buf) && curr->inode != 0)

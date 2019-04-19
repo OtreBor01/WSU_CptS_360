@@ -34,6 +34,7 @@ int _read(char*);
 int _pfd(char*);
 int _close(char*);
 int _write(char*);
+int _cat(char*);
 
 //*** Utility Functions ***
 char* flag_to_string(int);

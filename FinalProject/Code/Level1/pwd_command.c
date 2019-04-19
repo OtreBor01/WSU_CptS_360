@@ -11,7 +11,7 @@ int r_pwd(int depth, char *path, MINODE* wd)
     MINODE* pd = iget(wd->dev, ino); //get parent directory MINODE
     char* name = get_inode_name(pd, wd->ino); //gets the name of the 'wd'
     if(name == NULL){ return -1; }
-    char temp[256] = "";
+    char temp[PATH_SIZE] = "";
     //Builds the pwd string
     int isEmpty = !strcmp(path, "");
     strcpy(temp, path);
@@ -28,7 +28,7 @@ int r_pwd(int depth, char *path, MINODE* wd)
 int _pwd(char* pathname)
 {
     MINODE* wd = _Running->cwd;
-    char path[256] = "";
+    char path[PATH_SIZE] = "";
     int depth = r_pwd(0, path, wd);
     if(depth == 0){
         strcpy(path, "/");

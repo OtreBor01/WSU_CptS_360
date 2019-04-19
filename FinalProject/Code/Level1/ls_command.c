@@ -35,7 +35,7 @@ int ls_dir(MINODE *mip){
         get_block(mip->dev, blk, buf); // get data block into buf[ ]
         DIR *dp = (DIR*)buf; //as dir_entry
         char *cp = buf;
-        char temp[256];
+        char temp[PATH_SIZE];
         while(cp < (buf + BLKSIZE))
         {
             strncpy(temp, dp->name, dp->name_len); // make name a string

@@ -92,7 +92,7 @@ int openCmd(char *filename, int flags){
 }
 
 int _open(char* pathname){
-    char filename[100];
+    char filename[PATH_SIZE];
     int mode=-1;
     int fd;
     sscanf(pathname,"%s %d", filename, &mode);

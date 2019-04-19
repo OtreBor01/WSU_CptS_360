@@ -21,8 +21,8 @@ int (*lvl1_fptr[])(char*) = {_cd, _ls,  _pwd, _chmod, _stat, _creat, _touch, _rm
 char* lvl1_cmds[] = { "cd", "ls",  "pwd", "chmod", "stat", "creat", "touch", "rm", "mkdir", "rmdir", "link", "symlink", "readlink", "unlink", NULL };
 
 //Level2 Commands
-int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, NULL }; //_cat,
-char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", NULL }; //"cat",
+int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _cat, NULL };
+char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "cat", NULL };
 
 //Level2 Commands
 int (*lvl3_fptr[])(char*) = { NULL }; //_mount, _unmount
@@ -201,7 +201,7 @@ int menu(char* pathname)
 void get_line(char* line){
 
     printf("|Command: ");
-    fgets(line, 256, stdin);
+    fgets(line, PATH_SIZE, stdin);
     line[strlen(line) - 1] = 0;
 }
 
@@ -246,7 +246,7 @@ int main(int argc, char *argv[ ])
     int dev = mount_root();
     init_proc(dev);
     while(1){
-        char line[128] = "", cmd[16] = "", pathname[64] = "";
+        char line[PATH_SIZE] = "", cmd[16] = "", pathname[64] = "";
         printf("\n|================= P%d Running =================\n",  _Running->pid);
         get_line(line);
         if (line[0] == 0) { continue; }

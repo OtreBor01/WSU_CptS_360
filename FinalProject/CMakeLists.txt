@@ -38,5 +38,5 @@ add_executable(FinalProject
         Code/Level2/write_command.c
         Code/Level2/utility_functions.c
         Code/Level1/utility_functions.c
-        Code/Level2/cp_command.c)
+        Code/Level2/cp_command.c Code/Level2/cat_command.c)
 

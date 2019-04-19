@@ -74,6 +74,7 @@ extern int _read(char*);
 extern int _pfd(char*);
 extern int _close(char*);
 extern int _write(char*);
+extern int _cat(char*);
 
 #endif
 

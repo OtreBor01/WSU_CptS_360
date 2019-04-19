@@ -41,13 +41,13 @@ int _cp(char*pathname)
 
 
     //fd = open src for READ;
-    char openRead[250] = "";//read mode
+    char openRead[PATH_SIZE] = "";//read mode
     strcpy(openRead, source);
     strcat(openRead, " 0");
     int fd = _open(openRead);
 
     //gd = open dst for WR|CREAT;
-    char openWrite[250] = "";//write mode
+    char openWrite[PATH_SIZE] = "";//write mode
     strcpy(openWrite, dest);
     strcat(openWrite, " 1");
     int gd = _open(openWrite);

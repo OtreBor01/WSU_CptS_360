@@ -141,6 +141,9 @@
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level1/utility_functions.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/cat_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/close_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
