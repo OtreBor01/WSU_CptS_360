@@ -28,6 +28,7 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 //***** Function Prototypes *****
 //*** Commands ***
 int _mv(char*);
+int _cp(char*);
 int _open(char*);
 int _read(char*);
 int _pfd(char*);
@@ -40,6 +41,10 @@ int lbk_to_blk(MINODE*, int);
 int fd_can_read(int);
 int fd_can_write(int);
 OFT* get_open_fd(int);
-
+int replace_file(MINODE*,MINODE*,MINODE*,char*);
+int mv_into_dir(MINODE*,MINODE*,MINODE*,char*);
+int seperate_path(char*,char*,char*);
+int read_file(int,char*,int);
+int write_file(int,char*,int);
 
 #endif

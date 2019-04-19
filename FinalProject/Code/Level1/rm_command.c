@@ -38,7 +38,8 @@ int _rm(char* pathname)
     char* name = strchr(pathname, '/')?  dirname(pathname) : pathname; //gets the name of the file to delete, findname(pmip, ino, name);
 
     //(5). remove name from parent directory
-    int didWork = remove_name(pmip, name);
+    int isDir = 0;
+    int didWork = remove_name(pmip, name, isDir);
     if(didWork == 0)
     {
         print_error("_rm", "Failed to locate and remove file specified");

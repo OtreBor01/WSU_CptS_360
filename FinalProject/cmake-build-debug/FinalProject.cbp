@@ -144,6 +144,9 @@
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/close_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/cp_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/austinmm/Desktop/CS360/FinalProject/Code/Level2/mv_command.c">
 			<Option target="FinalProject"/>
 		</Unit>

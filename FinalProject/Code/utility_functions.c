@@ -15,15 +15,26 @@ void print_notice( char* message)
     printf("Notice: %s\n", message);
 }
 
+int reset_path_tokens(void)
+{
+    for(int i = 0; i < PATH_TOKENS; i++){
+        int size = sizeof(_PathTokens[i]) * sizeof(char);
+        memset(_PathTokens[i], 0, size);
+    }
+}
+
 int tokenize(char *pathname)
 {
-    strcpy(_Path, pathname);
-    _PathTokenCount = 0;
-    char* token = strtok(pathname, PATH_DELIMITER);
+    char* temp = (char*) malloc((strlen(pathname)+1) * sizeof(char));
+    strcpy(temp, pathname); strcpy(_Path, pathname);
+    _PathTokenCount = 0; reset_path_tokens();
+    char* token = strtok(temp, PATH_DELIMITER);
     while(token){
-        _PathTokens[_PathTokenCount++] = token;
+        strcpy(_PathTokens[_PathTokenCount++], token);
         token = strtok(NULL, PATH_DELIMITER);
     }
+    free(temp);
+    return 0;
 }
 
 int search(MINODE* mip, char* name)
@@ -185,14 +196,13 @@ int getino(char *pathname)
         char* name = _PathTokens[i];
         if (!S_ISDIR(mip->INODE.i_mode)) // check DIR type
         {
-            printf("'%s' is Not a Directory\n", name);
+            //printf("'%s' is Not a Directory\n", name);
             iput(mip);
             return 0;
         }
         ino = search(mip, name);
         if (ino == 0)
         {
-            printf("No such Component named '%s'\n", name);
             iput(mip);
             return 0;
         }
@@ -311,7 +321,7 @@ int enter_name(MINODE* p_mip, char* name, int ino, int fileType)
     return 0;
 }
 
-int remove_name(MINODE *pmip, char* name)
+int remove_name(MINODE *pmip, char* name, int isDir)
 {
     for(int i = 0; i < 12; i++) {
         char buf[BLKSIZE];
@@ -328,7 +338,8 @@ int remove_name(MINODE *pmip, char* name)
             strncpy(temp, curr->name, curr->name_len);
             temp[curr->name_len] = 0;
             rec_len_move = curr->rec_len;
-            if(!strcmp(temp, name))
+            int correct_file_type = (isDir == 1)? (curr->file_type == 2? 1: 0): (curr->file_type != 2? 1: 0);
+            if(!strcmp(temp, name) && correct_file_type)
             {
                 //if directory to remove is found indicate it was found and record the size of the directory and reset the memory space
                 removed_rec_len = rec_len_move;
@@ -546,10 +557,14 @@ int clearOftEntry(int fd){
 
 char* get_parent_path(char* path)
 {
-    return strchr(path, '/')?  basename(path) : "";
+    char* temp = (char*) malloc((strlen(path)+1) * sizeof(char));
+    strcpy(temp, path);
+    return strchr(path, '/')?  dirname(temp) : "";
 }
 
 char* get_dest_path(char* path)
 {
-    return strchr(path, '/')?  dirname(path) : path;
+    char* temp = (char*) malloc((strlen(path)+1) * sizeof(char));
+    strcpy(temp, path);
+    return strchr(path, '/')?  basename(temp) : path;
 }

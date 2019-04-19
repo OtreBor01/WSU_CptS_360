@@ -48,7 +48,8 @@ int _rmdir(char* pathname)
     char* bname = basename(pathname); //gets the name of the file to delete, findname(pmip, ino, name);
 
     //(5). remove name from parent directory
-    int didWork = remove_name(pmip, bname);
+    int isDir = 1; //ensures that file with the same name as dir doesn't get removed
+    int didWork = remove_name(pmip, bname, isDir);
     if(didWork == 0)
     {
         print_error("_rmdir", "Failed to locate and remove directory specified");
