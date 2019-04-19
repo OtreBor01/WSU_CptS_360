@@ -45,7 +45,7 @@ int _rmdir(char* pathname)
     MINODE* pmip = iget(mip->dev, pino); //get parent directory MINODE
 
     //(4). get name from parent DIR’s data block
-    char* bname = basename(pathname); //gets the name of the file to delete, findname(pmip, ino, name);
+    char* bname = get_dest_path(pathname); //gets the name of the file to delete, findname(pmip, ino, name);
 
     //(5). remove name from parent directory
     int isDir = 1; //ensures that file with the same name as dir doesn't get removed
