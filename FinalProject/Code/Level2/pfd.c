@@ -25,7 +25,7 @@ int _pfd(char*pathname)
         if(oft != NULL && oft->minodePtr != NULL)
         {
             char* flag = flag_to_string(oft->mode);
-            printf("| %02d   %6s   %5d   %6d    [%02d, %02d]    %8s\n",
+            printf("| %02d   %6s   %5d   %6d   [%02d , %02d]   %8s\n",
                     i, flag, oft->refCount, oft->offset, oft->minodePtr->dev, oft->minodePtr->ino, oft->fileName);
         }
     }

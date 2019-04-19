@@ -22,8 +22,9 @@ step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
 //***** Global Variables *****
 
 //***** Function Prototypes *****
+//*** Commands ***
 int _cd(char*);
-int _pwd(MINODE*);
+int _pwd(char*);
 int _ls(char*);
 int _link(char*);
 int _creat(char*);
@@ -36,6 +37,14 @@ int _readlink(char*);
 int _unlink(char*);
 int _stat(char*);
 int _chmod(char*);
+
+//*** Utility Functions ***
 void mode_to_letters(mode_t,char*);
+int isEmpty(MINODE*);
+char* get_inode_name(MINODE*,int);
+int kmkdir(MINODE*,char*);
+int create_REG_INODE(int,MINODE*);
+void mode_to_letters(mode_t,char*);
+
 
 #endif

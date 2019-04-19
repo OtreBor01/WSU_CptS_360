@@ -501,6 +501,33 @@ Code/Level1/unlink_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s
 .PHONY : Code/Level1/unlink_command.c.s
 
+Code/Level1/utility_functions.o: Code/Level1/utility_functions.c.o
+
+.PHONY : Code/Level1/utility_functions.o
+
+# target to build an object file
+Code/Level1/utility_functions.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o
+.PHONY : Code/Level1/utility_functions.c.o
+
+Code/Level1/utility_functions.i: Code/Level1/utility_functions.c.i
+
+.PHONY : Code/Level1/utility_functions.i
+
+# target to preprocess a source file
+Code/Level1/utility_functions.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i
+.PHONY : Code/Level1/utility_functions.c.i
+
+Code/Level1/utility_functions.s: Code/Level1/utility_functions.c.s
+
+.PHONY : Code/Level1/utility_functions.s
+
+# target to generate assembly for a file
+Code/Level1/utility_functions.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s
+.PHONY : Code/Level1/utility_functions.c.s
+
 Code/Level2/close_command.o: Code/Level2/close_command.c.o
 
 .PHONY : Code/Level2/close_command.o
@@ -795,6 +822,9 @@ help:
 	@echo "... Code/Level1/unlink_command.o"
 	@echo "... Code/Level1/unlink_command.i"
 	@echo "... Code/Level1/unlink_command.s"
+	@echo "... Code/Level1/utility_functions.o"
+	@echo "... Code/Level1/utility_functions.i"
+	@echo "... Code/Level1/utility_functions.s"
 	@echo "... Code/Level2/close_command.o"
 	@echo "... Code/Level2/close_command.i"
 	@echo "... Code/Level2/close_command.s"

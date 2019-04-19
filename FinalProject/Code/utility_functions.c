@@ -203,9 +203,46 @@ int getino(char *pathname)
     return ino;
 }
 
+int check_dup_file(DIR* dp, char* name, int fileType){
+    char temp[256];
+    strncpy(temp, dp->name, dp->name_len);
+    temp[dp->name_len] = 0;
+    //file already exist in current dir with the same name and same type
+    int bothDirs = dp->file_type == DE_DIR && fileType == DE_DIR? 1 : 0;
+    int neitherDirs = dp->file_type != DE_DIR && fileType != DE_DIR? 1 : 0;
+    int sameTye = (bothDirs == 1 || neitherDirs == 1)? 1 : 0;
+    if (!strcmp(name, temp) && sameTye)
+    {
+        return 1;
+    }
+    return 0;
+}
 
+int mode_to_filetype(int mode){
+    if(S_ISDIR(mode)){
+        return DE_DIR;
+    }
+    else if(S_ISREG(mode)){
+        return DE_REG;
+    }
+    else if(S_ISLNK(mode)){
+        return DE_SYMLK;
+    }
+    else if(S_ISBLK(mode)){
+        return DE_BLK_DEV;
+    }
+    else if(S_ISCHR(mode)){
+        return DE_CHAR_DEV;
+    }
+    else if(S_ISSOCK(mode)){
+        return DE_SOCKET;
+    }
+    else {
+        return DE_UNKOWN;
+    }
+}
 
-int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
+int enter_name(MINODE* p_mip, char* name, int ino, int fileType)
 {
     int block_index = 0;
     while(1)
@@ -215,22 +252,33 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
         if (blk == 0) { return 0; }
         get_block(p_mip->dev, blk, buf);
         DIR *dp = (DIR *) buf;
-        char *cp = buf;
+        char *cp = buf, *prev;
         //All dir_entries rec_len = ideal_length, except the last entry.
         //The rec_len of the LAST entry is to the end of the block, which may be larger than its ideal_length.
-        int name_len = strlen(base);
+        int name_len = strlen(name);
         //In order to enter a new entry of name with n_len, the needed length is
         int need_length = 4 * ((8 + name_len + 3) / 4);
-        while ((cp + dp->rec_len) < (buf + BLKSIZE))
+        while (cp < (buf + BLKSIZE) && dp->inode != 0)
         {
+            if(check_dup_file(dp, name, fileType) == 1){
+                print_notice("enter_name: file of same type and name already exist in directory");
+                return -1;
+            }
+            prev = cp;
             cp += dp->rec_len;
             dp = (DIR *) cp;
         }
+        cp = prev;
+        dp = (DIR *) cp;
+        // dp NOW points at last entry in block
         /*if(dp == NULL){
             decFreeInodes//The new data block containins only one entry.
             dp->rec_len = BLKSIZE;
+        }
+        if(prev == NULL){
+            print_notice("enter_name: invalid directory, cannot create new file inside");
+            return -1;
         }*/
-        // dp NOW points at last entry in block
         int ideal_length = 4 * ((8 + dp->name_len + 3) / 4);
         int remain = dp->rec_len - ideal_length;
         if (remain >= need_length) {
@@ -245,7 +293,7 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
             dp->file_type = fileType;
             dp->name_len = name_len;
             dp->inode = ino;
-            strcpy(dp->name, base);
+            strcpy(dp->name, name);
             put_block(p_mip->dev, blk, buf);
             return dp->inode;
         }
@@ -260,6 +308,7 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
             break;
         }
     }
+    return 0;
 }
 
 int remove_name(MINODE *pmip, char* name)
@@ -493,4 +542,14 @@ int clearOftEntry(int fd){
     _Ofts[fd].offset = 0;
     strcpy(_Ofts[fd].fileName,"");
     _OpenOFT--;
+}
+
+char* get_parent_path(char* path)
+{
+    return strchr(path, '/')?  basename(path) : "";
+}
+
+char* get_dest_path(char* path)
+{
+    return strchr(path, '/')?  dirname(path) : path;
 }

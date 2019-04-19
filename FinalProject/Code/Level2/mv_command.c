@@ -4,13 +4,6 @@
 
 #include "Level2.h"
 
-//The original file is a directory so it can only be moved into another directory with its original name or...
-// under a new one specified by the new path
-int mv_into(MINODE* o_mip, char* name, MINODE* n_mip)
-{
-    return enter_name(n_mip, name, o_mip->ino, o_mip->INODE.i_mode);
-}
-
 int mv_replace(MINODE* o_mip, MINODE* p_n_mip, MINODE* n_mip, char* name)
 {
     //if there exist a file to be replaced in the destination then...
@@ -18,9 +11,24 @@ int mv_replace(MINODE* o_mip, MINODE* p_n_mip, MINODE* n_mip, char* name)
     if(n_mip != NULL) {
         remove_name(p_n_mip, name);
     }
-    enter_name(p_n_mip, name, o_mip->ino, o_mip->INODE.i_mode);
+    int fileType = mode_to_filetype(o_mip->INODE.i_mode);
+    enter_name(p_n_mip, name, o_mip->ino, fileType);
     return -1;
 }
+
+//The original file is a directory so it can only be moved into another directory with its original name or...
+// under a new one specified by the new path
+int mv_into(MINODE* o_mip, MINODE* p_n_mip, MINODE* n_mip, char* name)
+{
+    int fileType = mode_to_filetype(o_mip->INODE.i_mode);
+    int result = enter_name(n_mip, name, o_mip->ino, fileType);
+    //-1 would indicate that a file of the same type and name already exist in the current directory so we need to replace it
+    if(result == -1){
+        return mv_replace(o_mip, p_n_mip, n_mip, name);
+    }
+    return result;
+}
+
 
 int seperate_path(char* path, char* source, char* dest)
 {
@@ -86,7 +94,7 @@ int _mv(char*pathname)
         print_notice("mv: cannot overwrite non-directory with directory");
         return -1;
     }
-    char* dir = strchr(source, '/')?  dirname(source) : source;
+    char* dir = get_dest_path(source);
     //removes the original MINODE from its parent directory
     if(remove_name(p_src_mip, dir) == 0) {
         print_notice("mv: unable to locate and remove file operand from parent directory");
@@ -96,10 +104,9 @@ int _mv(char*pathname)
     //4. ***** Executes the actual file movements *****
     //if the destination is a existing directory
     if(dest_mip != NULL && S_ISDIR(dest_mip->INODE.i_mode)){
-        dir = strchr(source, '/')?  dirname(source) : source;
-        return mv_into(src_mip, dir, dest_mip);
+        return mv_into(src_mip, p_dest_mip, dest_mip, dir);
     }
     //if the original file is not a directory
-    dir = strchr(dest, '/')?  dirname(dest) : dest;
+    dir = get_dest_path(dest);
     return mv_replace(src_mip, p_dest_mip, dest_mip, dir);
 }

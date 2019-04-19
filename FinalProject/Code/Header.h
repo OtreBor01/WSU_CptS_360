@@ -46,10 +46,13 @@ int ialloc(int dev), idalloc(int,int);
 int incFreeBlocks(int), decFreeBlocks(int);
 int balloc(int dev), bdalloc(int,int);
 int clearOftEntry(int);
+char* get_parent_path(char*), *get_dest_path(char*);
+int check_dup_file(DIR*,char*,int);
+int mode_to_filetype(int);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
-extern int _pwd(MINODE*);
+extern int _pwd(char*);
 extern int _ls(char*);
 extern int _creat(char*);
 extern int _touch(char*);

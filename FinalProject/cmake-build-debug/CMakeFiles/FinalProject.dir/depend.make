@@ -71,6 +71,11 @@ CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: ../Code/Level1/Level
 CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: ../Code/Level1/unlink_command.c
 CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: ../Code/Type.h
 
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Level1/Level1.h
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Level1/utility_functions.c
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Type.h
+
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/Level2.h
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/close_command.c
@@ -95,6 +100,11 @@ CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Level2/Level2.h
 CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Level2/read_command.c
 CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Type.h
+
+CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o: ../Code/Level2/Level2.h
+CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o: ../Code/Level2/utility_functions.c
+CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o: ../Code/Type.h
 
 CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o: ../Code/Level2/Level2.h
