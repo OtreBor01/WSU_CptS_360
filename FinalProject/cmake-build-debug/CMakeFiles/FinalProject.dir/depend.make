@@ -81,6 +81,11 @@ CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/Level2
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/close_command.c
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Type.h
 
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: ../Code/Level2/Level2.h
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: ../Code/Level2/cp_command.c
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: ../Code/Type.h
+
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: ../Code/Level2/Level2.h
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: ../Code/Level2/mv_command.c

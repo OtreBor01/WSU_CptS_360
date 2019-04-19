@@ -9,7 +9,7 @@
 int quit(char*), menu(char*);
 int init(void);
 int mount_root(void);
-int get_command_index(char*,int*); execute_cmd(int,int,char*);
+int get_command_index(char*,int*), execute_cmd(int,int,char*);
 
 //***** Global Variables *****
 //Main Commands
