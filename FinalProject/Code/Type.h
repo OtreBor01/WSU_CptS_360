@@ -7,6 +7,19 @@
 #define PROC_FREE    0
 #define PROC_BUSY    1
 
+// DIR file_type values
+#define DE_UNKOWN    0	//Unknown
+#define DE_REG       1	//Regular File
+#define DE_DIR	     2  //Directory
+#define DE_CHAR_DEV  3	//Character Device
+#define DE_BLK_DEV   4	//Block Device
+#define DE_NM_PIPE   5	//Named pipe
+#define DE_SOCKET    6	//Socket
+#define DE_SYMLK     7	//Symbolic Link
+
+#define PROC_FREE    0
+#define PROC_BUSY    1
+
 // file system table sizes
 #define NUM_MINODE     100
 #define NUM_MTABLE     10

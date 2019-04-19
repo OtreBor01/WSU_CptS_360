@@ -4,39 +4,6 @@
 
 #include "Level2.h"
 
-//The original file is a directory so it can only be moved into another directory with its original name or...
-// under a new one specified by the new path
-int mv_into(MINODE* o_mip, char* name, MINODE* n_mip)
-{
-    return enter_name(n_mip, name, o_mip->ino, o_mip->INODE.i_mode);
-}
-
-int mv_replace(MINODE* o_mip, MINODE* p_n_mip, MINODE* n_mip, char* name)
-{
-    //if there exist a file to be replaced in the destination then...
-    // remove the existing file from the destination parent directory
-    if(n_mip != NULL) {
-        remove_name(p_n_mip, name);
-    }
-    enter_name(p_n_mip, name, o_mip->ino, o_mip->INODE.i_mode);
-    return -1;
-}
-
-int seperate_path(char* path, char* source, char* dest)
-{
-    sscanf(path, "%s %s", source, dest);
-    if(!strcmp(source, "")) {
-        print_notice("mv: missing file operand");
-        return -1;
-    }
-    else if (!strcmp(dest, "")) {
-        print_notice("mv: missing destination file operand");
-        return -1;
-    }
-    return 0;
-}
-
-
 int _mv(char*pathname)
 {
     //1. ***** Seperates Paths into Source and Dest *****
@@ -51,9 +18,9 @@ int _mv(char*pathname)
 
     //get inode numbers of parent directories of files specified to move to and from..
     // checks if the parent directories are the root dir as well in the ternary operator
-    char* base = strchr(source, '/')?  basename(source) : "";
+    char* base = get_parent_path(source);
     int p_src_ino = getino(base);
-    base = strchr(dest, '/')? basename(dest) : "";
+    base = get_parent_path(dest);
     int p_dest_ino = getino(base);
 
     //ensures that both the dir and base files exist according to the source pathname provided
@@ -86,9 +53,11 @@ int _mv(char*pathname)
         print_notice("mv: cannot overwrite non-directory with directory");
         return -1;
     }
-    char* dir = strchr(source, '/')?  dirname(source) : source;
+    char* dir = get_dest_path(source);
     //removes the original MINODE from its parent directory
-    if(remove_name(p_src_mip, dir) == 0) {
+    int fileType = mode_to_filetype(src_mip->INODE.i_mode);
+    int isDir = (fileType == 2)? 1 : 0;
+    if(remove_name(p_src_mip, dir, isDir) == 0) {
         print_notice("mv: unable to locate and remove file operand from parent directory");
         return -1;
     }
@@ -96,10 +65,9 @@ int _mv(char*pathname)
     //4. ***** Executes the actual file movements *****
     //if the destination is a existing directory
     if(dest_mip != NULL && S_ISDIR(dest_mip->INODE.i_mode)){
-        dir = strchr(source, '/')?  dirname(source) : source;
-        return mv_into(src_mip, dir, dest_mip);
+        return mv_into_dir(src_mip, p_dest_mip, dest_mip, dir);
     }
     //if the original file is not a directory
-    dir = strchr(dest, '/')?  dirname(dest) : dest;
-    return mv_replace(src_mip, p_dest_mip, dest_mip, dir);
+    dir = get_dest_path(dest);
+    return replace_file(src_mip, p_dest_mip, dest_mip, dir);
 }

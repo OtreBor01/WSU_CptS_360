@@ -32,7 +32,7 @@ int _stat(char* pathname)
     mode_to_letters(ip->i_mode, mode_str);
     int octalPermission = ip->i_mode & (S_IRWXU | S_IRWXG | S_IRWXO);
     //Print out file stats
-    printf("File: %s\n", basename(pathname));
+    printf("File: %s\n", get_dest_path(pathname));
     printf("Size: %d\tBlocks: %d\tIO Block: %d\t%s\n", ip->i_size, ip->i_blocks, BLKSIZE, fileType);
     printf("Device: %d\tInode: %d\tLinks: %d\n", mip->dev, mip->ino,ip->i_links_count);
     printf("Access: (%04o/%s)\tUid: (%d)\tGid: (%d)\n", octalPermission, mode_str, ip->i_uid,ip->i_gid);

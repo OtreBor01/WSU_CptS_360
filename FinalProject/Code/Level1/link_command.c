@@ -66,7 +66,7 @@ int _link(char* pathname){
 
     pmip = iget(dev, pino);
     //Create entry in new parent DIR with same inode number of old_file
-    enter_name(pmip,childBaseName,oino,S_IFREG);
+    enter_name(pmip,childBaseName,oino, DE_REG);
 
     omip->INODE.i_links_count++;
     omip->dirty=1;

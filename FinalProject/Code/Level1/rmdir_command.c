@@ -11,22 +11,6 @@ the parent directory. So, if a DIR’s links_count is greater than 2, it is defi
 if links_count 1⁄4 2, the DIR may still contain regular files. In that case, we must traverse the DIR’s
 data blocks to count the number of dir_entries, which must be greater than 2.
  */
-int isEmpty(MINODE* mip)
-{
-    //    verify DIR is empty (traverse data blocks for number of entries = 2);
-    char buf[BLKSIZE];
-    int blk = mip->INODE.i_block[0];
-    get_block(mip->dev, blk, buf);
-    DIR* dp = (DIR*)buf;
-    char* cp = buf;
-    int count = 0;
-    for(; cp < (BLKSIZE+buf); count++)
-    {
-        cp += dp->rec_len;
-        dp = (DIR*)cp;
-    }
-    return count == 2? 1 : 0;
-}
 
 int _rmdir(char* pathname)
 {
@@ -61,10 +45,11 @@ int _rmdir(char* pathname)
     MINODE* pmip = iget(mip->dev, pino); //get parent directory MINODE
 
     //(4). get name from parent DIR’s data block
-    char* bname = basename(pathname); //gets the name of the file to delete, findname(pmip, ino, name);
+    char* bname = get_dest_path(pathname); //gets the name of the file to delete, findname(pmip, ino, name);
 
     //(5). remove name from parent directory
-    int didWork = remove_name(pmip, bname);
+    int isDir = 1; //ensures that file with the same name as dir doesn't get removed
+    int didWork = remove_name(pmip, bname, isDir);
     if(didWork == 0)
     {
         print_error("_rmdir", "Failed to locate and remove directory specified");

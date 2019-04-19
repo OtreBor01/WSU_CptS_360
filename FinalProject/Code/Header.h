@@ -23,7 +23,7 @@
 
 //***** Global Variables *****
 char    _Path[PATH_SIZE];
-char*   _PathTokens[PATH_TOKENS];
+char    _PathTokens[PATH_TOKENS][PATH_SIZE];
 int     _PathTokenCount;
 
 
@@ -39,17 +39,20 @@ MINODE *iget(int,int);
 int iput(MINODE*);
 int getino(char*);
 int enter_name(MINODE*,char*,int,int);
-int remove_name(MINODE*,char*);
+int remove_name(MINODE*,char*, int);
 int incFreeInodes(int), decFreeInodes(int);
 int set_bit(char*,int), clr_bit(char*,int), tst_bit(char*,int);
 int ialloc(int dev), idalloc(int,int);
 int incFreeBlocks(int), decFreeBlocks(int);
 int balloc(int dev), bdalloc(int,int);
 int clearOftEntry(int);
+char* get_parent_path(char*), *get_dest_path(char*);
+int check_dup_file(DIR*,char*,int);
+int mode_to_filetype(int);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
-extern int _pwd(MINODE*);
+extern int _pwd(char*);
 extern int _ls(char*);
 extern int _creat(char*);
 extern int _touch(char*);
@@ -65,11 +68,13 @@ extern int _chmod(char*);
 
 //Level2: Function Prototypes
 extern int _mv(char*);
+extern int _cp(char*);
 extern int _open(char *);
 extern int _read(char*);
 extern int _pfd(char*);
 extern int _close(char*);
-extern int _lseek(char*);
+extern int _write(char*);
+extern int _cat(char*);
 
 #endif
 

@@ -19,6 +19,6 @@ int _close(char* fdString){
     }
     clearOftEntry(fd); //Clear OFT entry
     _Running->fd[fd] = 0; //Clear Process entry
-    printf("|Close file descriptor: %d",fd);
+    printf("|Close file descriptor: %d\n",fd);
 
 }

@@ -15,22 +15,33 @@ void print_notice( char* message)
     printf("Notice: %s\n", message);
 }
 
+int reset_path_tokens(void)
+{
+    for(int i = 0; i < PATH_TOKENS; i++){
+        int size = sizeof(_PathTokens[i]) * sizeof(char);
+        memset(_PathTokens[i], 0, size);
+    }
+}
+
 int tokenize(char *pathname)
 {
-    strcpy(_Path, pathname);
-    _PathTokenCount = 0;
-    char* token = strtok(pathname, PATH_DELIMITER);
+    char* temp = (char*) malloc((strlen(pathname)+1) * sizeof(char));
+    strcpy(temp, pathname); strcpy(_Path, pathname);
+    _PathTokenCount = 0; reset_path_tokens();
+    char* token = strtok(temp, PATH_DELIMITER);
     while(token){
-        _PathTokens[_PathTokenCount++] = token;
+        strcpy(_PathTokens[_PathTokenCount++], token);
         token = strtok(NULL, PATH_DELIMITER);
     }
+    free(temp);
+    return 0;
 }
 
 int search(MINODE* mip, char* name)
 {
     for (int i = 0; i < 12; i++)  // search DIR direct blocks only
     {
-        char temp[256], buf[BLKSIZE];
+        char temp[PATH_SIZE], buf[BLKSIZE];
         int blk = mip->INODE.i_block[i];
         if (blk == 0) { return 0; }
         get_block(mip->dev, blk, buf);
@@ -185,14 +196,13 @@ int getino(char *pathname)
         char* name = _PathTokens[i];
         if (!S_ISDIR(mip->INODE.i_mode)) // check DIR type
         {
-            printf("'%s' is Not a Directory\n", name);
+            //printf("'%s' is Not a Directory\n", name);
             iput(mip);
             return 0;
         }
         ino = search(mip, name);
         if (ino == 0)
         {
-            printf("No such Component named '%s'\n", name);
             iput(mip);
             return 0;
         }
@@ -203,9 +213,46 @@ int getino(char *pathname)
     return ino;
 }
 
+int check_dup_file(DIR* dp, char* name, int fileType){
+    char temp[PATH_SIZE];
+    strncpy(temp, dp->name, dp->name_len);
+    temp[dp->name_len] = 0;
+    //file already exist in current dir with the same name and same type
+    int bothDirs = dp->file_type == DE_DIR && fileType == DE_DIR? 1 : 0;
+    int neitherDirs = dp->file_type != DE_DIR && fileType != DE_DIR? 1 : 0;
+    int sameTye = (bothDirs == 1 || neitherDirs == 1)? 1 : 0;
+    if (!strcmp(name, temp) && sameTye)
+    {
+        return 1;
+    }
+    return 0;
+}
 
+int mode_to_filetype(int mode){
+    if(S_ISDIR(mode)){
+        return DE_DIR;
+    }
+    else if(S_ISREG(mode)){
+        return DE_REG;
+    }
+    else if(S_ISLNK(mode)){
+        return DE_SYMLK;
+    }
+    else if(S_ISBLK(mode)){
+        return DE_BLK_DEV;
+    }
+    else if(S_ISCHR(mode)){
+        return DE_CHAR_DEV;
+    }
+    else if(S_ISSOCK(mode)){
+        return DE_SOCKET;
+    }
+    else {
+        return DE_UNKOWN;
+    }
+}
 
-int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
+int enter_name(MINODE* p_mip, char* name, int ino, int fileType)
 {
     int block_index = 0;
     while(1)
@@ -215,22 +262,33 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
         if (blk == 0) { return 0; }
         get_block(p_mip->dev, blk, buf);
         DIR *dp = (DIR *) buf;
-        char *cp = buf;
+        char *cp = buf, *prev;
         //All dir_entries rec_len = ideal_length, except the last entry.
         //The rec_len of the LAST entry is to the end of the block, which may be larger than its ideal_length.
-        int name_len = strlen(base);
+        int name_len = strlen(name);
         //In order to enter a new entry of name with n_len, the needed length is
         int need_length = 4 * ((8 + name_len + 3) / 4);
-        while ((cp + dp->rec_len) < (buf + BLKSIZE))
+        while (cp < (buf + BLKSIZE) && dp->inode != 0)
         {
+            if(check_dup_file(dp, name, fileType) == 1){
+                print_notice("enter_name: file of same type and name already exist in directory");
+                return -1;
+            }
+            prev = cp;
             cp += dp->rec_len;
             dp = (DIR *) cp;
         }
+        cp = prev;
+        dp = (DIR *) cp;
+        // dp NOW points at last entry in block
         /*if(dp == NULL){
             decFreeInodes//The new data block containins only one entry.
             dp->rec_len = BLKSIZE;
+        }
+        if(prev == NULL){
+            print_notice("enter_name: invalid directory, cannot create new file inside");
+            return -1;
         }*/
-        // dp NOW points at last entry in block
         int ideal_length = 4 * ((8 + dp->name_len + 3) / 4);
         int remain = dp->rec_len - ideal_length;
         if (remain >= need_length) {
@@ -245,7 +303,7 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
             dp->file_type = fileType;
             dp->name_len = name_len;
             dp->inode = ino;
-            strcpy(dp->name, base);
+            strcpy(dp->name, name);
             put_block(p_mip->dev, blk, buf);
             return dp->inode;
         }
@@ -260,9 +318,10 @@ int enter_name(MINODE* p_mip, char* base, int ino, int fileType)
             break;
         }
     }
+    return 0;
 }
 
-int remove_name(MINODE *pmip, char* name)
+int remove_name(MINODE *pmip, char* name, int isDir)
 {
     for(int i = 0; i < 12; i++) {
         char buf[BLKSIZE];
@@ -270,7 +329,7 @@ int remove_name(MINODE *pmip, char* name)
         get_block(pmip->dev, blk, buf);
         DIR *curr = (DIR *) buf, *prev = NULL;
         char* cp = buf;
-        char temp[256] = "";
+        char temp[PATH_SIZE] = "";
         int isFound = 0;
         int rec_len_move = 0, removed_rec_len = 0;
         while(cp < (BLKSIZE + buf) && curr->inode != 0)
@@ -279,7 +338,8 @@ int remove_name(MINODE *pmip, char* name)
             strncpy(temp, curr->name, curr->name_len);
             temp[curr->name_len] = 0;
             rec_len_move = curr->rec_len;
-            if(!strcmp(temp, name))
+            int correct_file_type = (isDir == 1)? (curr->file_type == 2? 1: 0): (curr->file_type != 2? 1: 0);
+            if(!strcmp(temp, name) && correct_file_type)
             {
                 //if directory to remove is found indicate it was found and record the size of the directory and reset the memory space
                 removed_rec_len = rec_len_move;
@@ -493,4 +553,18 @@ int clearOftEntry(int fd){
     _Ofts[fd].offset = 0;
     strcpy(_Ofts[fd].fileName,"");
     _OpenOFT--;
+}
+
+char* get_parent_path(char* path)
+{
+    char* temp = (char*) malloc((strlen(path)+1) * sizeof(char));
+    strcpy(temp, path);
+    return strchr(path, '/')?  dirname(temp) : "";
+}
+
+char* get_dest_path(char* path)
+{
+    char* temp = (char*) malloc((strlen(path)+1) * sizeof(char));
+    strcpy(temp, path);
+    return strchr(path, '/')?  basename(temp) : path;
 }
