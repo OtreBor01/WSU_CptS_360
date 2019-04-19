@@ -29,13 +29,12 @@ int _rm(char* pathname)
     }
 
     //(3). get parent’s ino and inode
-    char* base = basename(pathname);
-    char* parentPath =  !strcmp(pathname, base) ? "" : base;
-    int pino = getino(parentPath); //get parent inode number by getting pino from .. entry in INODE.i_block[0]
+    char* base = get_parent_path(pathname);
+    int pino = getino(base); //get parent inode number by getting pino from .. entry in INODE.i_block[0]
     MINODE* pmip = iget(mip->dev, pino); //get parent directory MINODE
 
     //(4). get name from parent DIR’s data block
-    char* name = strchr(pathname, '/')?  dirname(pathname) : pathname; //gets the name of the file to delete, findname(pmip, ino, name);
+    char* name = get_dest_path(pathname); //gets the name of the file to delete, findname(pmip, ino, name);
 
     //(5). remove name from parent directory
     int isDir = 0;
