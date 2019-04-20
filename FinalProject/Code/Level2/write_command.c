@@ -13,7 +13,7 @@ int _write(char* pathname)
     // number of bytes read
     char buf[BLKSIZE];
     int nbytes = 0, fd = 0;
-    sscanf(pathname, "%d %s", &fd, buf);
+    sscanf(pathname, "%d %[^\n]", &fd, buf);
     nbytes = strlen(buf);
     nbytes = write_file(fd, buf, nbytes);
 }

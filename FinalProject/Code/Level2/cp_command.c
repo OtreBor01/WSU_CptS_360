@@ -41,28 +41,28 @@ int _cp(char*pathname)
 
 
     //fd = open src for READ;
-    char openRead[PATH_SIZE] = "";//read mode
-    strcpy(openRead, source);
-    strcat(openRead, " 0");
-    int fd = _open(openRead);
-
+    int fd = open_file(source, 0);
+    if(fd < 0){
+        print_notice("cp: unable to open source file for read");
+        return -1;
+    }
     //gd = open dst for WR|CREAT;
-    char openWrite[PATH_SIZE] = "";//write mode
-    strcpy(openWrite, dest);
-    strcat(openWrite, " 1");
-    int gd = _open(openWrite);
+    int gd = open_file(dest, 1);
+    if(gd < 0){
+        print_notice("cp: unable to open destination file for write");
+        return -1;
+    }
 
-    _pfd("");
     char buf[BLKSIZE];
     int nbytes = 0;
-    //loop this?
-    nbytes = read_file(fd, buf, BLKSIZE);
-    nbytes = write_file(gd, buf, nbytes);  // notice the nbytes in write()
+    //copies all bytes from source file to dest file
+    while((nbytes = read_file(fd, buf, BLKSIZE)) > 0){
+        buf[nbytes] = 0;             // as a null terminated string
+        //spit out chars from buf[ ] but handle \n properly
+        nbytes = write_file(gd, buf, nbytes);  // notice the nbytes in write()
+    }
     //close the files
-    char fd_str[3] = "";
-    snprintf(fd_str, sizeof(fd_str), "%d", fd);
-    _close(fd_str);
-    snprintf(fd_str, sizeof(fd_str), "%d", gd);
-    _close(fd_str);
+    close_file(fd);
+    close_file(gd);
     return nbytes;
 }

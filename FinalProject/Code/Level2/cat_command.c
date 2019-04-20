@@ -21,18 +21,18 @@ int _cat(char* pathanme)
 {
     char buf[BLKSIZE];  // a null char at end of mybuf[ ]
     int nbytes = 0;
-    char openRead[PATH_SIZE] = "";
-    strcpy(openRead, pathanme); strcat(openRead, " 0");//open for read
-    int fd = _open(openRead);
-    if(fd == -1){
+    int fd = open_file(pathanme, 0);
+    if(fd < 0){
         print_notice("cat: unable to open file for read");
         return -1;
     }
+    printf("=====================  cat (fd = %02d)  =====================\n", fd);
     while((nbytes = read_file(fd, buf, BLKSIZE)) > 0){
         buf[nbytes] = 0;             // as a null terminated string
         //spit out chars from buf[ ] but handle \n properly
-        puts(buf);
+        printf("%s", buf);
     }
-    _close(fd);
+    printf("\n===========================================================\n");
+    close_file(fd);
     return nbytes;
 }
