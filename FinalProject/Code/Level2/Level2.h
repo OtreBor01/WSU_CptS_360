@@ -47,5 +47,7 @@ int mv_into_dir(MINODE*,MINODE*,MINODE*,char*);
 int seperate_path(char*,char*,char*);
 int read_file(int,char*,int);
 int write_file(int,char*,int);
+int close_file(int);
+int open_file(char*,int);
 
 #endif

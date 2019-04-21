@@ -76,6 +76,11 @@ CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Level1/Le
 CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Level1/utility_functions.c
 CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Type.h
 
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: ../Code/Level2/Level2.h
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: ../Code/Level2/cat_command.c
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: ../Code/Type.h
+
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/Level2.h
 CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/close_command.c
