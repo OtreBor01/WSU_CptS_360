@@ -9,8 +9,8 @@ int _unlink(char* pathname){
     char parent[500], child[500];
     MINODE* mip = iget(dev, ino);
     //Make sure file type is not a directory
-    if(S_ISDIR(mip->INODE.i_mode)){
-        print_notice("File type cannot be directory");
+    if(!S_ISLNK(mip->INODE.i_mode)){
+        print_notice("File type must be link");
         return -1;
     }
     //remove name entry from parent DIR data block
