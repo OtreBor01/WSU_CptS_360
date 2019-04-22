@@ -150,6 +150,9 @@
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/mv_command.c">
 			<Option target="FinalProject"/>
 		</Unit>

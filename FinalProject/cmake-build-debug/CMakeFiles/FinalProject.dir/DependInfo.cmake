@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o"
   "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o"
   "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o"
+  "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o"
   "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/mv_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o"
   "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/open_command.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
   "/home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/pfd.c" "/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"

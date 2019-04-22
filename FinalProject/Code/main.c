@@ -21,8 +21,8 @@ int (*lvl1_fptr[])(char*) = {_cd, _ls,  _pwd, _chmod, _stat, _creat, _touch, _rm
 char* lvl1_cmds[] = { "cd", "ls",  "pwd", "chmod", "stat", "creat", "touch", "rm", "mkdir", "rmdir", "link", "symlink", "readlink", "unlink", NULL };
 
 //Level2 Commands
-int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _cat, NULL };
-char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "cat", NULL };
+int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _lseek,  _cat, NULL };
+char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "lseek", "cat", NULL };
 
 //Level2 Commands
 int (*lvl3_fptr[])(char*) = { NULL }; //_mount, _unmount
