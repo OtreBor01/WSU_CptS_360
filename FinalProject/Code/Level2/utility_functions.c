@@ -18,6 +18,7 @@ int lbk_to_blk(MINODE* mip, int lbk)
 {
     int ibuf[256];
     char buf[BLKSIZE];
+    MTABLE *mp = getMountTable(mip->dev);
     // convert lbk to blk via INODE
     if (lbk < 12)// direct blocks
     {
@@ -46,7 +47,7 @@ int lbk_to_blk(MINODE* mip, int lbk)
                 break;
             }
         }
-        int block = (i - 1) / 8 + _IStartBlock;
+        int block = (i - 1) / 8 + mp->iblock;
         int offset = (i - 1) % 8;
         get_block(mip->dev, block, ibuf);
         return ibuf + offset;

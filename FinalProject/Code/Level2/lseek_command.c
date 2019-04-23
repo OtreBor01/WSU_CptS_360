@@ -13,7 +13,7 @@ int _lseek(char* arguments){
     sscanf(arguments,"%d %d",&fd, &position);
     OFT *oftp = &_Ofts[fd];
     if(oftp == 0){
-        print_notice('File discriptor is null');
+        print_notice("File discriptor is null");
         return -1;
     }
     if(position < 0 || position > oftp->minodePtr->INODE.i_size){

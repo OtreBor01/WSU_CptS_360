@@ -4,7 +4,7 @@
 #include "Level1.h"
 
 int _symlink(char* pathname){
-    int dev = _Root->dev;
+    int dev = _Running->cwd->dev;
     char* oldFile ,*newFile,  *parentDirName, *childBaseName;
     int oino, nino, pino; //old inode and new inode and parent inode
     MINODE * omip , *pmip, *nmip; //old mip and parent mip

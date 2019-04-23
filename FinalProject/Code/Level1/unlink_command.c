@@ -4,7 +4,7 @@
 #include "Level1.h"
 
 int _unlink(char* pathname){
-    int dev = _Root->dev;
+    int dev = _Running->cwd->dev;
     int ino = getino(pathname);
     char parent[500], child[500];
     MINODE* mip = iget(dev, ino);

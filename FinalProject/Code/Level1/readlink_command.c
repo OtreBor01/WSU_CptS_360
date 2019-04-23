@@ -6,7 +6,7 @@
 
 int _readlink(char* pathname){
 
-    int dev = _Root->dev;
+    int dev = _Running->cwd->dev;
     int ino = getino(pathname);
     MINODE* mip = iget(dev,ino);
     INODE* ip = &mip->INODE;
@@ -30,7 +30,7 @@ int _readlink(char* pathname){
     //grab ino from pathname found in link file iblocks
     lino = getino(linkPath);
     //grab mip for file linked to
-    lmip = iget(_Root->dev, lino);
+    lmip = iget(_Running->cwd->dev, lino);
     printf("Link file size: %d",lmip->INODE.i_size);
     return lmip->INODE.i_size;
 

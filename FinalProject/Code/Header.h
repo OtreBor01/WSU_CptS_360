@@ -25,6 +25,8 @@
 char    _Path[PATH_SIZE];
 char    _PathTokens[PATH_TOKENS][PATH_SIZE];
 int     _PathTokenCount;
+extern int _Total_Mounts;
+
 
 
 //***** Function Prototypes *****
@@ -49,6 +51,7 @@ int clearOftEntry(int);
 char* get_parent_path(char*), *get_dest_path(char*);
 int check_dup_file(DIR*,char*,int);
 int mode_to_filetype(int);
+MTABLE* getMountTable(int);
 
 //Level1: Function Prototypes
 extern int _cd(char*);
@@ -76,6 +79,10 @@ extern int _close(char*);
 extern int _write(char*);
 extern int _cat(char*);
 extern int _lseek(char*);
+
+//Level3: Function Prototypes
+extern int mount_root(char*,char*);
+
 
 #endif
 

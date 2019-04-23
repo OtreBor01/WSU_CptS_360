@@ -28,5 +28,6 @@ int _Total_Mounts;
 int mountStat(void);
 int checkMounted(char*);
 int checkCwdBusy(char*);
+int mount_root(char*,char*);
 
 #endif //LEVEL3_H
