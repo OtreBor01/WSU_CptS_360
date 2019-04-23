@@ -68,12 +68,11 @@ int init(void)
 }
 
 int mount_root_dev(){
-    char rootdev[50] = "", device[64] = "../";
+    char rootdev[50] = "";
     printf("Enter RootDev (Disk) Name: ");
     fgets(rootdev, sizeof(rootdev), stdin);
     rootdev[strlen(rootdev)-1] = 0; //removes '\n' from string
-    strcat(device, rootdev);
-    return mount_root(device, "/");
+    return mount_root(rootdev, "/");
 }
 
 int init_proc(int dev){
@@ -148,6 +147,8 @@ int menu(char* pathname)
     puts("| pfd                                                            - display opened file descriptors       |");
     puts("|--------------------------------------------------------------------------------------------------------|");
     puts("|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|\n");
+    // close - close a file descriptor
+    //lseek - reposition read/write file offset
     return 0;
 }
 
