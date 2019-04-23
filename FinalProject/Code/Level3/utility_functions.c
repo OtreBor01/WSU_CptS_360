@@ -8,7 +8,7 @@
  */
 int mountStat(void){
     for(int i = 0; i < _Total_Mounts; i++){
-        printf("%s is mounted on %s", _MTables[i].devName, _MTables[i].mntName);
+        printf("%s is mounted on %s\n", _MTables[i].devName, _MTables[i].mntName);
     }
 }
 
@@ -18,10 +18,11 @@ int mountStat(void){
  */
 int checkMounted(char* diskname){
     int i = 0;
-    while((i < _Total_Mounts) & (strlen(_MTables[i].devName) != 0)){
+    for(;(i < _Total_Mounts) & (strlen(_MTables[i].devName) != 0);i++){
         if(strcmp(_MTables[i].devName, diskname) == 0){
             return -1;
         }
+
     }
     return 0;
 }
@@ -36,6 +37,7 @@ int checkCwdBusy(char* pathname){
             print_notice("Directory is currently busy");
             return -1;
         }
+        i++;
     }
     return 0;
 }
