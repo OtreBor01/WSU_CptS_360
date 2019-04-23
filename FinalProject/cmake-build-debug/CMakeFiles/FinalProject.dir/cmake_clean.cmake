@@ -26,6 +26,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o"
+  "CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o"
+  "CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o"
+  "CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o"
   "FinalProject.pdb"
   "FinalProject"
 )
