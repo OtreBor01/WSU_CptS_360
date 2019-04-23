@@ -18,11 +18,10 @@ int mountStat(void){
  */
 int checkMounted(char* diskname){
     int i = 0;
-    for(;(i < _Total_Mounts) & (strlen(_MTables[i].devName) != 0);i++){
+    for(;(i < _Total_Mounts) & (strlen(_MTables[i].devName) != 0); i++){
         if(strcmp(_MTables[i].devName, diskname) == 0){
             return -1;
         }
-
     }
     return 0;
 }
@@ -32,12 +31,11 @@ int checkMounted(char* diskname){
  */
 int checkCwdBusy(char* pathname){
     int i = 0;
-    while(i < NUM_PROC & strlen(_Procs[i].cwd)!= 0 ){
+    for(;i < NUM_PROC & strlen(_Procs[i].cwd)!= 0; i++){
         if(strcmp(_Procs[i].cwd,pathname)==0){
             print_notice("Directory is currently busy");
             return -1;
         }
-        i++;
     }
     return 0;
 }
@@ -47,10 +45,13 @@ int checkCwdBusy(char* pathname){
 
 int mount_root(char* disk, char* path) {
     //Open Device (disk)
-    int dev = open(disk, O_RDWR | O_RDONLY);
+    char device[64] = "../";
+    strcat(device, disk);
+    int dev = open(device, O_RDWR | O_RDONLY);
     if (dev < 0)
     {
-        print_error("mount_root", "Unable to Open Root Device");
+        print_notice("mount_root: Unable to Open Root Device");
+        return -1;
     }
     MTABLE* mp = &_MTables[_Total_Mounts++];
     mp->dev = dev;
@@ -80,6 +81,9 @@ int mount_root(char* disk, char* path) {
 
     //Get Root INODE
     int ino = getino(path);
+    if(ino == 0){
+        print_notice("mount_root: Unable to locate directory specified");
+    }
     MINODE* root = iget(dev, ino); // get root inode
     if(_Total_Mounts == 1){
         _Root = root;
