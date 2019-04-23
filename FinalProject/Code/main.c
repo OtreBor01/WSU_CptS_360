@@ -35,7 +35,7 @@ int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
 
 int init(void)
 {
-    _Total_Mounts = 1;
+    _Total_Mounts = 0;
     _OpenOFT = 0;//Set the number of open oft values
     puts("Initializing EXT2 Data Structures");
     //Sets all MINODE's refCount to 0 in the array
