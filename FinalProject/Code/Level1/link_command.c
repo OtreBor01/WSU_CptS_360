@@ -28,7 +28,7 @@ int _link(char* pathname){
         dev = _Running->cwd->dev;
     }
     */
-    dev = _Root->dev;
+    dev =_Running->cwd->dev;
 
     //Get old File inode and check File type
     oino = getino(oldFile);

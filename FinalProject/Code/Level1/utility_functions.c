@@ -77,12 +77,12 @@ int kmkdir(MINODE* pmip, char* name){
 
 
     //Allocate an INODE and disk block
-    ino = ialloc(_Root->dev);
-    blk = balloc(_Root->dev);
+    ino = ialloc(pmip->dev);
+    blk = balloc(pmip->dev);
 
     //4.2 Create INODE
     //Load INODE into a minode
-    MINODE* mip = iget(_Root->dev, ino);
+    MINODE* mip = iget(pmip->dev, ino);
     INODE * ip = &mip->INODE;
     ip->i_mode = 0x41ED;// 040755: DIR type and permissions
     ip->i_uid = _Running->uid; // owner uid
@@ -113,7 +113,7 @@ int kmkdir(MINODE* pmip, char* name){
     dp->rec_len = BLKSIZE-12;// rec_len spans block
     dp->name_len = 2;
     dp->name[0] = dp->name[1] = '.';
-    put_block(_Root->dev, blk, buf);// write to blk on diks
+    put_block(pmip->dev, blk, buf);// write to blk on diks
     return enter_name(pmip, name, ino, DE_DIR);
 }
 

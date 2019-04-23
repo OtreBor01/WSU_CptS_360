@@ -8,7 +8,7 @@
 //***** Function Prototypes *****
 int quit(char*), menu(char*);
 int init(void);
-int mount_root(void);
+int mount_root_dev();
 int get_command_index(char*,int*), execute_cmd(int,int,char*);
 
 //***** Global Variables *****
@@ -35,6 +35,8 @@ int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
 
 int init(void)
 {
+    _Total_Mounts = 1;
+    _OpenOFT = 0;//Set the number of open oft values
     puts("Initializing EXT2 Data Structures");
     //Sets all MINODE's refCount to 0 in the array
     for (int i = 0; i < NUM_MINODE; i++) {
@@ -65,62 +67,13 @@ int init(void)
     _Running = &_Procs[0]; //sets the running proc to P0
 }
 
-int mount_root(void) {
-    //1. ) Open rootdev
-    puts("Mounting EXT2 Root");
+int mount_root_dev(){
     char rootdev[50] = "", device[64] = "../";
-    printf("Enter Root-Dev (Disk) Name: ");
+    printf("Enter RootDev (Disk) Name: ");
     fgets(rootdev, sizeof(rootdev), stdin);
     rootdev[strlen(rootdev)-1] = 0; //removes '\n' from string
     strcat(device, rootdev);
-    printf("Device: '%s'\n", device);
-    int dev = open(device, O_RDWR | O_RDONLY);
-    if (dev < 0)
-    {
-        print_error("mount_root", "Unable to Open Root Device");
-    }
-
-    //2.) get super block of rootdev
-    char buf[BLKSIZE];
-    get_block(dev, SUPERBLOCK, buf);
-    _Super = (SUPER *) buf;
-    //3.) check if magic number
-    if (_Super->s_magic != EXT2_SUPER_MAGIC)
-    {
-        print_error("mount_root", "Root Device is Not a Valid EXT2 File System");
-    }
-    _OpenOFT = 0;//Set the number of open oft values
-    // fill mount table mtable[0] with rootdev information
-    MTABLE* mp = &_MTables[0];
-    // use mtable[0]
-    mp->dev = dev;
-    // copy super block info into mtable[0]
-    mp->ninodes = _Super->s_inodes_count;
-    _NumberOfBlocks = mp->nblocks = _Super->s_blocks_count;
-    strcpy(mp->devName, rootdev);
-    strcpy(mp->mntName, PATH_DELIMITER);
-    get_block(dev, GDBLOCK, buf);
-    _GroupDec = (GD *)buf;
-    int bmap = mp->bmap = _GroupDec->bg_block_bitmap;
-    int imap = mp->imap = _GroupDec->bg_inode_bitmap;
-    int iblock = _IStartBlock = mp->iblock  = _GroupDec->bg_inode_table;
-
-    printf("|super-magic = %x | bmap = %d | imap = %d | iblock = %d|\n",
-            _Super->s_magic, bmap, imap, iblock);
-    printf("|nblocks = %d | bfree = %d | ninodes = %d | ifree = %d|\n",
-            _NumberOfBlocks, _Super->s_free_blocks_count, _Super->s_inodes_count, _Super->s_free_inodes_count);
-
-    // call iget(), which inc minode’s refCount
-    _Root = iget(dev, ROOT_INODE); // get root inode
-    mp->mntDirPtr = _Root; // double link
-    _Root->dev = dev;
-    _Root->mptr = mp;
-    for (int i=0; i<NUM_PROC; i++) // set proc’s CWD
-    {
-        _Procs[i].cwd = iget(dev, ROOT_INODE); // each inc refCount by 1
-    }
-    printf("root_mount: '%s' mounted on / \n", rootdev);
-    return dev;
+    return mount_root(device, "/");
 }
 
 int init_proc(int dev){
@@ -243,7 +196,7 @@ int execute_cmd(int lvl, int command, char* pathname)
 int main(int argc, char *argv[ ])
 {
     init();
-    int dev = mount_root();
+    int dev = mount_root_dev();
     init_proc(dev);
     while(1){
         char line[PATH_SIZE] = "", cmd[16] = "", pathname[64] = "";

@@ -128,7 +128,8 @@ MINODE *iget(int dev, int ino)
     // assign to (dev, ino)
     mip->dev = dev;
     mip->ino = ino;
-    int block = (ino - 1) / 8 + _IStartBlock; // disk block containing this inode
+    MTABLE *mp = getMountTable(dev);
+    int block = (ino - 1) / 8 + mp->iblock; // disk block containing this inode
     int offset = (ino - 1) % 8; // which inode in this block
     char buf[BLKSIZE];
     get_block(dev, block, buf);
@@ -151,11 +152,12 @@ MINODE *iget(int dev, int ino)
 int iput(MINODE *mip) {
     char buf[BLKSIZE];
     if (mip == 0) { return 0; }
+    MTABLE *mp = getMountTable(mip->dev);
     mip->refCount--; // dec refCount by 1
     if (mip->refCount > 0) { return 0; } // still has user
     if (mip->dirty == 0) { return 0; } // no need to write back
     // write INODE back to disk
-    int block = (mip->ino - 1) / 8 + _IStartBlock;
+    int block = (mip->ino - 1) / 8 + mp->iblock;
     int offset = (mip->ino - 1) % 8;
     // get block containing this inode
     get_block(mip->dev, block, buf);
@@ -388,38 +390,50 @@ int remove_name(MINODE *pmip, char* name, int isDir)
 
 int incFreeInodes(int dev)
 {
+
     char buf[BLKSIZE];
+    MTABLE *mp = getMountTable(dev);
     // dec free inodes count in SUPER and GD
     get_block(dev, 1, buf); //get super
-    _Super = (SUPER *)buf;
-    _Super->s_free_inodes_count++;
+    SUPER* super = (SUPER *)buf;
+    mp->free_inodes = ++super->s_free_inodes_count;
     put_block(dev, 1, buf); //update super
     get_block(dev, 2, buf); //group descipter
-    _GroupDec = (GD *)buf;
-    _GroupDec->bg_free_inodes_count++;
+    GD* group = (GD *)buf;
+    group->bg_free_inodes_count--;
     put_block(dev, 2, buf);
 }
 
 int decFreeInodes(int dev)
 {
     char buf[BLKSIZE];
+    MTABLE *mp = getMountTable(dev);
     // dec free inodes count in SUPER and GD
     get_block(dev, 1, buf); //get super
-    _Super = (SUPER *)buf;
-    _Super->s_free_inodes_count--;
+    SUPER* super = (SUPER *)buf;
+    mp->free_inodes = --super->s_free_inodes_count;
     put_block(dev, 1, buf); //update super
     get_block(dev, 2, buf); //group descipter
-    _GroupDec = (GD *)buf;
-    _GroupDec->bg_free_inodes_count--;
+    GD* group = (GD *)buf;
+    group->bg_free_inodes_count--;
     put_block(dev, 2, buf);
 }
 
+
+MTABLE* getMountTable(int dev){
+    for(int i = 0; i < NUM_MTABLE; i++){
+        MTABLE* mt = &_MTables[i];
+        if(mt != NULL && mt->dev == dev){
+            return mt;
+        }
+    }
+}
 
 int ialloc(int dev)
 {
     char buf[BLKSIZE];
     // use imap, ninodes in mount table of dev
-    MTABLE *mp = &_MTables[0];
+    MTABLE *mp = getMountTable(dev);
     get_block(dev, mp->imap, buf);
     for (int i=0; i < mp->ninodes; i++)
     {
@@ -438,7 +452,7 @@ int ialloc(int dev)
 increments the free inodes count in both superblock and group descriptor by 1.*/
 int idalloc(int dev, int ino) {
     char buf[BLKSIZE];
-    MTABLE *mp = &_MTables[0];
+    MTABLE *mp = getMountTable(dev);
     if (ino > mp->ninodes){ // niodes global
         print_notice("INode number is out of range");
         return -1;
@@ -481,28 +495,30 @@ int incFreeBlocks(int dev)
 {
 // dec free inodes count in SUPER and GD
     char buf[BLKSIZE];
+    MTABLE *mp = getMountTable(dev);
     get_block(dev, 1, buf);
-    _Super = (SUPER *)buf;
-    _Super->s_free_blocks_count;
+    SUPER* super = (SUPER *)buf;
+    mp->free_blocks = ++super->s_free_blocks_count;
     put_block(dev, 1, buf);
     get_block(dev, 2, buf);
-    _GroupDec = (GD *)buf;
-    _GroupDec->bg_free_blocks_count++;
+    GD* group = (GD *)buf;
+    group->bg_free_blocks_count++;
     put_block(dev, 2, buf);
 }
 
 
 int decFreeBlocks(int dev)
 {
-// dec free inodes count in SUPER and GD
+    // dec free inodes count in SUPER and GD
+    MTABLE *mp = getMountTable(dev);
     char buf[BLKSIZE];
     get_block(dev, 1, buf);
-    _Super = (SUPER *)buf;
-    _Super->s_free_blocks_count;
+    SUPER* super = (SUPER *)buf;
+    mp->free_blocks = --super->s_free_blocks_count;
     put_block(dev, 1, buf);
     get_block(dev, 2, buf);
-    _GroupDec = (GD *)buf;
-    _GroupDec->bg_free_blocks_count--;
+    GD* group = (GD *)buf;
+    group->bg_free_blocks_count--;
     put_block(dev, 2, buf);
 }
 
@@ -511,7 +527,7 @@ int balloc(int dev)
     char buf[BLKSIZE];
     // use bmap, nblocks in mount table of dev
     //MTABLE *mp = (MTABLE *)get_mtable(dev);
-    MTABLE *mp = &_MTables[0];
+    MTABLE *mp = getMountTable(dev);
     get_block(dev, mp->bmap, buf);
     for (int i=0; i < mp->nblocks; i++){
         if (tst_bit(buf, i)==0){
@@ -530,7 +546,7 @@ int balloc(int dev)
 int bdalloc(int dev, int bno)
 {
     char buf[BLKSIZE];
-    MTABLE *mp = &_MTables[0];
+    MTABLE *mp = getMountTable(dev);
     if (bno > mp->nblocks){
         print_notice("Block-Node number is out of range");
         return -1;

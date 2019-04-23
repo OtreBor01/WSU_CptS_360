@@ -15,7 +15,7 @@ int _mkdir(char* pathname){
         print_notice("mkdir: could not locate parent directory");
         return -1;
     }
-    pmip = iget(_Root->dev, pino);
+    pmip = iget(_Running->cwd->dev, pino);
     if(!S_ISDIR(pmip->INODE.i_mode)){
         print_notice("mkdir: could not locate parent directory");
         return -1;

@@ -11,7 +11,7 @@ File permission checking
 -----------------------------
 */
 
-/***** Libraries *****
+//***** Libraries *****
 #include "../Header.h"
 
 
@@ -19,12 +19,13 @@ File permission checking
 
 
 //***** Global Variables *****
+int _Total_Mounts;
+
 
 //***** Function Prototypes *****
 //*** Commands ***
 
 //*** Utility Functions ***
-
-
+int mount_root(char*,char*);
 
 #endif //LEVEL3_H
