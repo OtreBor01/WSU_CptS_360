@@ -13,12 +13,16 @@ int _mount(char* pathname){
         return 0;
     }
     sscanf(pathname, "%s %s", filesys,mount_point);
-    //check wheter filesys is already mounted
+    //check whether filesys is already mounted
     if(checkMounted(filesys) == -1){
         print_notice("File system is already mounted");
         return -1;
     }
-
-
+    int dev = mount_root(filesys,mount_point);
+    if(dev == -1){
+        print_notice("Mount unable to complete");
+        return -1;
+    }
+    return 0;
 
 }
