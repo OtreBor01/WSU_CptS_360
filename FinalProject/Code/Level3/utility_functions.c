@@ -6,49 +6,44 @@
 
 
 int mount_root(char* disk, char* path) {
-    int start_block = 0;
-    int num_of_blocks = 0;
-    SUPER* super;
-    GD* groupDesc;
     //Open Device (disk)
     int dev = open(disk, O_RDWR | O_RDONLY);
     if (dev < 0)
     {
         print_error("mount_root", "Unable to Open Root Device");
     }
+    MTABLE* mp = &_MTables[_Total_Mounts++];
+    mp->dev = dev;
+    strcpy(mp->devName, disk);
+    strcpy(mp->mntName, path);
+
 
     //Get and check super INODE
     char buf[BLKSIZE];
     get_block(dev, SUPERBLOCK, buf);
-    super = (SUPER *) buf;
+    SUPER* super = (SUPER *) buf;
     if (super->s_magic != EXT2_SUPER_MAGIC)
     {
         print_error("mount_root", "Root Device is Not a Valid EXT2 File System");
     }
-
-    //Get Group Desc INODE
-    get_block(dev, GDBLOCK, buf);
-    groupDesc = (GD *)buf;
-
-    //Get Root INODE
-    MINODE* root = iget(dev, path); // get root inode
-    if(_Total_Mounts == 0){
-        _Root = root;
-    }
-
-
-    // fill mount table mtable with disk information
-    MTABLE* mp = &_MTables[_Total_Mounts++];
-    mp->dev = dev;
     mp->ninodes = super->s_inodes_count;
     mp->nblocks = super->s_blocks_count;
     mp->free_blocks = super->s_free_blocks_count;
     mp->free_inodes = super->s_free_inodes_count;
-    strcpy(mp->devName, disk);
-    strcpy(mp->mntName, path);
+
+    //Get Group Desc INODE
+    get_block(dev, GDBLOCK, buf);
+    GD* groupDesc = (GD *)buf;
     mp->bmap = groupDesc->bg_block_bitmap;
     mp->imap = groupDesc->bg_inode_bitmap;
     mp->iblock  = groupDesc->bg_inode_table;
+
+    //Get Root INODE
+    int ino = getino(path);
+    MINODE* root = iget(dev, ino); // get root inode
+    if(_Total_Mounts == 1){
+        _Root = root;
+    }
     mp->mntDirPtr = root; // double link
     root->mptr = mp;
 
