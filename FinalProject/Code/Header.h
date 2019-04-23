@@ -82,6 +82,7 @@ extern int _lseek(char*);
 
 //Level3: Function Prototypes
 extern int mount_root(char*,char*);
+extern int _mount(char*);
 
 
 #endif

@@ -18,15 +18,15 @@ char* main_cmds[] = { "quit", "menu", NULL };
 
 //Level1 Commands
 int (*lvl1_fptr[])(char*) = {_cd, _ls,  _pwd, _chmod, _stat, _creat, _touch, _rm, _mkdir, _rmdir, _link, _symlink, _readlink, _unlink, NULL };
-char* lvl1_cmds[] = { "cd", "ls",  "pwd", "chmod", "stat", "creat", "touch", "rm", "mkdir", "rmdir", "link", "symlink", "readlink", "unlink", NULL };
+char* lvl1_cmds[] = { "cd", "ls",  "pwd", "chmod", "stat", "creat", "touch", "rm", "mkdir", "rmdir", "link", "symlink", "readlink", "unlink",  NULL };
 
 //Level2 Commands
 int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _lseek,  _cat, NULL };
 char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "lseek", "cat", NULL };
 
 //Level2 Commands
-int (*lvl3_fptr[])(char*) = { NULL }; //_mount, _unmount
-char* lvl3_cmds[] = { NULL }; //"mount", "unmount"
+int (*lvl3_fptr[])(char*) = { _mount,NULL }; //_mount, _unmount
+char* lvl3_cmds[] = {"mount", NULL }; //"mount", "unmount"
 
 //used to hold all command function pointer arrays
 int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
