@@ -57,6 +57,29 @@ int get_mount(char* fs){
     }
     return -1;
 }
+MINODE* mount_point(char* path, int dev){
+    int ino = getino(path);
+    if(ino == 0){
+        print_notice("mount_root: Unable to locate directory specified");
+        return NULL;
+    }
+    MINODE* root = iget(dev, ino); // get root inode
+    if(!S_ISDIR(root->INODE.i_mode)){
+        print_notice("mount_root: file specified is not a valid directory");
+        return NULL;
+    }
+    if(root->refCount > 1) {
+        print_notice("mount_root: directory specified is busy and cannot be mounted at this time");
+        return NULL;
+    }
+    if(_Total_Mounts == 1){
+        _Root = root;
+    }
+    return root;
+
+}
+
+
 
 
 int mount_root(char* disk, char* path) {
@@ -72,7 +95,8 @@ int mount_root(char* disk, char* path) {
     MTABLE* mp = &_MTables[_Total_Mounts++];
     mp->dev = dev;
     strcpy(mp->devName, disk);
-    strcpy(mp->mntName, path);
+    char* dest = get_dest_path(path);
+    strcpy(mp->mntName, dest);
 
 
     //Get and check super INODE
@@ -96,17 +120,10 @@ int mount_root(char* disk, char* path) {
     mp->iblock  = groupDesc->bg_inode_table;
 
     //Get Root INODE
-    int ino = getino(path);
-    if(ino == 0){
-        print_notice("mount_root: Unable to locate directory specified");
-    }
-    MINODE* root = iget(dev, ino); // get root inode
-    if(_Total_Mounts == 1){
-        _Root = root;
-    }
+    MINODE* root = mount_point(path, dev);
+    if(root == NULL){ return -1; }
     mp->mntDirPtr = root; // double link
     root->mptr = mp;
-
     printf("|super-magic = %x | bmap = %d | imap = %d | iblock = %d|\n",
            super->s_magic, mp->bmap,  mp->imap, mp->iblock);
     printf("|nblocks = %d | bfree = %d | ninodes = %d | ifree = %d|\n",
@@ -116,6 +133,6 @@ int mount_root(char* disk, char* path) {
     {
         _Procs[i].cwd = iget(dev, ROOT_INODE); // each inc refCount by 1
     }
-    printf("root_mount: '%s' mounted on %s \n", disk, path);
+    printf("root_mount: '%s' mounted on %s \n", disk, dest);
     return dev;
 }
