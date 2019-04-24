@@ -40,7 +40,23 @@ int checkCwdBusy(char* pathname){
     return 0;
 }
 
+int checkBusyFiles(char* dev){
+    for (int i = 0; i < NUM_MINODE; i++){
+        if(strcmp(_MINodes[i].dev,dev)==0){
+            return 1;
+        }
+    }
+    return 0;
+}
 
+int get_mount(char* fs){
+    for(int md = 0;md < NUM_MTABLE; md++){
+        if(strcmp(_MTables[md].devName, fs)==0){
+            return md;
+        }
+    }
+    return -1;
+}
 
 
 int mount_root(char* disk, char* path) {
