@@ -89,8 +89,7 @@ int replace_file(MINODE* src_mip, MINODE* p_dest_mip, MINODE* dest_mip, char* na
         remove_name(p_dest_mip, name, isDir);
     }
     fileType = mode_to_filetype(src_mip->INODE.i_mode);
-    enter_name(p_dest_mip, name, src_mip->ino, fileType);
-    return -1;
+    return enter_name(p_dest_mip, name, src_mip->ino, fileType);
 }
 
 //The original file is a directory so it can only be moved into another directory with its original name or...

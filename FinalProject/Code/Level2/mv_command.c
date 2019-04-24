@@ -9,7 +9,10 @@ int _mv(char*pathname)
     //1. ***** Seperates Paths into Source and Dest *****
     char source[125] = "", dest[125] = "";
     int validPaths = seperate_path(pathname, source, dest);
-    if(validPaths == -1){ return -1; }
+    if(validPaths == -1){
+        print_notice("mv: unable to locate source and dest path");
+        return -1;
+    }
 
     //2. ***** Get ino values for the base and dir files specified by source and dest paths
     //get inode numbers of files specified to move to and from
