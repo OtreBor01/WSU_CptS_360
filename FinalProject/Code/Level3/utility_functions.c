@@ -49,6 +49,29 @@ int checkBusyFiles(char* dev){
     return 0;
 }
 
+MINODE* mount_point(char* path, int dev){
+    int ino = getino(path);
+    if(ino == 0){
+        print_notice("mount_root: Unable to locate directory specified");
+        return NULL;
+    }
+    MINODE* root = iget(dev, ino); // get root inode
+    if(!S_ISDIR(root->INODE.i_mode)){
+        print_notice("mount_root: file specified is not a valid directory");
+        return NULL;
+    }
+    if(root->refCount > 1) {
+        print_notice("mount_root: directory specified is busy and cannot be mounted at this time");
+        return NULL;
+    }
+    if(_Total_Mounts == 1){
+        _Root = root;
+    }
+    return root;
+
+}
+
+
 int get_mount(char* fs){
     for(int md = 0;md < NUM_MTABLE; md++){
         if(strcmp(_MTables[md].devName, fs)==0){
