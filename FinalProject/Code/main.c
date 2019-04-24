@@ -25,8 +25,8 @@ int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _lsee
 char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "lseek", "cat", NULL };
 
 //Level2 Commands
-int (*lvl3_fptr[])(char*) = { _mount,NULL }; //_mount, _unmount
-char* lvl3_cmds[] = {"mount", NULL }; //"mount", "unmount"
+int (*lvl3_fptr[])(char*) = { _mount, _unmount, NULL }; //_mount, _unmount
+char* lvl3_cmds[] = {"mount", "unmount", NULL }; //"mount", "unmount"
 
 //used to hold all command function pointer arrays
 int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};

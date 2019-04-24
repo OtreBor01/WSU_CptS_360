@@ -65,6 +65,7 @@ int create_REG_INODE(int ino, MINODE* p_mip){
     }
     //set dirty and iput
     mip->dirty = 1;
+    mip->refCount = 2;
     iput(mip);
     mip->dirty = 0;
 }
@@ -96,6 +97,7 @@ int kmkdir(MINODE* pmip, char* name){
         ip->i_block[i] = 0;
     }
     mip->dirty = 1; //mark node as dirty
+    mip->refCount = 2;
     iput(mip); //write inode to disk
 
     //4.3

@@ -120,18 +120,22 @@ int mount_root(char* disk, char* path) {
 
     //Get Root INODE
     MINODE* root = mount_point(path, dev);
-    if(root == NULL){ return -1; }
+    if(root == NULL){
+        print_notice("mount_root: unable to locate directory to mount on");
+        return -1;
+    }
     mp->mntDirPtr = root; // double link
     root->mptr = mp;
     printf("|super-magic = %x | bmap = %d | imap = %d | iblock = %d|\n",
            super->s_magic, mp->bmap,  mp->imap, mp->iblock);
     printf("|nblocks = %d | bfree = %d | ninodes = %d | ifree = %d|\n",
            mp->nblocks, mp->free_blocks, mp->ninodes, mp->free_inodes);
-
-    for (int i=0; i<NUM_PROC; i++) // set proc’s CWD
-    {
-        _Procs[i].cwd = iget(dev, ROOT_INODE); // each inc refCount by 1
-    }
     printf("root_mount: '%s' mounted on %s \n", disk, dest);
     return dev;
 }
+/*
+ *  for (int i=0; i<NUM_PROC; i++) // set proc’s CWD
+    {
+        _Procs[i].cwd = iget(dev, root->ino); // each inc refCount by 1
+    }
+ */
