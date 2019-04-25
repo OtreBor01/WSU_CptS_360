@@ -11,6 +11,9 @@
 
 int _cp(char*pathname)
 {
+    int dev = _Running->cwd->dev;
+    int pdev = _Running->cwd->dev;
+    int ddev = _Running->cwd->dev;
     //1. ***** Seperates Paths into Source and Dest *****
     char source[125] = "", dest[125] = "";
     int validPaths = seperate_path(pathname, source, dest);
@@ -18,12 +21,12 @@ int _cp(char*pathname)
 
     //2. ***** Get ino values for the base and dir files specified by source and dest paths
     //get inode numbers of files specified to move to and from
-    int src_ino = getino(source);
+    int src_ino = getino(source, &dev);
 
     //get inode numbers of parent directories of files specified to move to and from..
     // checks if the parent directories are the root dir as well in the ternary operator
     char* base = get_parent_path(source);
-    int p_src_ino = getino(base);
+    int p_src_ino = getino(base, &pdev);
 
     //ensures that both the dir and base files exist according to the source pathname provided
     if(src_ino == 0 || p_src_ino == 0){
@@ -32,8 +35,8 @@ int _cp(char*pathname)
     }
 
     base = get_parent_path(dest);
-    int p_dest_ino = getino(base);
-    MINODE* p_dest_mip = iget(_Running->cwd->dev, p_dest_ino);
+    int p_dest_ino = getino(base,&ddev);
+    MINODE* p_dest_mip = iget(ddev, p_dest_ino);
     if(p_dest_ino == 0 || p_dest_mip == NULL || !S_ISDIR(p_dest_mip->INODE.i_mode)){
         print_notice("mv: unable to locate destination file operand");
         return -1;

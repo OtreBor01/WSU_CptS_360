@@ -283,11 +283,12 @@ int truncateHelper(MINODE* mip){
 
 int open_file(char *filename, int flags){
     //Get files minode
-    int ino = getino(filename);
+    int dev = _Running->cwd->dev;
+    int ino = getino(filename, &dev);
     if(ino == 0){//if file doesnt exist
         ino = _creat(filename); //create file
     }
-    MINODE* mip = iget(_Running->cwd->dev, ino);
+    MINODE* mip = iget(dev, ino);
     //check if file is regular
     if(!S_ISREG(mip->INODE.i_mode)){
         print_notice("open: file type is not regular");
