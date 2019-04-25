@@ -45,6 +45,6 @@ char* get_inode_name(MINODE*,int);
 int kmkdir(MINODE*,char*);
 int create_REG_INODE(int,MINODE*);
 void mode_to_letters(mode_t,char*);
-
+int check_file_permissions(MINODE* mip);
 
 #endif

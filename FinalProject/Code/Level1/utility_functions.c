@@ -136,3 +136,59 @@ void mode_to_letters(mode_t mode, char *str)
     str[9] = (mode & S_IXOTH) ? 'x' : '-';
     str[10] = '\0'; //terminating character
 }
+int convertDecimalToOctal(int decimalNumber)
+{
+    int octalNumber = 0, i = 1;
+
+    while (decimalNumber != 0)
+    {
+        octalNumber += (decimalNumber % 8) * i;
+        decimalNumber /= 8;
+        i *= 10;
+    }
+
+    return octalNumber;
+}
+
+int check_file_permissions(MINODE* mip){
+    int index = 0;
+    int mode = convertDecimalToOctal(mip->INODE.i_mode);
+    int uid = _Running->uid;
+    int c = 0; /* digit position */
+    int n = mode;
+
+    while (n != 0)
+    {
+        n /= 10;
+        c++;
+    }
+
+    int numberArray[c];
+
+    c = 0;
+    n = mode;
+
+/* extract each digit */
+    while (n != 0)
+    {
+        numberArray[c] = n % 10;
+        n /= 10;
+        c++;
+    }
+    /*
+    while(mode){
+        perm[index] = mode/modval;
+        mode %= modval;
+        modval/=10;
+        index++;
+    }*/
+    index = 3 - uid;
+    if(numberArray[index] == 2| numberArray[index] == 3| numberArray[index] == 6| numberArray[index] == 7){
+        //Checking against all writing octal numbers
+        return 0;
+    }
+    else{
+        return -1;
+    }
+
+}

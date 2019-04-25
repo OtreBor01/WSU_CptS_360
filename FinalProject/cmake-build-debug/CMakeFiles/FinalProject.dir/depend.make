@@ -131,6 +131,11 @@ CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o: ../Code/Level3/Level3
 CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o: ../Code/Level3/mount_command.c
 CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o: ../Code/Type.h
 
+CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o: ../Code/Header.h
+CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o: ../Code/Level3/Level3.h
+CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o: ../Code/Level3/su_command.c
+CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o: ../Code/Type.h
+
 CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: ../Code/Header.h
 CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: ../Code/Level3/Level3.h
 CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: ../Code/Level3/unmount_command.c

@@ -825,6 +825,33 @@ Code/Level3/mount_command.c.s:
 	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.s
 .PHONY : Code/Level3/mount_command.c.s
 
+Code/Level3/su_command.o: Code/Level3/su_command.c.o
+
+.PHONY : Code/Level3/su_command.o
+
+# target to build an object file
+Code/Level3/su_command.c.o:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o
+.PHONY : Code/Level3/su_command.c.o
+
+Code/Level3/su_command.i: Code/Level3/su_command.c.i
+
+.PHONY : Code/Level3/su_command.i
+
+# target to preprocess a source file
+Code/Level3/su_command.c.i:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.i
+.PHONY : Code/Level3/su_command.c.i
+
+Code/Level3/su_command.s: Code/Level3/su_command.c.s
+
+.PHONY : Code/Level3/su_command.s
+
+# target to generate assembly for a file
+Code/Level3/su_command.c.s:
+	$(MAKE) -f CMakeFiles/FinalProject.dir/build.make CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.s
+.PHONY : Code/Level3/su_command.c.s
+
 Code/Level3/unmount_command.o: Code/Level3/unmount_command.c.o
 
 .PHONY : Code/Level3/unmount_command.o
@@ -1020,6 +1047,9 @@ help:
 	@echo "... Code/Level3/mount_command.o"
 	@echo "... Code/Level3/mount_command.i"
 	@echo "... Code/Level3/mount_command.s"
+	@echo "... Code/Level3/su_command.o"
+	@echo "... Code/Level3/su_command.i"
+	@echo "... Code/Level3/su_command.s"
 	@echo "... Code/Level3/unmount_command.o"
 	@echo "... Code/Level3/unmount_command.i"
 	@echo "... Code/Level3/unmount_command.s"

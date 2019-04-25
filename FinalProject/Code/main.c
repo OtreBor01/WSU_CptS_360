@@ -25,8 +25,8 @@ int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _lsee
 char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "lseek", "cat", NULL };
 
 //Level2 Commands
-int (*lvl3_fptr[])(char*) = { _mount, _unmount, NULL }; //_mount, _unmount
-char* lvl3_cmds[] = {"mount", "unmount", NULL }; //"mount", "unmount"
+int (*lvl3_fptr[])(char*) = { _mount, _unmount, _su, NULL }; //_mount, _unmount
+char* lvl3_cmds[] = {"mount", "unmount", "su", NULL }; //"mount", "unmount"
 
 //used to hold all command function pointer arrays
 int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
@@ -36,6 +36,8 @@ int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
 int init(void)
 {
     _Total_Mounts = 0;
+    _Sudo = 0;
+    _Su = 0;
     _OpenOFT = 0;//Set the number of open oft values
     puts("Initializing EXT2 Data Structures");
     //Sets all MINODE's refCount to 0 in the array
@@ -55,7 +57,7 @@ int init(void)
     }
     for (int i = 0; i < NUM_PROC; i++){
         _Procs[i].pid = i; //sets the id of the procs
-        _Procs[i].uid = i;
+        _Procs[i].uid = 1; //I am a user
         _Procs[i].cwd = 0;
         _Procs[i].status = PROC_FREE; //sets all procs to free
         for (int j = 0; j < NUM_FD; j++) {
@@ -217,6 +219,11 @@ int main(int argc, char *argv[ ])
         char line[PATH_SIZE] = "", cmd[16] = "", pathname[64] = "";
         printf("\n|================= P%d Running =================\n",  _Running->pid);
         get_line(line);
+        if(strstr(line, "sudo")){//Sudo command
+            _Sudo = 1;
+            memmove(line, line+5, strlen(line));
+
+        }
         if (line[0] == 0) { continue; }
         sscanf(line, "%s %[^\n]s", cmd, pathname);
         printf("|Cmd: '%s' | Path: '%s'\n", cmd, pathname);
@@ -231,6 +238,7 @@ int main(int argc, char *argv[ ])
         else {
             print_notice("main: Invalid Command Entered...");
         }
+        _Sudo = 0;
 /*
         if (!strcmp(cmd, "menu")) {
             menu();

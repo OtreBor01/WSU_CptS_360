@@ -177,6 +177,9 @@
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/mount_command.c">
 			<Option target="FinalProject"/>
 		</Unit>
+		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/su_command.c">
+			<Option target="FinalProject"/>
+		</Unit>
 		<Unit filename="/home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c">
 			<Option target="FinalProject"/>
 		</Unit>

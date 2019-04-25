@@ -13,6 +13,7 @@ int _unlink(char* pathname){
         print_notice("File type must be link");
         return -1;
     }
+
     //remove name entry from parent DIR data block
     strcpy(parent, dirname(pathname));
     strcpy(child, basename(pathname));

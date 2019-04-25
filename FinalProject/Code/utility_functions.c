@@ -596,3 +596,4 @@ char* get_dest_path(char* path)
     strcpy(temp, path);
     return strchr(path, '/')?  basename(temp) : path;
 }
+
