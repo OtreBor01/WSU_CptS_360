@@ -77,7 +77,8 @@ int mount_root_dev(){
 }
 
 int init_proc(int dev){
-    puts("Creating P0 as Running Process");
+    puts("Creating P0, P1 as Process");
+    puts("Initiating P0 as Running Process");
     _Running = &_Procs[0];
     _Running->status = PROC_BUSY;
     _Running->cwd = _Root;
