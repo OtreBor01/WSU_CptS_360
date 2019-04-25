@@ -47,6 +47,7 @@ typedef struct ext2_group_desc      GD;
 typedef struct ext2_inode           INODE;
 typedef struct ext2_dir_entry_2     DIR;
 
+typedef struct mtable* mtablePtr;
 // In-memory inodes structure
 typedef struct minode{
   INODE             INODE; // disk inode
@@ -54,7 +55,7 @@ typedef struct minode{
   int               refCount; // use count
   int               dirty; // modified flag
   int               mounted; // mounted flag
-  struct mntable*   mptr; // mount table pointer
+  mtablePtr         mptr; // mount table pointer
 }MINODE;
 
 // Open File Table

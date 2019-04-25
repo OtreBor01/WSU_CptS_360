@@ -25,7 +25,7 @@ int _rmdir(char* pathname)
     MINODE* mip = iget(dev, ino);
 
     //(2). verify INODE is a DIR (by INODE.i_mode field);
-    if(mip->refCount != 1) //minode is not BUSY (refCount = 1);
+    if(mip->refCount > 1) //minode is not BUSY (refCount = 1);
     {
         print_notice("Cannot rmdir because directory is currently being used");
         iput(mip);

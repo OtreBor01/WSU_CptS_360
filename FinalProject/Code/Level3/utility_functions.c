@@ -50,19 +50,13 @@ int checkBusyFiles(char* dev){
 }
 
 MINODE* mount_point(char* path, int dev){
-    if(strcmp(path,"/")){
-        dev = _Running->cwd->dev;
-    }
-
-    int ino = getino(path, &dev);
+    int ino = getino("/", &dev);
     if(ino == 0){
         print_notice("mount_root: Unable to locate directory specified");
         return NULL;
     }
-    if (ino != 2){//check if root dev
-        dev--;
-    }
-    MINODE* root = iget(dev, ino); // get root inode
+    MINODE* root = iget(dev, ROOT_INODE); // get root inode
+    root->ino = ino;
     if(!S_ISDIR(root->INODE.i_mode)){
         print_notice("mount_root: file specified is not a valid directory");
         return NULL;
@@ -105,7 +99,6 @@ int mount_root(char* disk, char* path) {
     char* dest = get_dest_path(path);
     strcpy(mp->mntName, dest);
 
-
     //Get and check super INODE
     char buf[BLKSIZE];
     get_block(dev, SUPERBLOCK, buf);
@@ -125,7 +118,9 @@ int mount_root(char* disk, char* path) {
     mp->bmap = groupDesc->bg_block_bitmap;
     mp->imap = groupDesc->bg_inode_bitmap;
     mp->iblock  = groupDesc->bg_inode_table;
-
+    int temp_dev = _Running->cwd == NULL? dev : _Running->cwd->dev;
+    int ino = getino(path, &temp_dev);
+    MINODE* org_mip = iget(temp_dev, ino);
     //Get Root INODE
     MINODE* root = mount_point(path, dev);
     if(root == NULL){
@@ -133,7 +128,8 @@ int mount_root(char* disk, char* path) {
         return -1;
     }
     mp->mntDirPtr = root; // double link
-    root->mptr = mp;
+    org_mip->mounted = 1;
+    org_mip->mptr = mp;
     printf("|super-magic = %x | bmap = %d | imap = %d | iblock = %d|\n",
            super->s_magic, mp->bmap,  mp->imap, mp->iblock);
     printf("|nblocks = %d | bfree = %d | ninodes = %d | ifree = %d|\n",
