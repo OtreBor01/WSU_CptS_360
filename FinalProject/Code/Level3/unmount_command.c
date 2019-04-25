@@ -31,7 +31,7 @@ int _unmount(char* pathname){
     m->mntDirPtr->mounted=0; //sets mounted flag to 0
     iput(m->mntDirPtr);
     m->mntDirPtr = NULL;
-    MINODE* mip = iget(m->dev-1, m->original_ino);
+    MINODE* mip = iget(m->dev-1, m->original_ino); //set back to the old minoded
     iput(mip);
     close(m->dev);
     m->nblocks = 0;

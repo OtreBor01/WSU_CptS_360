@@ -25,6 +25,13 @@ int _rmdir(char* pathname)
     MINODE* mip = iget(dev, ino);
 
     //(2). verify INODE is a DIR (by INODE.i_mode field);
+
+    if(check_file_permissions(mip) == -1 & _Su == 0 & _Sudo == 0){//check file permissions
+        print_notice("You do not have rights to this file");
+        iput(mip);
+        return -1;
+    }
+
     if(mip->refCount > 1) //minode is not BUSY (refCount = 1);
     {
         print_notice("Cannot rmdir because directory is currently being used");

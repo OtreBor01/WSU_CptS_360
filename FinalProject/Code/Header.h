@@ -26,6 +26,8 @@ char    _Path[PATH_SIZE];
 char    _PathTokens[PATH_TOKENS][PATH_SIZE];
 int     _PathTokenCount;
 extern int _Total_Mounts;
+extern int     _Sudo;
+extern int     _Su;
 
 
 
@@ -85,6 +87,7 @@ extern int mount_root(char*,char*);
 extern int _mount(char*);
 extern int _unmount(char*);
 extern int _pmnt(char*);
+extern int _su(char*);
 
 
 #endif

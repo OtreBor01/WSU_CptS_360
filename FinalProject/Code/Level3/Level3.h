@@ -20,11 +20,14 @@ File permission checking
 
 //***** Global Variables *****
 int _Total_Mounts;
+int _Sudo;
+int _Su;
 
 //***** Function Prototypes *****
 //*** Commands ***
 int _mount(char*);
 int _unmount(char*);
+int _su(char*);
 int _pmnt(char*);
 
 //*** Utility Functions ***
