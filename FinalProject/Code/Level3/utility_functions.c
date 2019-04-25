@@ -55,15 +55,19 @@ MINODE* mount_point(char* path, int dev){
         print_notice("mount_root: Unable to locate directory specified");
         return NULL;
     }
+    if (ino != 2){//check if root dev
+        dev--;
+    }
     MINODE* root = iget(dev, ino); // get root inode
     if(!S_ISDIR(root->INODE.i_mode)){
         print_notice("mount_root: file specified is not a valid directory");
         return NULL;
     }
-    if(root->refCount > 1) {
+    /*
+    if(checkBusyFiles()) {
         print_notice("mount_root: directory specified is busy and cannot be mounted at this time");
         return NULL;
-    }
+    }*/
     if(_Total_Mounts == 1){
         _Root = root;
     }
