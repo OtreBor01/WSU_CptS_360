@@ -19,7 +19,7 @@ int _mv(char*pathname)
     int src_dev =_Running->cwd->dev;
     int dest_dev = _Running->cwd->dev;
     int src_ino = getino(source,&src_dev);
-    int dest_ino = getino(dest,&dest);
+    int dest_ino = getino(dest,&dest_dev);
 
     //get inode numbers of parent directories of files specified to move to and from..
     // checks if the parent directories are the root dir as well in the ternary operator
