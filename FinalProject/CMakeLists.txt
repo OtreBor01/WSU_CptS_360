@@ -24,7 +24,6 @@ add_executable(FinalProject
         Code/main.c
         Code/Type.h
         Code/utility_functions.c
-        disk
         mk
         ReadMe.md
         Code/Level1/stat_command.c
