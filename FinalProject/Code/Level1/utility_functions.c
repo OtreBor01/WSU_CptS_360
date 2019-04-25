@@ -97,7 +97,7 @@ int kmkdir(MINODE* pmip, char* name){
     }
     mip->dirty = 1; //mark node as dirty
     iput(mip); //write inode to disk
-
+    mip->dirty = 0;
     //4.3
     //Create data block for new DIR containing . and .. entries
     bzero(buf, BLKSIZE);
