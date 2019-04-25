@@ -70,9 +70,22 @@ CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/cd_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.s
 
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Level1/chmod_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c > CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s
+
 CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o: ../Code/Level1/creat_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/creat_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o: ../Code/Level1/link_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/link_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o: ../Code/Level1/ls_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/ls_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o: ../Code/Level1/mkdir_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/mkdir_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o: ../Code/Level1/pwd_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/pwd_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o: ../Code/Level1/readlink_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/readlink_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.i: cmake_force
@@ -147,19 +160,6 @@ CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.i: cmake_force
 CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/readlink_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: ../Code/Level1/rmdir_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c
-
-CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c > CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o: ../Code/Level1/rm_command.c
@@ -174,61 +174,22 @@ CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rm_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.s
 
-CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Level1/symlink_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c
+CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o: ../Code/Level1/rmdir_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c
 
-CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c > CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i
+CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c > CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.i
 
-CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: ../Code/Level1/unlink_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c
-
-CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c > CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/main.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/main.c.o: ../Code/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/FinalProject.dir/Code/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/main.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/main.c
-
-CMakeFiles/FinalProject.dir/Code/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/main.c > CMakeFiles/FinalProject.dir/Code/main.c.i
-
-CMakeFiles/FinalProject.dir/Code/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/main.c -o CMakeFiles/FinalProject.dir/Code/main.c.s
-
-CMakeFiles/FinalProject.dir/Code/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/utility_functions.c.o: ../Code/utility_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c
-
-CMakeFiles/FinalProject.dir/Code/utility_functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/utility_functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c > CMakeFiles/FinalProject.dir/Code/utility_functions.c.i
-
-CMakeFiles/FinalProject.dir/Code/utility_functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/utility_functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/utility_functions.c.s
+CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/rmdir_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o: ../Code/Level1/stat_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/stat_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.i: cmake_force
@@ -239,22 +200,22 @@ CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/stat_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.s
 
-CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o: ../Code/Level1/chmod_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o: ../Code/Level1/symlink_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c
 
-CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c > CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.i
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c > CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.i
 
-CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/chmod_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.s
+CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/symlink_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o: ../Code/Level1/touch_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/touch_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.i: cmake_force
@@ -265,22 +226,87 @@ CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/touch_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.s
 
-CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Level2/read_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c
+CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o: ../Code/Level1/unlink_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c
 
-CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c > CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i
+CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c > CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.i
 
-CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s
+CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/unlink_command.c -o CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.s
+
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Level1/utility_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/utility_functions.c
+
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/utility_functions.c > CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s
+
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: ../Code/Level2/cat_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c > CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.s
+
+CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/close_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c > CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s
+
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: ../Code/Level2/cp_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c > CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.s
+
+CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o: ../Code/Level2/lseek_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c > CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o: ../Code/Level2/mv_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/mv_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.i: cmake_force
@@ -293,7 +319,7 @@ CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o: ../Code/Level2/open_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/open_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.i: cmake_force
@@ -306,7 +332,7 @@ CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.s: cmake_force
 
 CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o: ../Code/Level2/pfd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/pfd.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.i: cmake_force
@@ -317,35 +343,22 @@ CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/pfd.c -o CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.s
 
-CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o: ../Code/Level2/close_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c
+CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o: ../Code/Level2/read_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c
 
-CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c > CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.i
+CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c > CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.i
 
-CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/close_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o: ../Code/Level2/write_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/write_command.c
-
-CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/write_command.c > CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/write_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s
+CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/read_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o: ../Code/Level2/utility_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/utility_functions.c
 
 CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.i: cmake_force
@@ -356,74 +369,22 @@ CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.s
 
-CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o: ../Code/Level1/utility_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/utility_functions.c
+CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o: ../Code/Level2/write_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/write_command.c
 
-CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/utility_functions.c > CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.i
+CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/write_command.c > CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.i
 
-CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level1/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o: ../Code/Level2/cp_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c
-
-CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c > CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cp_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o: ../Code/Level2/cat_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c
-
-CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c > CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/cat_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o: ../Code/Level2/lseek_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c
-
-CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c > CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/lseek_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.s
-
-CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o: ../Code/Level3/utility_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/utility_functions.c
-
-CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/utility_functions.c > CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.i
-
-CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.s
+CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level2/write_command.c -o CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o: ../Code/Level3/mount_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/mount_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.i: cmake_force
@@ -434,22 +395,22 @@ CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/mount_command.c -o CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.s
 
-CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: CMakeFiles/FinalProject.dir/flags.make
-CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: ../Code/Level3/unmount_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c
+CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o: ../Code/Level3/pmnt_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/pmnt_command.c
 
-CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c > CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.i
+CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/pmnt_command.c > CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.i
 
-CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c -o CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.s
+CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/pmnt_command.c -o CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.s
 
 CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o: CMakeFiles/FinalProject.dir/flags.make
 CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o: ../Code/Level3/su_command.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/su_command.c
 
 CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.i: cmake_force
@@ -460,77 +421,131 @@ CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/su_command.c -o CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.s
 
+CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o: ../Code/Level3/unmount_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c
+
+CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c > CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/unmount_command.c -o CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.s
+
+CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o: ../Code/Level3/utility_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/utility_functions.c
+
+CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/utility_functions.c > CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.i
+
+CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/Level3/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.s
+
+CMakeFiles/FinalProject.dir/Code/main.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/main.c.o: ../Code/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/FinalProject.dir/Code/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/main.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/main.c
+
+CMakeFiles/FinalProject.dir/Code/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/main.c > CMakeFiles/FinalProject.dir/Code/main.c.i
+
+CMakeFiles/FinalProject.dir/Code/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/main.c -o CMakeFiles/FinalProject.dir/Code/main.c.s
+
+CMakeFiles/FinalProject.dir/Code/utility_functions.c.o: CMakeFiles/FinalProject.dir/flags.make
+CMakeFiles/FinalProject.dir/Code/utility_functions.c.o: ../Code/utility_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FinalProject.dir/Code/utility_functions.c.o   -c /home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c
+
+CMakeFiles/FinalProject.dir/Code/utility_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FinalProject.dir/Code/utility_functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c > CMakeFiles/FinalProject.dir/Code/utility_functions.c.i
+
+CMakeFiles/FinalProject.dir/Code/utility_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FinalProject.dir/Code/utility_functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/noah/Documents/cpts360/Project/FinalProject/Code/utility_functions.c -o CMakeFiles/FinalProject.dir/Code/utility_functions.c.s
+
 # Object files for target FinalProject
 FinalProject_OBJECTS = \
 "CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/main.c.o" \
-"CMakeFiles/FinalProject.dir/Code/utility_functions.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o" \
+"CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o" \
 "CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o" \
-"CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o"
+"CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o" \
+"CMakeFiles/FinalProject.dir/Code/main.c.o" \
+"CMakeFiles/FinalProject.dir/Code/utility_functions.c.o"
 
 # External object files for target FinalProject
 FinalProject_EXTERNAL_OBJECTS =
 
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/cd_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/creat_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/link_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/ls_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/mkdir_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/pwd_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/readlink_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/rm_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/main.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/utility_functions.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/rmdir_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/stat_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/chmod_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/symlink_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/touch_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/unlink_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/mv_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/open_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/pfd.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/close_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/read_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/utility_functions.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level1/utility_functions.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/cp_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/cat_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/lseek_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level2/write_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o
-FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o
 FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/main.c.o
+FinalProject: CMakeFiles/FinalProject.dir/Code/utility_functions.c.o
 FinalProject: CMakeFiles/FinalProject.dir/build.make
 FinalProject: CMakeFiles/FinalProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking C executable FinalProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking C executable FinalProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FinalProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
