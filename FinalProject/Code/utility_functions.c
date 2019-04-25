@@ -37,7 +37,19 @@ int tokenize(char *pathname)
     return 0;
 }
 
-int search(MINODE* mip, char* name)
+int locateDevInMTables(char *name, int dev){
+    for(int i = 0; i < NUM_MTABLE; i++){
+        MTABLE* mp = &_MTables[i];
+        if(mp != NULL && mp->dev != 0
+        && !strcmp(mp->devName, name)){
+            return mp->dev;
+        }
+    }
+    return dev;
+}
+
+
+int search(MINODE* mip, char* name, int * dev)
 {
     for (int i = 0; i < 12; i++)  // search DIR direct blocks only
     {
@@ -53,6 +65,7 @@ int search(MINODE* mip, char* name)
             //printf("%8d%8d%8u %s\n", dp->inode, dp->rec_len, dp->name_len, temp);
             if (!strcmp(name, temp)){
                 printf("Found '%s': inumber = %d\n", name, dp->inode);
+                *dev = locateDevInMTables(name, mip->dev);
                 return dp->inode;
             }
             cp += dp->rec_len;
@@ -178,7 +191,7 @@ int iput(MINODE *mip) {
     We assume that the tokenized strings are in a global data area, each pointed by a name[i] pointer and the number of token strings is nname.
     Then it calls the search() function to search for the token strings in successive directories.
     The following shows the tokenize() and search() functions.*/
-int getino(char *pathname)
+int getino(char *pathname, int *dev)
 {
     MINODE *mip;
     if (!strcmp(pathname, "/")){
@@ -202,14 +215,13 @@ int getino(char *pathname)
             iput(mip);
             return 0;
         }
-        ino = search(mip, name);
+        ino = search(mip, name, dev);
+        iput(mip); // release current minode
         if (ino == 0)
         {
-            iput(mip);
             return 0;
         }
-        iput(mip); // release current minode
-        mip = iget(mip->dev, ino); // switch to new minode
+        mip = iget(*dev, ino); // switch to new minode
     }
     iput(mip);
     return ino;

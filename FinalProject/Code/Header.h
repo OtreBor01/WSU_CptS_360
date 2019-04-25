@@ -32,14 +32,14 @@ extern int _Total_Mounts;
 //***** Function Prototypes *****
 //Utility_functions: Function Prototypes
 int tokenize(char*);
-int search(MINODE*,char*);
+int search(MINODE*,char*,int*);
 void print_error(char*,char*), print_notice(char*);
 MINODE* mialloc(void);
 int midalloc(MINODE*);
 int get_block(int,int,char*), put_block(int,int,char*);
 MINODE *iget(int,int);
 int iput(MINODE*);
-int getino(char*);
+int getino(char*,int*);
 int enter_name(MINODE*,char*,int,int);
 int remove_name(MINODE*,char*, int);
 int incFreeInodes(int), decFreeInodes(int);
