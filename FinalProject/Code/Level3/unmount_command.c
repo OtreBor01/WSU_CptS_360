@@ -30,6 +30,9 @@ int _unmount(char* pathname){
     MTABLE *m = &_MTables[md];
     m->mntDirPtr->mounted=0; //sets mounted flag to 0
     iput(m->mntDirPtr);
+    m->mntDirPtr = NULL;
+    MINODE* mip = iget(m->dev-1, m->original_ino);
+    iput(mip);
     close(m->dev);
     m->nblocks = 0;
     m->ninodes = 0;
