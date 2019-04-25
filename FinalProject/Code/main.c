@@ -25,8 +25,8 @@ int (*lvl2_fptr[])(char*) = {_mv, _open, _close, _read, _write, _pfd, _cp, _lsee
 char* lvl2_cmds[] = { "mv", "open",  "close", "read", "write", "pfd", "cp", "lseek", "cat", NULL };
 
 //Level2 Commands
-int (*lvl3_fptr[])(char*) = { _mount, _unmount, NULL }; //_mount, _unmount
-char* lvl3_cmds[] = {"mount", "unmount", NULL }; //"mount", "unmount"
+int (*lvl3_fptr[])(char*) = { _mount, _unmount, _pmnt, NULL }; //_mount, _unmount
+char* lvl3_cmds[] = {"mount", "unmount", "pmnt", NULL }; //"mount", "unmount"
 
 //used to hold all command function pointer arrays
 int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
@@ -36,6 +36,7 @@ int (**all_fptr[])(char*) = {main_fptr, lvl1_fptr, lvl2_fptr, lvl3_fptr, NULL};
 int init(void)
 {
     _Total_Mounts = 0;
+    _Current_Mount_Index = 0;
     _OpenOFT = 0;//Set the number of open oft values
     puts("Initializing EXT2 Data Structures");
     //Sets all MINODE's refCount to 0 in the array
@@ -231,73 +232,5 @@ int main(int argc, char *argv[ ])
         else {
             print_notice("main: Invalid Command Entered...");
         }
-/*
-        if (!strcmp(cmd, "menu")) {
-            menu();
-        }
-        else if (!strcmp(cmd, "ls")) {
-            _ls(pathname);
-        }
-        else if (!strcmp(cmd, "cd")) {
-            _cd(pathname);
-        }
-        else if (!strcmp(cmd, "pwd")) {
-            _pwd(_Running->cwd);
-        }
-        else if (!strcmp(cmd, "quit")) {
-            quit(); break;
-        }
-        else if (!strcmp(cmd, "creat")) {
-            _creat(pathname);
-        }
-        else if (!strcmp(cmd, "touch")) {
-            _touch(pathname);
-        }
-        else if (!strcmp(cmd, "rm")) {
-            _rm(pathname);
-        }
-        else if (!strcmp(cmd,"link")) {
-            _link(pathname);
-        }
-        else if (!strcmp(cmd, "mkdir")) {
-            _mkdir(pathname);
-        }
-        else if (!strcmp(cmd, "rmdir")) {
-            _rmdir(pathname);
-        }
-        else if(!strcmp(cmd, "symlink")){
-            _symlink(pathname);
-        }
-        else if(!strcmp(cmd, "readlink")){
-            _readlink(pathname);
-        }
-        else if(!strcmp(cmd, "stat")){
-            _stat(pathname);
-        }
-        else if(!strcmp(cmd, "chmod")){
-            _chmod(pathname);
-        }
-        else if(!strcmp(cmd, "unlink")){
-            _unlink(pathname);
-        }
-        else if(!strcmp(cmd, "mv")) {
-            _mv(pathname);
-        }
-        else if(!strcmp(cmd, "open")){
-            _open(pathname);
-        }
-        else if(!strcmp(cmd, "close")){
-            _close(pathname);
-        }
-        else if(!strcmp(cmd, "lseek")){
-            _lseek(pathname);
-        }
-        else if(!strcmp(cmd, "read")){
-            _read(pathname);
-        }
-        else if(!strcmp(cmd, "pfd")){
-            _pfd(pathname);
-        }
-        */
     }
 }

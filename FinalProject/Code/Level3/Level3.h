@@ -25,6 +25,7 @@ int _Total_Mounts;
 //*** Commands ***
 int _mount(char*);
 int _unmount(char*);
+int _pmnt(char*);
 
 //*** Utility Functions ***
 int mountStat(void);

@@ -6,11 +6,15 @@
 int r_pwd(int depth, char *path, MINODE* wd)
 {
     //Base case
-    if (wd == _Root) { return depth; }
-    int dev = wd->dev;
-    int ino = search(wd, "..", &dev); //get parent inode number
-    MINODE* pd = iget(dev, ino); //get parent directory MINODE
-    char* name = get_inode_name(pd, wd->ino); //gets the name of the 'wd'
+    if (wd ==_Root) { return depth; }
+    int dev = wd->dev, original_dev = dev;
+    int p_ino = search(wd, "..", &dev); //get parent inode number
+    int c_ino = wd->ino;
+    if(original_dev != dev){
+        c_ino = wd->mptr->original_ino;
+    }
+    MINODE* pd = iget(dev, p_ino); //get parent directory MINODE
+    char* name = get_inode_name(pd, c_ino); //gets the name of the 'wd'
     if(name == NULL){ return -1; }
     char temp[PATH_SIZE] = "";
     //Builds the pwd string

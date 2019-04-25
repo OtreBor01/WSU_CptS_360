@@ -37,16 +37,28 @@ int tokenize(char *pathname)
     return 0;
 }
 
-int locateDevInMTables(int ino, int *dev){
+int locateDevInMTables(char *name, int c_ino, int d_ino, int *dev){
+    //Going back a dir into a new mtable
+    if(c_ino == 2 && d_ino == 2 && !strcmp(name, "..")){
+        _Current_Mount_Index = _Current_Mount_Index == 0? 0 : _Current_Mount_Index - 1;
+        *dev = _MTables[_Current_Mount_Index].dev;
+        return 2;
+    }
+    else if(d_ino == 2 && !strcmp(name, "..")){
+        return 2;
+    }
     for(int i = 0; i < NUM_MTABLE; i++){
         MTABLE* mp = &_MTables[i];
-        if(mp != NULL && mp->dev != 0 && mp->mntDirPtr != NULL
-        && ino == mp->original_ino){
+        int isValidIndex = (_Current_Mount_Index == i || _Current_Mount_Index - 1 == i ||  _Current_Mount_Index + 1 == i)? 1 : 0;
+        //going forward into a dir
+        if(mp != NULL && mp->mntDirPtr != NULL
+        && isValidIndex == 1 && d_ino == mp->original_ino){
             *dev = mp->dev;
+            _Current_Mount_Index = i;
             return 2;
         }
     }
-    return ino;
+    return d_ino;
 }
 
 
@@ -66,7 +78,7 @@ int search(MINODE* mip, char* name, int * dev)
             //printf("%8d%8d%8u %s\n", dp->inode, dp->rec_len, dp->name_len, temp);
             if (!strcmp(name, temp)){
                 printf("Found '%s': inumber = %d\n", name, dp->inode);
-                return locateDevInMTables(dp->inode, dev);
+                return locateDevInMTables(dp->name, mip->ino, dp->inode, dev);
             }
             cp += dp->rec_len;
             dp = (DIR *)cp;

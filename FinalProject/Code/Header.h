@@ -84,6 +84,7 @@ extern int _lseek(char*);
 extern int mount_root(char*,char*);
 extern int _mount(char*);
 extern int _unmount(char*);
+extern int _pmnt(char*);
 
 
 #endif
