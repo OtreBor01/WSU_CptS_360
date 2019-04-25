@@ -138,7 +138,7 @@ MINODE *iget(int dev, int ino)
     // initialize minode
     mip->mounted = 0;
     mip->dirty = 0;
-    mip->mptr = 0;//mp??
+    mip->mptr = mp;
     return mip;
 }
 

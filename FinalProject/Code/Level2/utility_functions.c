@@ -83,8 +83,10 @@ int replace_file(MINODE* src_mip, MINODE* p_dest_mip, MINODE* dest_mip, char* na
 {
     //if there exist a file to be replaced in the destination then...
     // remove the existing file from the destination parent directory
-    int fileType = mode_to_filetype(dest_mip->INODE.i_mode);
+    int fileType;
+    //if the destination file exist we need to remove it first
     if(dest_mip != NULL) {
+        fileType = mode_to_filetype(dest_mip->INODE.i_mode);
         int isDir = (fileType == 2) ? 1 : 0;
         remove_name(p_dest_mip, name, isDir);
     }
