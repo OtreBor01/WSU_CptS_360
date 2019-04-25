@@ -5,7 +5,7 @@
 
 int _unlink(char* pathname){
     int dev = _Running->cwd->dev;
-    int ino = getino(pathname);
+    int ino = getino(pathname, &dev);
     char parent[500], child[500];
     MINODE* mip = iget(dev, ino);
     //Make sure file type is not a directory
@@ -16,7 +16,7 @@ int _unlink(char* pathname){
     //remove name entry from parent DIR data block
     strcpy(parent, dirname(pathname));
     strcpy(child, basename(pathname));
-    int pino = getino(parent);
+    int pino = getino(parent, &dev);
     MINODE* pmip = iget(dev, pino);
     int isDir = 0; //ensures that dir with the same name as child doesn't get removed
     remove_name(pmip,child, isDir);

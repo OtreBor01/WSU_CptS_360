@@ -12,7 +12,7 @@ int _touch(char* pathname)
     char* base = get_parent_path(pathname);
     char* dir = get_dest_path(pathname);
     int dev = _Running->cwd->dev;
-    int p_ino = getino(base);
+    int p_ino = getino(base, &dev);
     if(p_ino == 0){
         print_notice("touch: Unable to locate parent directory");
         return -1;
@@ -29,8 +29,8 @@ int _touch(char* pathname)
     //if the file already exist
     if(r == -1){
         //update its access time to now
-        int ino = getino(pathname);
-        MINODE* mip = iget(_Running->cwd->dev, ino);
+        int ino = getino(pathname, &dev);
+        MINODE* mip = iget(dev, ino);
         time_t now;
         //Access - the last time the file was read
         mip->INODE.i_atime = time(&now);

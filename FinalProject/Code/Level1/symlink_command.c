@@ -4,7 +4,6 @@
 #include "Level1.h"
 
 int _symlink(char* pathname){
-    int dev = _Running->cwd->dev;
     char* oldFile ,*newFile,  *parentDirName, *childBaseName;
     int oino, nino, pino; //old inode and new inode and parent inode
     MINODE * omip , *pmip, *nmip; //old mip and parent mip
@@ -17,7 +16,8 @@ int _symlink(char* pathname){
     printf("oldFile:  %s\n\n",oldFile);
     printf("newFile:  %s\n\n",newFile);
     //get old ino and minode
-    oino = getino(oldFile);
+    int dev = _Running->cwd->dev;
+    oino = getino(oldFile, &dev);
     //Verify old file exist and is right type
     if (oino == 0){
         print_notice("Old file does not exist");
@@ -29,7 +29,7 @@ int _symlink(char* pathname){
         return -1;
     }
     //get new ino
-    nino = getino(newFile);
+    nino = getino(newFile, &dev);
     //Verify newFile does not exist
     if(nino != 0){
         printf("Error: New File must not exist yet");
@@ -38,7 +38,7 @@ int _symlink(char* pathname){
 
     //create new file for link and grab ino
     nino = _creat(newFile);
-    pino = getino(dirname(newFile));
+    pino = getino(dirname(newFile), &dev);
     pmip = iget(dev,pino);
     nmip = iget(dev,nino);
     INODE * ip = &nmip->INODE;

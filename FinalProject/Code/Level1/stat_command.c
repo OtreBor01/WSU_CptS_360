@@ -15,13 +15,14 @@ int _stat(char* pathname)
     Birth: -
      */
     char* fileType = "unknown";
-    int ino = getino(pathname);
+    int dev = _Running->cwd->dev;
+    int ino = getino(pathname, &dev);
     if(ino == 0)
     {
         print_notice("Unable to locate the file specified");
         return -1;
     }
-    MINODE* mip = iget(_Running->cwd->dev, ino);
+    MINODE* mip = iget(dev, ino);
     INODE* ip = &mip->INODE;
     //Get file type name
     if(S_ISDIR(ip->i_mode)){ fileType = "directory"; }

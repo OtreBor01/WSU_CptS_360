@@ -8,13 +8,14 @@
 int _rm(char* pathname)
 {
     //(1). get in-memory INODE of pathname:
-    int ino = getino(pathname);
+    int dev = _Running->cwd->dev;
+    int ino = getino(pathname, &dev);
     if(ino == 0)
     {
         print_notice("Unable to locate the file specified");
         return -1;
     }
-    MINODE* mip = iget(_Running->cwd->dev, ino);
+    MINODE* mip = iget(dev, ino);
 
     //(2). verify INODE is a DIR (by INODE.i_mode field);
     if(mip->refCount > 1) //minode is not BUSY (refCount = 1);
@@ -30,8 +31,8 @@ int _rm(char* pathname)
 
     //(3). get parent’s ino and inode
     char* base = get_parent_path(pathname);
-    int pino = getino(base); //get parent inode number by getting pino from .. entry in INODE.i_block[0]
-    MINODE* pmip = iget(mip->dev, pino); //get parent directory MINODE
+    int pino = getino(base, &dev); //get parent inode number by getting pino from .. entry in INODE.i_block[0]
+    MINODE* pmip = iget(dev, pino); //get parent directory MINODE
 
     //(4). get name from parent DIR’s data block
     char* name = get_dest_path(pathname); //gets the name of the file to delete, findname(pmip, ino, name);

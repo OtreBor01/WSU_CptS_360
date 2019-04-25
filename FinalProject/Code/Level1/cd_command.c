@@ -12,9 +12,10 @@ int _cd(char* path)
     else{
         char buf[BLKSIZE];
         //search for path to print
-        int ino = getino(path); //get inode number of the dir to cd into
+        int dev = _Running->cwd->dev;
+        int ino = getino(path, &dev); //get inode number of the dir to cd into
         if(ino == 0) { return -1; } //if unable to find path to dir specified
-        MINODE *mip = iget(_Running->cwd->dev, ino); //Using the inode number retrieved we find the actual MINODE object
+        MINODE *mip = iget(dev, ino); //Using the inode number retrieved we find the actual MINODE object
         if(S_ISDIR(mip->INODE.i_mode)) //if the inode is a valid directory
         {
             if(_Running->cwd != mip){

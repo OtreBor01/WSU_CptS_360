@@ -15,7 +15,7 @@ int _creat(char* pathname)
     char* base = get_parent_path(pathname);
     char* dir = get_dest_path(pathname);
     int dev = _Running->cwd->dev;
-    int p_ino = getino(base);
+    int p_ino = getino(base, &dev);
     if(p_ino == 0){
         print_notice("creat: Unable to locate parent directory");
         return -1;

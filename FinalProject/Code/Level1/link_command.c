@@ -5,7 +5,6 @@
 
 
 int _link(char* pathname){
-    int dev;
     char* oldFile ,*newFile, temp[100], temp2[100], *parentDirName, *childBaseName;
     int oino, nino, pino; //old inode and new inode and parent inode
     MINODE * omip , *pmip; //old mip and parent mip
@@ -28,22 +27,23 @@ int _link(char* pathname){
         dev = _Running->cwd->dev;
     }
     */
-    dev =_Running->cwd->dev;
+    int src_dev =_Running->cwd->dev;
 
     //Get old File inode and check File type
-    oino = getino(oldFile);
+    oino = getino(oldFile, &src_dev);
     if (oino == 0){
         print_notice("Old file does not exist");
         return -1;
     }
-    omip = iget(dev,oino);
+    omip = iget(src_dev,oino);
     if(S_ISDIR(omip->INODE.i_mode)){
        printf("Error: File Type must not be DIR");
        return -1;
     }
 
     //Check if new File exist yet
-    nino = getino(newFile);//temp never set check this
+    int dest_dev =_Running->cwd->dev;
+    nino = getino(newFile, &dest_dev);//temp never set check this
     if(nino != 0){
         printf("Error: New File must not exist yet");
         return -1;
@@ -55,16 +55,18 @@ int _link(char* pathname){
     strcpy(temp2,newFile);
     childBaseName = basename(newFile);
 
-    pino = getino(parentDirName);
+    dest_dev =_Running->cwd->dev;
+    pino = getino(parentDirName, &dest_dev);
 
+    /*
     if(newFile[0] == '/'){
-        dev = _Root->dev;
+        dest_dev = _Root->dev;
     }
     else{
         dev = _Running->cwd->dev;
-    }
+    }*/
 
-    pmip = iget(dev, pino);
+    pmip = iget(dest_dev, pino);
     //Create entry in new parent DIR with same inode number of old_file
     enter_name(pmip,childBaseName,oino, DE_REG);
 

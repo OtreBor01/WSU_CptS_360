@@ -5,22 +5,21 @@
 #include "Level1.h"
 
 int _mkdir(char* pathname){
-    int pino;
-    MINODE * pmip;
     //Grab dir name and path name
     //Grab ino to check if dir exist and is a DIR type
+    int parent_dev = _Running->cwd->dev;
     char* path = get_parent_path(pathname);
-    pino = getino(path);
+    int pino = getino(path, &parent_dev);
     if(pino == 0){
         print_notice("mkdir: could not locate parent directory");
         return -1;
     }
-    pmip = iget(_Running->cwd->dev, pino);
+    MINODE * pmip = iget(parent_dev, pino);
     if(!S_ISDIR(pmip->INODE.i_mode)){
         print_notice("mkdir: could not locate parent directory");
         return -1;
     }
-    if(search(pmip,path) != 0){
+    if(search(pmip, path, &parent_dev) != 0){
         print_notice("mkdir: directory with that name already exist");
         return -1;
     }

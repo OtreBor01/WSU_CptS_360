@@ -7,8 +7,9 @@ int r_pwd(int depth, char *path, MINODE* wd)
 {
     //Base case
     if (wd == _Root) { return depth; }
-    int ino = search(wd, ".."); //get parent inode number
-    MINODE* pd = iget(wd->dev, ino); //get parent directory MINODE
+    int dev = _Running->cwd->dev;
+    int ino = search(wd, "..", &dev); //get parent inode number
+    MINODE* pd = iget(dev, ino); //get parent directory MINODE
     char* name = get_inode_name(pd, wd->ino); //gets the name of the 'wd'
     if(name == NULL){ return -1; }
     char temp[PATH_SIZE] = "";

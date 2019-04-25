@@ -53,13 +53,14 @@ int ls_dir(MINODE *mip){
 
 int _ls(char* path)
 {
-    int ino = getino(path);
+    int dev = _Running->cwd->dev;
+    int ino = getino(path, &dev);
     if(ino == 0)
     {
         print_notice("Unable to locate the file specified");
         return -1;
     }
-    MINODE *mip = iget(_Running->cwd->dev, ino);
+    MINODE *mip = iget(dev, ino);
     if(S_ISDIR(mip->INODE.i_mode))
     {
         ls_dir(mip);

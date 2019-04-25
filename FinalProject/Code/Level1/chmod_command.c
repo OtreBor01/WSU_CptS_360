@@ -15,13 +15,14 @@ int _chmod(char* pathname)
         print_notice("Invalid permission value entered");
     }
     //(1). get the in-memory INODE of a file by
-    int ino = getino(pathname);
+    int dev = _Running->cwd->dev;
+    int ino = getino(pathname, &dev);
     if(ino == 0)
     {
         print_notice("Unable to locate the file specified");
         return -1;
     }
-    MINODE* mip = iget(_Running->cwd->dev, ino);
+    MINODE* mip = iget(dev, ino);
     //(2). get information from INODE or modify the INODE;
     //int octal = permission & (S_IRWXU | S_IRWXG | S_IRWXO);
     mip->INODE.i_mode |= octal;
