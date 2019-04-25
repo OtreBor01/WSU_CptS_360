@@ -88,6 +88,7 @@ typedef struct mtable{
   int          free_inodes;
   int          bmap; // from group descriptor
   int          imap;
+  int          original_ino; //this is the ino value of the inode before it was mounted
   int          iblock; // inodes start block
   MINODE*      mntDirPtr; // mount point DIR pointer
   char         devName[64]; //device name

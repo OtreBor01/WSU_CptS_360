@@ -50,26 +50,7 @@ int checkBusyFiles(char* dev){
 }
 
 MINODE* mount_point(char* path, int dev){
-    int ino = getino("/", &dev);
-    if(ino == 0){
-        print_notice("mount_root: Unable to locate directory specified");
-        return NULL;
-    }
-    MINODE* root = iget(dev, ROOT_INODE); // get root inode
-    root->ino = ino;
-    if(!S_ISDIR(root->INODE.i_mode)){
-        print_notice("mount_root: file specified is not a valid directory");
-        return NULL;
-    }
-    /*
-    if(checkBusyFiles()) {
-        print_notice("mount_root: directory specified is busy and cannot be mounted at this time");
-        return NULL;
-    }*/
-    if(_Total_Mounts == 1){
-        _Root = root;
-    }
-    return root;
+
 
 }
 
@@ -83,8 +64,62 @@ int get_mount(char* fs){
     return -1;
 }
 
-int mount_root(char* disk, char* path) {
-    //Open Device (disk)
+SUPER* getSuper(MTABLE* mp, int dev){
+    //Get and check super INODE
+    char buf[BLKSIZE];
+    get_block(dev, SUPERBLOCK, buf);
+    SUPER* super = (SUPER *) buf;
+    if (super->s_magic != EXT2_SUPER_MAGIC)
+    {
+        print_notice("mount_root: device is Not a Valid EXT2 File System");
+        return NULL;
+    }
+    mp->ninodes = super->s_inodes_count;
+    mp->nblocks = super->s_blocks_count;
+    mp->free_blocks = super->s_free_blocks_count;
+    mp->free_inodes = super->s_free_inodes_count;
+    return super;
+}
+
+GD* getGroupDesc(MTABLE* mp, int dev){
+    //Get Group Desc INODE
+    char buf[BLKSIZE];
+    get_block(dev, GDBLOCK, buf);
+    GD* groupDesc = (GD *)buf;
+    mp->bmap = groupDesc->bg_block_bitmap;
+    mp->imap = groupDesc->bg_inode_bitmap;
+    mp->iblock  = groupDesc->bg_inode_table;
+    return groupDesc;
+}
+
+MINODE* getRoot(MTABLE* mp, int dev, int ino){
+    MINODE* mip = iget(dev, ROOT_INODE);
+    if(!S_ISDIR(mip->INODE.i_mode)){
+        print_notice("mount_root: file specified is not a valid directory");
+        return NULL;
+    }
+    mp->original_ino = ino;
+    mp->mntDirPtr = mip;
+    mip->mptr = mp;
+    mip->mounted = 1;
+    return mip;
+}
+
+int get_original_ino(char* path){
+    int original_ino = 2;
+    if (_Running->cwd != NULL) {
+        int dev = _Running->cwd->dev;
+        original_ino = getino(path, &dev);
+        if (original_ino == 0) {
+            print_notice("mount_root: could not locate file to mount onto");
+            return -1;
+        }
+    }
+    return original_ino;
+}
+
+
+int open_device(char* disk){
     char device[64] = "../";
     strcat(device, disk);
     int dev = open(device, O_RDWR | O_RDONLY);
@@ -93,43 +128,41 @@ int mount_root(char* disk, char* path) {
         print_notice("mount_root: Unable to Open Root Device");
         return -1;
     }
+    return dev;
+}
+
+
+int mount_root(char* disk, char* path) {
+
+    //gets the ino number of the mip that is about to be mounted to new disk
+    int original_ino = get_original_ino(path);
+
+    int dev = open_device(disk);
+    if(dev == -1){ return -1; }
+
+    //Gets index of mtable to mount onto
     MTABLE* mp = &_MTables[_Total_Mounts++];
     mp->dev = dev;
     strcpy(mp->devName, disk);
     char* dest = get_dest_path(path);
     strcpy(mp->mntName, dest);
 
-    //Get and check super INODE
-    char buf[BLKSIZE];
-    get_block(dev, SUPERBLOCK, buf);
-    SUPER* super = (SUPER *) buf;
-    if (super->s_magic != EXT2_SUPER_MAGIC)
-    {
-        print_error("mount_root", "Root Device is Not a Valid EXT2 File System");
-    }
-    mp->ninodes = super->s_inodes_count;
-    mp->nblocks = super->s_blocks_count;
-    mp->free_blocks = super->s_free_blocks_count;
-    mp->free_inodes = super->s_free_inodes_count;
+    //Super
+    SUPER* super = getSuper(mp, dev);
+    if(super == NULL){ return -1; }
 
-    //Get Group Desc INODE
-    get_block(dev, GDBLOCK, buf);
-    GD* groupDesc = (GD *)buf;
-    mp->bmap = groupDesc->bg_block_bitmap;
-    mp->imap = groupDesc->bg_inode_bitmap;
-    mp->iblock  = groupDesc->bg_inode_table;
-    int temp_dev = _Running->cwd == NULL? dev : _Running->cwd->dev;
-    int ino = getino(path, &temp_dev);
-    MINODE* org_mip = iget(temp_dev, ino);
-    //Get Root INODE
-    MINODE* root = mount_point(path, dev);
-    if(root == NULL){
-        print_notice("mount_root: unable to locate directory to mount on");
-        return -1;
+    //Group
+    GD* groupDesc = getGroupDesc(mp, dev);
+    if(groupDesc == NULL){ return -1; }
+
+    //Get directory (MINODE*) to mount onto
+    MINODE* mip = getRoot(mp, dev, original_ino);
+    if(mip == NULL){ return -1; }
+
+    if(_Total_Mounts == 1) {
+        _Root = mip;
     }
-    mp->mntDirPtr = root; // double link
-    org_mip->mounted = 1;
-    org_mip->mptr = mp;
+
     printf("|super-magic = %x | bmap = %d | imap = %d | iblock = %d|\n",
            super->s_magic, mp->bmap,  mp->imap, mp->iblock);
     printf("|nblocks = %d | bfree = %d | ninodes = %d | ifree = %d|\n",

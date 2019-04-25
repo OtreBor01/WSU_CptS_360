@@ -37,15 +37,16 @@ int tokenize(char *pathname)
     return 0;
 }
 
-int locateDevInMTables(int ino, int dev){
+int locateDevInMTables(int ino, int *dev){
     for(int i = 0; i < NUM_MTABLE; i++){
         MTABLE* mp = &_MTables[i];
         if(mp != NULL && mp->dev != 0 && mp->mntDirPtr != NULL
-        && ino == mp->mntDirPtr->ino){
-            return mp->dev;
+        && ino == mp->original_ino){
+            *dev = mp->dev;
+            return 2;
         }
     }
-    return dev;
+    return ino;
 }
 
 
@@ -65,8 +66,7 @@ int search(MINODE* mip, char* name, int * dev)
             //printf("%8d%8d%8u %s\n", dp->inode, dp->rec_len, dp->name_len, temp);
             if (!strcmp(name, temp)){
                 printf("Found '%s': inumber = %d\n", name, dp->inode);
-                *dev = locateDevInMTables(dp->inode, mip->dev);
-                return dp->inode;
+                return locateDevInMTables(dp->inode, dev);
             }
             cp += dp->rec_len;
             dp = (DIR *)cp;
@@ -133,9 +133,6 @@ MINODE *iget(int dev, int ino)
             && (mip->ino == ino))
         {
             mip->refCount++;
-            if(mip->mounted == 1){
-                    return mip->mptr->mntDirPtr;
-            }
             return mip;
         }
     }
