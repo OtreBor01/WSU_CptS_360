@@ -20,10 +20,12 @@ int _unmount(char* pathname){
     }
 
     //check if mount is busy
+    /*
     if(checkBusyFiles(pathname)){
         print_notice("File system is busy");
         return -1;
     }
+    */
 
     MTABLE *m = &_MTables[md];
     m->mntDirPtr->mounted=0; //sets mounted flag to 0
@@ -36,4 +38,6 @@ int _unmount(char* pathname){
     m->iblock = 0;
     memset(m->devName, 0, 64);
     memset(m->mntName, 0, 64);
+    _Total_Mounts--;
+    return 0;
 }

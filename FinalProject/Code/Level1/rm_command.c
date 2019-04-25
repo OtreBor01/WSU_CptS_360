@@ -17,7 +17,7 @@ int _rm(char* pathname)
     MINODE* mip = iget(_Running->cwd->dev, ino);
 
     //(2). verify INODE is a DIR (by INODE.i_mode field);
-    if(mip->refCount != 1) //minode is not BUSY (refCount = 1);
+    if(mip->refCount > 1) //minode is not BUSY (refCount = 1);
     {
         print_notice("Cannot rm because file is currently being used");
         return -1;

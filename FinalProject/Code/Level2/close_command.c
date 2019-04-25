@@ -11,4 +11,5 @@ int _close(char* fdString){
         return -1;
     }
     close_file(fd);
+    return 0;
 }

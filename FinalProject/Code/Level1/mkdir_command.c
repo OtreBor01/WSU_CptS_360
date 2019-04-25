@@ -29,4 +29,5 @@ int _mkdir(char* pathname){
     pmip->INODE.i_links_count = 1;
     pmip->dirty = 1;
     iput(pmip);
+    return 0;
 }

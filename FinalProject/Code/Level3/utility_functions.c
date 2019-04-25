@@ -42,7 +42,7 @@ int checkCwdBusy(char* pathname){
 
 int checkBusyFiles(char* dev){
     for (int i = 0; i < NUM_MINODE; i++){
-        if(strcmp(_MINodes[i].dev,dev)==0){
+        if(strcmp(_MINodes[i].dev,dev)==0){ //might cause bug because its attempting to check a string with an int representation of dev
             return 1;
         }
     }
