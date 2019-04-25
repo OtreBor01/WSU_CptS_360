@@ -16,15 +16,19 @@ int _mv(char*pathname)
 
     //2. ***** Get ino values for the base and dir files specified by source and dest paths
     //get inode numbers of files specified to move to and from
-    int src_ino = getino(source);
-    int dest_ino = getino(dest);
+    int src_dev =_Running->cwd->dev;
+    int dest_dev = _Running->cwd->dev;
+    int src_ino = getino(source,&src_dev);
+    int dest_ino = getino(dest,&dest);
 
     //get inode numbers of parent directories of files specified to move to and from..
     // checks if the parent directories are the root dir as well in the ternary operator
     char* base = get_parent_path(source);
-    int p_src_ino = getino(base);
+    int psrc_dev = _Running->cwd->dev;
+    int p_src_ino = getino(base, &psrc_dev);
     base = get_parent_path(dest);
-    int p_dest_ino = getino(base);
+    int pdest_dev = _Running->cwd->dev;
+    int p_dest_ino = getino(base, &pdest_dev);
 
     //ensures that both the dir and base files exist according to the source pathname provided
     if(src_ino == 0 || p_src_ino == 0){
@@ -35,13 +39,13 @@ int _mv(char*pathname)
     //3. ***** Gets MINODEs for all the valid inode numbers obtained above *****
     int dev = _Running->cwd->dev;
     //old parent dir
-    MINODE* p_src_mip = iget(dev, p_src_ino);
+    MINODE* p_src_mip = iget(psrc_dev, p_src_ino);
     //old file
-    MINODE* src_mip = iget(dev, src_ino);
+    MINODE* src_mip = iget(src_dev, src_ino);
     //new parent dir
-    MINODE* p_dest_mip = iget(dev, p_dest_ino);
+    MINODE* p_dest_mip = iget(pdest_dev, p_dest_ino);
     //old file
-    MINODE* dest_mip = (dest_ino == 0)? NULL: iget(dev, dest_ino);
+    MINODE* dest_mip = (dest_ino == 0)? NULL: iget(dest_dev, dest_ino);
     //if unable to locate parent dir of destination or destination is not a valid directory
     if(p_dest_ino == 0 || p_dest_mip == NULL || !S_ISDIR(p_dest_mip->INODE.i_mode)){
         print_notice("mv: unable to locate destination file operand");

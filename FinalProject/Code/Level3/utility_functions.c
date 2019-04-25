@@ -50,7 +50,11 @@ int checkBusyFiles(char* dev){
 }
 
 MINODE* mount_point(char* path, int dev){
-    int ino = getino(path);
+    if(strcmp(path,"/")){
+        dev = _Running->cwd->dev;
+    }
+
+    int ino = getino(path, &dev);
     if(ino == 0){
         print_notice("mount_root: Unable to locate directory specified");
         return NULL;
