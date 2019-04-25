@@ -141,7 +141,7 @@ int mount_root(char* disk, char* path) {
     if(dev == -1){ return -1; }
 
     //Gets index of mtable to mount onto
-    MTABLE* mp = &_MTables[_Total_Mounts++];
+    MTABLE* mp = &_MTables[_Total_Mounts];
     mp->dev = dev;
     strcpy(mp->devName, disk);
     char* dest = get_dest_path(path);
@@ -159,7 +159,7 @@ int mount_root(char* disk, char* path) {
     MINODE* mip = getRoot(mp, dev, original_ino);
     if(mip == NULL){ return -1; }
 
-    if(_Total_Mounts == 1) {
+    if(_Total_Mounts == 0) {
         _Root = mip;
     }
 
@@ -168,6 +168,7 @@ int mount_root(char* disk, char* path) {
     printf("|nblocks = %d | bfree = %d | ninodes = %d | ifree = %d|\n",
            mp->nblocks, mp->free_blocks, mp->ninodes, mp->free_inodes);
     printf("root_mount: '%s' mounted on %s \n", disk, dest);
+    _Total_Mounts++;
     return dev;
 }
 /*

@@ -29,7 +29,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FinalProject.dir/Code/Level3/utility_functions.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level3/mount_command.c.o"
   "CMakeFiles/FinalProject.dir/Code/Level3/unmount_command.c.o"
-  "CMakeFiles/FinalProject.dir/Code/Level3/su_command.c.o"
+  "CMakeFiles/FinalProject.dir/Code/Level3/pmnt_command.c.o"
   "FinalProject.pdb"
   "FinalProject"
 )

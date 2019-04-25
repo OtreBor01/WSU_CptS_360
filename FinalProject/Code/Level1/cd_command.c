@@ -18,9 +18,11 @@ int _cd(char* path)
         MINODE *mip = iget(dev, ino); //Using the inode number retrieved we find the actual MINODE object
         if(S_ISDIR(mip->INODE.i_mode)) //if the inode is a valid directory
         {
+            /*
             if(_Running->cwd != mip){
                 iput(_Running->cwd);
             }
+             */
             _Running->cwd = mip;
         }
         else if(S_ISREG(mip->INODE.i_mode)) //if inode was a file

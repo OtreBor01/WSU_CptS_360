@@ -28,6 +28,7 @@ int _Su;
 int _mount(char*);
 int _unmount(char*);
 int _su(char*);
+int _pmnt(char*);
 
 //*** Utility Functions ***
 int mountStat(void);

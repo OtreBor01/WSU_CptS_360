@@ -64,7 +64,7 @@ typedef struct oft{
   int          refCount;
   MINODE*      minodePtr;;
   int          offset;
-  char        fileName[EXT2_NAME_LEN];
+  char         fileName[EXT2_NAME_LEN];
 }OFT;
 
 // PROC structure
@@ -97,9 +97,10 @@ typedef struct mtable{
 
 //***** Global Variables *****
 
-MINODE*      _Root;
+MINODE*     _Root;
 MINODE      _MINodes[NUM_MINODE]; //in memory INODEs
 MTABLE      _MTables[NUM_MTABLE]; //mount tables
+int         _Current_Mount_Index;
 OFT         _Ofts[NUM_OFT]; //Opened file instance
 int         _OpenOFT;
 PROC        _Procs[NUM_PROC]; //PROC structures

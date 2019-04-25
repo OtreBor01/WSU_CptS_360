@@ -18,15 +18,6 @@ int _link(char* pathname){
     printf("oldFile:  %s\n\n",oldFile);
     printf("newFile:  %s\n\n",newFile);
 
-    //Grab dev by checking path
-    /*
-    if(oldFile[0] == '/'){
-        dev = _Root->dev;
-    }
-    else{
-        dev = _Running->cwd->dev;
-    }
-    */
     int src_dev =_Running->cwd->dev;
 
     //Get old File inode and check File type
@@ -57,14 +48,6 @@ int _link(char* pathname){
 
     dest_dev =_Running->cwd->dev;
     pino = getino(parentDirName, &dest_dev);
-
-    /*
-    if(newFile[0] == '/'){
-        dest_dev = _Root->dev;
-    }
-    else{
-        dev = _Running->cwd->dev;
-    }*/
 
     pmip = iget(dest_dev, pino);
     //Create entry in new parent DIR with same inode number of old_file
