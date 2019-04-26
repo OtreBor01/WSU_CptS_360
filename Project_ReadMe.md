@@ -5,7 +5,7 @@
 
                      Date Assigned: 3-7-2019
 
-      1. DUE and DEMO: Level-1  : 4-05-2019;  QUIZ: 4-9-2019
+      1. DUE and DEMO: Level-1  : 4-12-2019;  QUIZ: 4-16-2019
                        Level-2-3: 4-25-2019;  DEMO & Interview with KCW 
                                   
          For each DEMO: Turn in a hard copy of your work.
@@ -105,3 +105,5 @@
         step1  : mount disk as the root FS; ls,pwd,cd, mkdir, creat
         step2  : ls,pwd,cd; mkdir,creat;  rmdir
         step3  : ls,pwd,cd,mkdir,creat,rmdir;  link, symlink, unlink
+
+**
