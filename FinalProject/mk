@@ -1,3 +1,0 @@
-rm project
-gcc -m32 -o project Code/*.c Code/Level1/*.c
-./project
