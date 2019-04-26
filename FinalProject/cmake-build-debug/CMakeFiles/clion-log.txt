@@ -1,4 +1,16 @@
-/snap/clion/69/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /home/noah/Documents/cpts360/Project/FinalProject
+/snap/clion/69/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/austinmm/Desktop/CS360/FinalProject
 -- Configuring done
--- Generating done
--- Build files have been written to: /home/noah/Documents/cpts360/Project/FinalProject/cmake-build-debug
+CMake Error at CMakeLists.txt:11 (add_executable):
+  Cannot find source file:
+
+    FS
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:11 (add_executable):
+  No SOURCES given to target: FinalProject
+
+
+-- Build files have been written to: /home/austinmm/Desktop/CS360/FinalProject/cmake-build-debug

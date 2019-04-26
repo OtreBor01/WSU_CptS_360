@@ -55,7 +55,7 @@ int _cp(char*pathname)
         print_notice("cp: unable to open destination file for write");
         return -1;
     }
-
+    _pfd("");
     char buf[BLKSIZE];
     int nbytes = 0;
     //copies all bytes from source file to dest file

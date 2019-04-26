@@ -58,7 +58,7 @@ int init(void)
     }
     for (int i = 0; i < NUM_PROC; i++){
         _Procs[i].pid = i; //sets the id of the procs
-        _Procs[i].uid = 1; //I am a user
+        _Procs[i].uid = 2; //I am a user
         _Procs[i].cwd = 0;
         _Procs[i].status = PROC_FREE; //sets all procs to free
         for (int j = 0; j < NUM_FD; j++) {
@@ -165,6 +165,8 @@ int menu(char* pathname)
     puts("| mount <device: string> <directory: string>                     - mount a filesystem                    |");
     puts("|--------------------------------------------------------------------------------------------------------|");
     puts("| unmount <device: string>                                       - un-mounts a filesystem                |");
+    puts("|--------------------------------------------------------------------------------------------------------|");
+    puts("| pmt                                                            - displays mounted devices              |");
     puts("|--------------------------------------------------------------------------------------------------------|");
     puts("|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|\n");
     return 0;

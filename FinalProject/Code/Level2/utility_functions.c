@@ -41,7 +41,7 @@ int lbk_to_blk(MINODE* mip, int lbk)
     else// double indirect blocks; see Exercise 11.13 below.
     {
         //this is an educated quess!!!
-        int i = 13, blk = mip->INODE.i_block[12];
+        int i = 13, blk = mip->INODE.i_block[13];
         for(; i <= 15; i++){
             if(i <= lbk < i+256){
                 break;
@@ -227,7 +227,7 @@ int write_file(int fd, char buf[], int nbytes)
         offset += write_nbytes;
         count += write_nbytes;
         nbytes -= write_nbytes;
-        if (offset > mip->INODE.i_size) {  // inc file size
+        if (offset >= BLKSIZE) {  // inc file size
             mip->INODE.i_size += write_nbytes;
         }
         /*

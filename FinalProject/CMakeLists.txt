@@ -46,9 +46,9 @@ add_executable(FinalProject
         Code/main.c
         Code/Type.h
         Code/utility_functions.c
-        diskimage
+        disk1
+        disk2
         FS
         mk
         mkFS
-        mydisk
         ReadMe.md)
